@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+/* Note: use next/font/google in layout.tsx instead of @import in production */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colors */
+  --color-bg-primary:    #0D0D0D;
+  --color-bg-section:    #141414;
+  --color-bg-card:       #1A1A1A;
+  --color-accent:        #FF1A1A;
+  --color-accent-hover:  #CC0000;
+  --color-border:        #2A2A2A;
+  --color-text:          #FFFFFF;
+  --color-body:          #B0B0B0;
+  --color-muted:         #6B6B6B;
+
+  /* Layout */
+  --container-max:    1200px;
+  --container-pad-x:  80px;
+  --container-pad-y:  96px;
+
+  /* Type */
+  --font-primary: 'Poppins', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Focus visible ring for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Scrollbar (optional dark styling) */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-primary); }
+::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+
+/* Container utility */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad-x);
+}
+
+/* Section padding utility */
+.section {
+  padding: var(--container-pad-y) 0;
+}
+
+/* Alternating section backgrounds */
+.section-dark    { background: var(--color-bg-primary); }
+.section-darker  { background: var(--color-bg-section); }
+
+@media (max-width: 1024px) {
+  :root {
+    --container-pad-x: 48px;
+    --container-pad-y: 72px;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --container-pad-x: 24px;
+    --container-pad-y: 56px;
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    --container-pad-x: 16px;
+    --container-pad-y: 48px;
+  }
+}
+
+@layer components {
+  /* Primary CTA Button */
+  .btn-primary {
+    background: var(--color-accent);
+    color: #FFFFFF;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  }
+  .btn-primary:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(255, 26, 26, 0.25);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  /* Ghost Button (Secondary) */
+  .btn-ghost {
+    background: transparent;
+    color: #FFFFFF;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1.5px solid #FFFFFF;
+    transition: background 200ms ease, border-color 200ms ease;
+  }
+  .btn-ghost:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  /* Text Link CTA */
+  .btn-text {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 200ms ease;
+  }
+  .btn-text:hover { color: var(--color-accent); }
+}
