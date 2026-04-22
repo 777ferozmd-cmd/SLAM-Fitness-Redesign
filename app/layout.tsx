@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import "./globals.css";
 const poppins = Poppins({ 
   subsets: ["latin"],
@@ -20,9 +22,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans bg-slam-bg text-slam-text antialiased`}>
+      <body className={`${poppins.variable} font-sans bg-slam-bg text-slam-text antialiased flex flex-col min-h-screen`}>
         <Navbar />
-        {children}
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

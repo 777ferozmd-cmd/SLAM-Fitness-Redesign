@@ -41,7 +41,7 @@ export default function Navbar() {
       y: 0,
       transition: {
         duration: 0.4,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
       }
     },
     exit: { 
@@ -49,7 +49,7 @@ export default function Navbar() {
       y: "-100%",
       transition: {
         duration: 0.3,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
       }
     }
   };
@@ -70,7 +70,7 @@ export default function Navbar() {
     visible: { 
       opacity: 1, 
       x: 0,
-      transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+      transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] as const }
     }
   };
 

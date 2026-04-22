@@ -26,7 +26,7 @@ const dirs = [
   'public/images',
 ];
 
-const baseDir = path.resolve(process.cwd(), 'temp-app');
+const baseDir = process.cwd();
 
 for (const dir of dirs) {
   fs.mkdirSync(path.join(baseDir, dir), { recursive: true });
