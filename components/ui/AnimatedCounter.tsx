@@ -1,36 +1,69 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { useInView, useMotionValue, useSpring } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 
-interface AnimatedCounterProps {
+export interface AnimatedCounterProps {
   value: number;
-  prefix?: string;
   suffix?: string;
+  prefix?: string;
+  duration?: number;
+  className?: string;
 }
 
-export default function AnimatedCounter({ value, prefix = "", suffix = "" }: AnimatedCounterProps) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, {
-    damping: 50,
-    stiffness: 100,
-  });
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+export default function AnimatedCounter({
+  value,
+  suffix = "",
+  prefix = "",
+  duration = 1800,
+  className = "",
+}: AnimatedCounterProps) {
+  const elementRef = useRef<HTMLSpanElement>(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (isInView) {
-      motionValue.set(value);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          const element = elementRef.current;
+          if (!element) return;
+
+          const start = performance.now();
+          const update = (time: number) => {
+            const progress = Math.min((time - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+            const currentValue = Math.floor(eased * value);
+            
+            element.textContent = `${prefix}${currentValue}${suffix}`;
+            
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              element.textContent = `${prefix}${value}${suffix}`; // snap to final
+            }
+          };
+          requestAnimationFrame(update);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = elementRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
-  }, [motionValue, isInView, value]);
 
-  useEffect(() => {
-    springValue.on("change", (latest) => {
-      if (ref.current) {
-        ref.current.textContent = `${prefix}${Intl.NumberFormat("en-US").format(Math.floor(latest))}${suffix}`;
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
-    });
-  }, [springValue, prefix, suffix]);
+    };
+  }, [value, suffix, prefix, duration, hasAnimated]);
 
-  return <span ref={ref} />;
+  return (
+    <span ref={elementRef} className={className}>
+      {prefix}0{suffix}
+    </span>
+  );
 }

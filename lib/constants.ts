@@ -4,6 +4,7 @@ export const CONTACT = {
   corporateAddress: "#18/70, Halls Road, Kilpauk, Chennai – 600 010",
   corporatePhone: "+91 70944 79145",
   corporateEmail: "aneesh@paulsons.in",
+  contactPerson: "Mr Suresh Babu",
   whatsapp: "917094405880",
   instagram: "https://www.instagram.com/slamfitnessstudio/",
   facebook: "https://www.facebook.com/slamfitnessindia/",
@@ -64,6 +65,9 @@ export const NAV_LINKS = [
       { label: "Body Transformation", href: "/services/body-transformation" },
     ]
   },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Trainers", href: "/trainers" },
+  { label: "Transformations", href: "/transformations" },
   { label: "Blog", href: "/blog" },
   { label: "Locations", href: "/locations" },
   { label: "Franchise", href: "/franchise" },

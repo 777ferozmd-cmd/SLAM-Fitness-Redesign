@@ -1,127 +1,136 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
+import SectionLabel from "@/components/ui/SectionLabel";
+import Button from "@/components/ui/Button";
+import Badge from "@/components/ui/Badge";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
+
+const posts = [
+  {
+    category: "Nutrition",
+    title: "Pre-Workout Fuel: What to Eat Before Heavy Lifts",
+    readTime: "4 Min Read",
+    image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    category: "Training",
+    title: "5 Common Deadlift Mistakes Holding Back Your Gains",
+    readTime: "6 Min Read",
+    image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    category: "Lifestyle",
+    title: "How to Optimize Your Sleep for Maximum Muscle Recovery",
+    readTime: "5 Min Read",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=600&auto=format&fit=crop"
+  }
+];
 
 export default function BlogPreview() {
-  const blogs = [
-    {
-      id: 1,
-      title: "Top 5 Functional Training Exercises for Real-World Strength",
-      category: "Training",
-      date: "Oct 12, 2023",
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=600&auto=format&fit=crop",
-    },
-    {
-      id: 2,
-      title: "Nutrition 101: What to Eat Before and After Your SLAM Workout",
-      category: "Nutrition",
-      date: "Nov 05, 2023",
-      image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=600&auto=format&fit=crop",
-    },
-    {
-      id: 3,
-      title: "Why Bootcamp is the Ultimate Catalyst for Fat Loss",
-      category: "Lifestyle",
-      date: "Nov 28, 2023",
-      image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=600&auto=format&fit=crop",
-    }
-  ];
-
-  const stagger = {
-    initial: { opacity: 0 },
-    whileInView: { opacity: 1 },
-    viewport: { once: true, margin: "-50px" },
-    transition: { staggerChildren: 0.1 },
-  };
-
-  const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.5, ease: "easeOut" }
-  };
-
   return (
-    <section className="bg-slam-bg py-20 md:py-32">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-20">
+    <section className="bg-slam-bg py-20 lg:py-32 overflow-hidden border-b border-slam-border">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-[80px]">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-          <div className="flex flex-col items-start gap-4 max-w-2xl">
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              className="text-slam-primary text-[12px] uppercase tracking-[0.12em] font-bold"
-            >
-              The SLAM Journal
-            </motion.p>
+        <motion.div 
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <div className="flex flex-col">
+            <motion.div variants={itemVariants}>
+              <SectionLabel>FITNESS INSIGHTS</SectionLabel>
+            </motion.div>
             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: 0.1 }}
-              className="text-white font-extrabold leading-[1.1] text-[clamp(40px,5vw,56px)]"
+              variants={itemVariants}
+              className="text-[clamp(36px,5vw,52px)] font-extrabold text-white leading-[1.1] tracking-tight"
             >
-              Latest Insights & <br className="hidden md:block"/>
-              <span className="text-slam-muted">Fitness Tips.</span>
+              From the <span className="text-slam-accent">SLAM</span> Blog
             </motion.h2>
           </div>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ delay: 0.2 }}
-            className="shrink-0"
-          >
-            <Link href="/blog" className="btn-secondary inline-flex group">
+          
+          <motion.div variants={itemVariants} className="hidden md:block">
+            <Button variant="text" href="/blog">
               Read All Articles
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </Button>
           </motion.div>
-        </div>
+        </motion.div>
 
-        {/* Blog Grid */}
+        {/* Blog Cards */}
         <motion.div 
-          variants={stagger}
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 md:pb-0 md:grid md:grid-cols-3 md:overflow-visible no-scrollbar"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
-          {blogs.map((blog) => (
-            <motion.article 
-              key={blog.id} 
-              variants={fadeInUp}
-              className="group flex flex-col cursor-pointer"
+          {posts.map((post, idx) => (
+            <motion.div 
+              key={idx}
+              variants={itemVariants}
+              className="snap-center shrink-0 w-[85vw] md:w-auto"
             >
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6">
-                <Image 
-                  src={blog.image}
-                  alt={blog.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute top-4 left-4 bg-slam-bg/80 backdrop-blur-sm px-3 py-1 rounded text-xs font-bold tracking-wider uppercase text-slam-accent border border-slam-border">
-                  {blog.category}
+              <Link href="/blog" className="flex flex-col group cursor-pointer h-full">
+                {/* Image */}
+                <div className="w-full h-[240px] relative rounded-slam-lg overflow-hidden mb-6 bg-[#1A1A1A]">
+                  <Image 
+                    src={post.image} 
+                    alt={post.title} 
+                    fill 
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  />
                 </div>
-              </div>
-              
-              <div className="flex items-center gap-2 text-slam-muted text-sm font-medium mb-3">
-                <Calendar className="w-4 h-4" />
-                <span>{blog.date}</span>
-              </div>
-              
-              <h3 className="text-xl font-bold text-white group-hover:text-slam-accent transition-colors leading-snug">
-                <Link href="/blog" className="after:absolute after:inset-0">
-                  {blog.title}
-                </Link>
-              </h3>
-            </motion.article>
+                
+                {/* Meta */}
+                <div className="flex items-center gap-3 mb-4">
+                  <Badge color="red">{post.category}</Badge>
+                  <span className="text-[12px] text-[#808080] font-bold tracking-wider uppercase">
+                    {post.readTime}
+                  </span>
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-xl font-bold text-white leading-snug group-hover:text-slam-accent transition-colors duration-300">
+                  {post.title}
+                </h3>
+              </Link>
+            </motion.div>
           ))}
+        </motion.div>
+
+        {/* Mobile CTA */}
+        <motion.div 
+          className="mt-4 md:hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          <Button variant="text" href="/blog">
+            Read All Articles
+          </Button>
         </motion.div>
 
       </div>

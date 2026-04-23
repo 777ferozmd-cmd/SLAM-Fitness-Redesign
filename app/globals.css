@@ -149,4 +149,26 @@ body {
     transition: color 200ms ease;
   }
   .btn-text:hover { color: var(--color-accent); }
+
+  /* WhatsApp Floating Button */
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 99;
+    width: 56px;
+    height: 56px;
+    background: #1A1A1A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    cursor: pointer;
+    animation: pulse 2.5s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+    50% { box-shadow: 0 4px 32px rgba(37,211,102,0.3); }
+  }
 }

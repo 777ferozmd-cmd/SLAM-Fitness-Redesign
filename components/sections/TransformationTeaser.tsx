@@ -23,15 +23,15 @@ const itemVariants = {
   },
 };
 
-const trainers = [
-  { name: "Karthik Raj", initials: "KR", spec: "Head Coach, Functional Training", exp: 8 },
-  { name: "Sneha Reddy", initials: "SR", spec: "Weight Loss Specialist", exp: 5 },
-  { name: "Arun Kumar", initials: "AK", spec: "Strength & Conditioning", exp: 6 }
+const transformations = [
+  { name: "Rahul S.", program: "Body Transformation", time: "12 Weeks" },
+  { name: "Priya M.", program: "Weight Loss", time: "8 Weeks" },
+  { name: "Vikram K.", program: "Muscle Gain", time: "16 Weeks" }
 ];
 
-export default function TrainerSpotlight() {
+export default function TransformationTeaser() {
   return (
-    <section className="bg-slam-bg py-20 lg:py-32 overflow-hidden border-b border-slam-border">
+    <section className="bg-slam-section py-20 lg:py-32 overflow-hidden border-b border-slam-border">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-[80px]">
         
         {/* Header */}
@@ -44,19 +44,19 @@ export default function TrainerSpotlight() {
         >
           <div className="flex flex-col">
             <motion.div variants={itemVariants}>
-              <SectionLabel>OUR TEAM</SectionLabel>
+              <SectionLabel>REAL STORIES</SectionLabel>
             </motion.div>
             <motion.h2 
               variants={itemVariants}
               className="text-[clamp(36px,5vw,52px)] font-extrabold text-white leading-[1.1] tracking-tight"
             >
-              Trained By the <span className="text-slam-accent">Best</span>
+              <span className="text-slam-accent">Real</span> People. Real Results.
             </motion.h2>
           </div>
           
           <motion.div variants={itemVariants} className="hidden md:block">
-            <Button variant="text" href="/trainers">
-              Meet the Full Team
+            <Button variant="text" href="/transformations">
+              See All Transformations
             </Button>
           </motion.div>
         </motion.div>
@@ -69,28 +69,30 @@ export default function TrainerSpotlight() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {trainers.map((trainer, idx) => (
+          {transformations.map((t, idx) => (
             <motion.div 
               key={idx}
               variants={itemVariants}
-              className="snap-center shrink-0 w-[80vw] md:w-auto bg-[#1A1A1A] border border-[#2A2A2A] rounded-slam-lg p-8 hover:border-[#FF1A1A] transition-colors duration-300 flex flex-col items-center group cursor-default"
+              className="snap-center shrink-0 w-[85vw] md:w-auto bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] border border-slam-border rounded-slam-lg p-5"
             >
-              {/* Placeholder Headshot */}
-              <div className="w-28 h-28 rounded-full bg-[#2A2A2A] group-hover:bg-[#FF1A1A]/10 transition-colors duration-300 mx-auto mb-6 flex items-center justify-center border-2 border-transparent group-hover:border-[#FF1A1A]/30">
-                <span className="text-3xl font-bold text-white group-hover:text-[#FF1A1A] transition-colors duration-300">
-                  {trainer.initials}
-                </span>
+              {/* Before / After Placeholder */}
+              <div className="flex gap-2 h-[200px] mb-6">
+                <div className="flex-1 bg-[#2A2A2A] rounded-[8px] flex items-center justify-center relative overflow-hidden">
+                  <span className="absolute bottom-3 left-3 text-[11px] uppercase font-bold text-white/50 tracking-wider">Before</span>
+                </div>
+                <div className="flex-1 bg-[#1A1A1A] rounded-[8px] flex items-center justify-center relative overflow-hidden">
+                  <span className="absolute bottom-3 left-3 text-[11px] uppercase font-bold text-slam-accent tracking-wider">After</span>
+                </div>
               </div>
-              
+
               {/* Details */}
-              <h3 className="text-2xl font-bold text-white text-center mb-1">{trainer.name}</h3>
-              <p className="text-[15px] font-semibold text-slam-accent text-center mb-4">{trainer.spec}</p>
-              
-              <div className="w-full h-px bg-[#2A2A2A] mb-4" />
-              
-              <p className="text-[13px] text-[#808080] font-medium tracking-wide text-center uppercase">
-                {trainer.exp} Years Experience
-              </p>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-1">{t.name}</h3>
+                <p className="text-sm font-semibold text-slam-accent mb-3">{t.program}</p>
+                <div className="inline-block px-3 py-1 bg-[#2A2A2A] rounded-full">
+                  <span className="text-[11px] text-white/80 font-bold uppercase tracking-wider">{t.time}</span>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -102,8 +104,8 @@ export default function TrainerSpotlight() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <Button variant="text" href="/trainers">
-            Meet the Full Team
+          <Button variant="text" href="/transformations">
+            See All Transformations
           </Button>
         </motion.div>
 

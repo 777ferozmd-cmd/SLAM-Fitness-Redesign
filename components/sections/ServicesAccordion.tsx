@@ -1,96 +1,126 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { SERVICES } from "@/lib/constants";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Plus, Minus } from "lucide-react";
-import * as Icons from "lucide-react";
+import { motion } from "framer-motion";
+import { Plus } from "lucide-react";
+import { SERVICES } from "@/lib/constants";
+import SectionLabel from "@/components/ui/SectionLabel";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
 
 export default function ServicesAccordion() {
-  const [openIndex, setOpenIndex] = useState<number>(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="bg-slam-bg py-20 md:py-32 px-6 md:px-20 border-b border-slam-border">
-      <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-        {/* Left Column: Heading & Sticky Content */}
-        <div className="lg:sticky lg:top-32 flex flex-col items-start gap-6">
-          <p className="text-slam-primary text-[12px] uppercase tracking-[0.12em] font-bold">
-            Our Services
-          </p>
-          <h2 className="text-white font-extrabold leading-[1.1] text-[clamp(40px,5vw,56px)]">
-            Elite Training. <br />
-            <span className="text-slam-muted">Real Results.</span>
-          </h2>
-          <p className="text-[18px] text-[#C8C8C8] max-w-[420px]">
-            Whether your goal is to lose fat, build muscle, or completely transform your body, we have a specialized program designed for you.
-          </p>
-          <Link href="/contact" className="btn-primary inline-flex mt-4 group">
-            Start Your Journey
-            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
+    <section className="bg-slam-bg py-20 lg:py-32 overflow-hidden border-b border-slam-border">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-[80px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
+          {/* Left Column: Text + Accordion */}
+          <motion.div 
+            className="flex flex-col"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.div variants={itemVariants}>
+              <SectionLabel>OUR PROGRAMS</SectionLabel>
+            </motion.div>
 
-        {/* Right Column: Accordion */}
-        <div className="flex flex-col border-t border-slam-border">
-          {SERVICES.map((service, index) => {
-            const isOpen = index === openIndex;
-            // @ts-expect-error - Framer Motion requires specific ease casting or dynamic resolution that TS struggles with in this context
-            const Icon = Icons[service.icon] || Icons.Dumbbell;
+            <motion.h2 
+              variants={itemVariants}
+              className="text-[clamp(36px,5vw,52px)] font-extrabold text-white leading-[1.1] mb-6 tracking-tight"
+            >
+              <span className="text-slam-accent">Programs</span> Tailored To You
+            </motion.h2>
 
-            return (
-              <div
-                key={service.slug}
-                className="border-b border-slam-border py-6 md:py-8 cursor-pointer group"
-                onClick={() => setOpenIndex(index === openIndex ? -1 : index)}
-              >
-                <div className="flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-6">
-                    <div className={`w-12 h-12 rounded-xl border flex items-center justify-center transition-colors duration-300 ${
-                      isOpen ? "bg-slam-accent border-slam-accent text-white" : "bg-slam-section border-slam-border text-slam-text group-hover:border-slam-accent"
-                    }`}>
-                      <Icon className="w-6 h-6" />
+            <motion.p 
+              variants={itemVariants}
+              className="text-[18px] text-[#C8C8C8] mb-10 max-w-[480px]"
+            >
+              From fat loss to muscle gain — SLAM has a structured program for every body type and goal.
+            </motion.p>
+
+            {/* Accordion List */}
+            <motion.div variants={itemVariants} className="flex flex-col gap-4">
+              {SERVICES.map((service, index) => {
+                const isActive = activeIndex === index;
+
+                return (
+                  <Link
+                    key={service.slug}
+                    href={`/services/${service.slug}`}
+                    onMouseEnter={() => setActiveIndex(index)}
+                    onClick={() => setActiveIndex(index)}
+                    className={`block w-full text-left p-6 rounded-slam-lg transition-all duration-300 ease-in-out ${
+                      isActive 
+                        ? "bg-slam-accent text-white shadow-[0_8px_24px_rgba(255,26,26,0.2)]" 
+                        : "bg-transparent border border-slam-border hover:border-slam-accent"
+                    }`}
+                  >
+                    <div className="flex justify-between items-center">
+                      <h3 className={`text-xl font-bold ${isActive ? "text-white" : "text-white"}`}>
+                        {service.title}
+                      </h3>
+                      {!isActive && (
+                        <Plus className="w-6 h-6 text-slam-accent shrink-0" strokeWidth={2.5} />
+                      )}
                     </div>
-                    <h3 className={`text-2xl md:text-3xl font-bold transition-colors duration-300 ${isOpen ? "text-white" : "text-slam-muted group-hover:text-white"}`}>
-                      {service.title}
-                    </h3>
-                  </div>
-                  <div className={`text-slam-muted transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
-                    {isOpen ? <Minus className="w-6 h-6" /> : <Plus className="w-6 h-6" />}
-                  </div>
-                </div>
-
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
+                    
+                    <div 
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                        isActive ? "max-h-[150px] opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"
+                      }`}
                     >
-                      <div className="pt-6 pb-2 pl-[72px]">
-                        <p className="text-slam-primary font-bold mb-2 uppercase tracking-wider text-sm">
-                          {service.tagline}
-                        </p>
-                        <p className="text-[#C8C8C8] leading-relaxed mb-6">
-                          {service.description}
-                        </p>
-                        <Link
-                          href={`/services/${service.slug}`}
-                          className="inline-flex items-center text-white font-bold hover:text-slam-accent transition-colors"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Explore Program
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+                      <p className="text-white/90 leading-relaxed pr-8">
+                        {service.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column: Tall Photo */}
+          <motion.div 
+            className="relative w-full h-[400px] lg:h-[600px] rounded-[16px] overflow-hidden hidden md:block"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop"
+              alt="SLAM Fitness Studio Training Programs"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            {/* Inner Gradient for Polish */}
+            <div className="absolute inset-0 border border-white/10 rounded-[16px] pointer-events-none" />
+          </motion.div>
+          
         </div>
       </div>
     </section>

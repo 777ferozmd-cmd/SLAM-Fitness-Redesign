@@ -1,100 +1,111 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import Button from "@/components/ui/Button";
+import SectionLabel from "@/components/ui/SectionLabel";
 import { Star } from "lucide-react";
 
-export default function Hero() {
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1,
-      },
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
     },
-  };
+  },
+};
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
-  };
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
 
+export default function Hero() {
   return (
-    <section className="relative w-full h-[100vh] min-h-[600px] flex items-end justify-start overflow-hidden">
+    <section className="relative w-full h-[100vh] min-h-[600px] overflow-hidden flex items-end">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop"
-          alt="Athlete training at SLAM Fitness"
-          fill
-          priority
-          className="object-cover"
-        />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/45" />
-      </div>
+      <Image
+        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2000&auto=format&fit=crop"
+        alt="SLAM Fitness Studio Gym Area"
+        fill
+        className="object-cover z-0"
+        priority
+      />
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-20 pb-12 md:pb-20">
-        <motion.div
-          variants={stagger}
-          initial="initial"
-          animate="animate"
-          className="flex flex-col items-start gap-5 max-w-2xl"
+      {/* Overlay */}
+      <div 
+        className="absolute inset-0 z-10"
+        style={{
+          background: "linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.20) 100%)"
+        }}
+      />
+
+      {/* Content Container */}
+      <div className="relative z-20 w-full max-w-[1200px] mx-auto px-6 lg:px-[80px] pb-16 lg:pb-[80px]">
+        <motion.div 
+          className="max-w-[620px] flex flex-col items-start text-left"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          {/* Eyebrow */}
-          <motion.p
-            variants={fadeInUp}
-            className="text-slam-primary text-[12px] uppercase tracking-[0.12em] font-bold"
-          >
-            SLAM FITNESS STUDIO
-          </motion.p>
+          <motion.div variants={itemVariants}>
+            <SectionLabel>SLAM FITNESS STUDIO</SectionLabel>
+          </motion.div>
 
-          {/* H1 */}
           <motion.h1
-            variants={fadeInUp}
-            className="text-white font-extrabold leading-[1.1] text-[clamp(52px,6vw,72px)]"
+            variants={itemVariants}
+            className="text-[clamp(52px,6vw,72px)] font-extrabold text-white leading-[1.1] tracking-tight mb-4"
           >
-            Where Chennai Comes to Train
+            Where Chennai Comes to <span className="text-[#FF1A1A]">Train</span>
           </motion.h1>
 
-          {/* Body copy */}
           <motion.p
-            variants={fadeInUp}
-            className="text-[18px] text-[#C8C8C8] max-w-[420px]"
+            variants={itemVariants}
+            className="text-[18px] text-[#C8C8C8] max-w-[420px] mb-8 leading-relaxed"
           >
             Expert coaches. Personalised programs tailored to your goals, your body, and your schedule.
           </motion.p>
 
-          {/* CTA Button */}
-          <motion.div variants={fadeInUp} className="pt-2">
-            <Link href="/contact" className="btn-primary inline-flex">
+          <motion.div variants={itemVariants}>
+            <Button variant="primary" href="/contact">
               Claim Your Free Trial
-            </Link>
+            </Button>
           </motion.div>
 
-          {/* Social Proof Cluster */}
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-6 mt-4">
+          <motion.div
+            variants={itemVariants}
+            className="flex items-center gap-3 mt-6"
+          >
+            {/* Avatars */}
             <div className="flex -space-x-3">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full border-2 border-[#141414] overflow-hidden relative bg-gray-800">
+                <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0D0D0D] overflow-hidden relative">
                   <Image
-                    src={`https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop&crop=faces&sat=-100`}
-                    alt={`Reviewer ${i}`}
+                    src={`https://i.pravatar.cc/100?img=${i + 10}`}
+                    alt="Member avatar"
                     fill
                     className="object-cover"
                   />
                 </div>
               ))}
             </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1 text-[#FFD700]">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`w-4 h-4 ${i < 4 ? "fill-current" : "fill-current opacity-50"}`} />
+
+            {/* Stars & Text */}
+            <div className="flex flex-col ml-1">
+              <div className="flex text-[#FFD700] mb-0.5">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star key={star} size={14} className="fill-[#FFD700] text-[#FFD700]" />
                 ))}
-                <span className="text-white font-bold ml-1 text-sm">4.5</span>
+                <span className="text-white text-xs font-bold ml-1.5 leading-none self-center">4.5</span>
               </div>
-              <span className="text-sm text-slam-muted">From 580+ Google Reviews</span>
+              <span className="text-[13px] text-[#6B6B6B] leading-none">
+                From 580+ Google Reviews
+              </span>
             </div>
           </motion.div>
         </motion.div>
