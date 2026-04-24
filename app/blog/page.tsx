@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Search } from "lucide-react";
 import { blogPosts, CATEGORIES } from "@/lib/blog-data";
+import Card from "@/components/ui/Card";
 
 export default function BlogIndex() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -105,28 +106,30 @@ export default function BlogIndex() {
         {filteredPosts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block bg-[#1A1A1A] border border-[#2A2A2A] rounded-[16px] overflow-hidden transition-all duration-300 hover:border-slam-accent hover:-translate-y-1">
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <Image
-                    src={post.thumbnail}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-5">
-                  <span className="inline-block text-[11px] font-semibold text-slam-accent uppercase tracking-[0.1em] mb-2">
-                    {post.category}
-                  </span>
-                  <h3 className="text-white text-[17px] font-bold leading-[1.4] mb-3 group-hover:text-slam-accent transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <div className="text-slam-muted text-[12px] flex items-center gap-3 mt-2">
-                    <span>{post.date}</span>
-                    <span className="w-1 h-1 rounded-full bg-slam-border" />
-                    <span>{post.readTime}</span>
+              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block transition-all duration-300 hover:-translate-y-1">
+                <Card className="p-0 overflow-hidden border-[#2A2A2A]">
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={post.thumbnail}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
-                </div>
+                  <div className="p-5">
+                    <span className="inline-block text-[11px] font-semibold text-slam-accent uppercase tracking-[0.1em] mb-2">
+                      {post.category}
+                    </span>
+                    <h3 className="text-white text-[17px] font-bold leading-[1.4] mb-3 group-hover:text-slam-accent transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <div className="text-slam-muted text-[12px] flex items-center gap-3 mt-2">
+                      <span>{post.date}</span>
+                      <span className="w-1 h-1 rounded-full bg-slam-border" />
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+                </Card>
               </Link>
             ))}
           </div>

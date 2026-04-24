@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
+import Card from "@/components/ui/Card";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -94,28 +95,30 @@ export default function BlogPreview() {
               className="snap-center shrink-0 w-[85vw] md:w-auto"
             >
               <Link href="/blog" className="flex flex-col group cursor-pointer h-full">
-                {/* Image */}
-                <div className="w-full h-[240px] relative rounded-slam-lg overflow-hidden mb-6 bg-[#1A1A1A]">
-                  <Image 
-                    src={post.image} 
-                    alt={post.title} 
-                    fill 
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
-                  />
-                </div>
-                
-                {/* Meta */}
-                <div className="flex items-center gap-3 mb-4">
-                  <Badge color="red">{post.category}</Badge>
-                  <span className="text-[12px] text-[#808080] font-bold tracking-wider uppercase">
-                    {post.readTime}
-                  </span>
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-xl font-bold text-white leading-snug group-hover:text-slam-accent transition-colors duration-300">
-                  {post.title}
-                </h3>
+                <Card className="p-0 border-[#2A2A2A] h-full flex flex-col bg-transparent !border-transparent hover:!border-transparent hover:bg-transparent">
+                  {/* Image */}
+                  <div className="w-full h-[240px] relative rounded-slam-lg overflow-hidden mb-6 bg-[#1A1A1A]">
+                    <Image 
+                      src={post.image} 
+                      alt={post.title} 
+                      fill 
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+                    />
+                  </div>
+                  
+                  {/* Meta */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <Badge color="red">{post.category}</Badge>
+                    <span className="text-[12px] text-[#808080] font-bold tracking-wider uppercase">
+                      {post.readTime}
+                    </span>
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white leading-snug group-hover:text-slam-accent transition-colors duration-300">
+                    {post.title}
+                  </h3>
+                </Card>
               </Link>
             </motion.div>
           ))}

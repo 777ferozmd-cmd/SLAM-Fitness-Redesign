@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -73,8 +74,9 @@ export default function TrainerSpotlight() {
             <motion.div 
               key={idx}
               variants={itemVariants}
-              className="snap-center shrink-0 w-[80vw] md:w-auto bg-[#1A1A1A] border border-[#2A2A2A] rounded-slam-lg p-8 hover:border-[#FF1A1A] transition-colors duration-300 flex flex-col items-center group cursor-default"
+              className="snap-center shrink-0 w-[80vw] md:w-auto"
             >
+              <Card className="p-8 flex flex-col items-center group cursor-default h-full">
               {/* Placeholder Headshot */}
               <div className="w-28 h-28 rounded-full bg-[#2A2A2A] group-hover:bg-[#FF1A1A]/10 transition-colors duration-300 mx-auto mb-6 flex items-center justify-center border-2 border-transparent group-hover:border-[#FF1A1A]/30">
                 <span className="text-3xl font-bold text-white group-hover:text-[#FF1A1A] transition-colors duration-300">
@@ -91,6 +93,7 @@ export default function TrainerSpotlight() {
               <p className="text-[13px] text-[#808080] font-medium tracking-wide text-center uppercase">
                 {trainer.exp} Years Experience
               </p>
+              </Card>
             </motion.div>
           ))}
         </motion.div>

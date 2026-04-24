@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Card from "@/components/ui/Card";
 
 const CATEGORIES = ["All", "Weight Loss", "Weight Gain", "Body Transformation", "Bootcamp"];
 
@@ -58,8 +59,9 @@ export function TransformationGallery() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
-              className="group relative rounded-2xl overflow-hidden bg-[#1A1A1A] border border-[#2A2A2A]"
+              className="h-full"
             >
+              <Card className="group relative h-full flex flex-col !p-0 border-[#2A2A2A]">
               {/* Image Placeholder (split before/after visually) */}
               <div className="relative h-[300px] w-full flex">
                 <div className="w-1/2 h-full relative border-r border-white/20">
@@ -97,6 +99,7 @@ export function TransformationGallery() {
                 </p>
                 <p className="text-[#6B6B6B] text-[12px] mt-1">Program: {card.program}</p>
               </div>
+              </Card>
             </motion.div>
           ))}
         </AnimatePresence>

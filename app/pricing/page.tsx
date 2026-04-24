@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Check, Minus } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
 import { PricingFAQAccordion } from "./ClientComponents";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Gym Membership Pricing in Chennai — SLAM",
@@ -47,7 +48,7 @@ export default function PricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             
             {/* Starter Plan */}
-            <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[20px] p-8 lg:p-10 transition-colors duration-300 hover:border-slam-accent flex flex-col h-full">
+            <SpotlightCard className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[20px] p-8 lg:p-10 transition-colors duration-300 hover:border-slam-accent flex flex-col h-full">
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
                 <p className="text-[14px] text-[#6B6B6B] mb-6">Monthly, basic access</p>
@@ -74,10 +75,10 @@ export default function PricingPage() {
               >
                 Get Pricing
               </Link>
-            </div>
+            </SpotlightCard>
 
             {/* SLAMer Plan (Recommended) */}
-            <div className="bg-[#1A1A1A] border-2 border-slam-accent rounded-[20px] p-8 lg:p-10 transition-colors duration-300 relative flex flex-col h-full transform md:-translate-y-4">
+            <SpotlightCard className="bg-[#1A1A1A] border-2 border-slam-accent rounded-[20px] p-8 lg:p-10 transition-colors duration-300 relative flex flex-col h-full transform md:-translate-y-4">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-slam-accent text-white text-[11px] font-bold tracking-[0.1em] uppercase px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap">
                 Recommended
               </div>
@@ -108,10 +109,10 @@ export default function PricingPage() {
               >
                 Get Pricing
               </Link>
-            </div>
+            </SpotlightCard>
 
             {/* Elite Plan */}
-            <div className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[20px] p-8 lg:p-10 transition-colors duration-300 hover:border-slam-accent flex flex-col h-full">
+            <SpotlightCard className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[20px] p-8 lg:p-10 transition-colors duration-300 hover:border-slam-accent flex flex-col h-full">
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">Elite</h3>
                 <p className="text-[14px] text-[#6B6B6B] mb-6">6–12 month, personal training + diet</p>
@@ -140,7 +141,7 @@ export default function PricingPage() {
               >
                 Get Pricing
               </Link>
-            </div>
+            </SpotlightCard>
 
           </div>
         </div>

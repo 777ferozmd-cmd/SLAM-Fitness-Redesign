@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { Dumbbell, Target, Flame, Activity, Users, ShieldCheck, HeartPulse } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
+import Card from "@/components/ui/Card";
 import { FAQAccordion, ProgramTabs } from "./ClientComponents";
 
 export const metadata: Metadata = {
@@ -159,13 +160,13 @@ export default function WeightLossGainPage() {
               { icon: Users, title: "Women", desc: "A safe, supportive environment with tailored programming for toning, fat loss, and strength." },
               { icon: HeartPulse, title: "Health-Focused Adults", desc: "Ideal for managing conditions like hypertension, cardiovascular risks, and type 2 diabetes through managed fitness." }
             ].map((item, idx) => (
-              <div key={idx} className="bg-[#1A1A1A] rounded-2xl p-8 border border-[#2A2A2A] flex flex-col items-start">
+              <Card key={idx} className="p-8 flex flex-col items-start !border-[#2A2A2A]">
                 <div className="w-14 h-14 rounded-full bg-slam-accent/10 flex items-center justify-center mb-6">
                   <item.icon className="w-7 h-7 text-slam-accent" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
                 <p className="text-[#B0B0B0] text-[16px] leading-relaxed">{item.desc}</p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>

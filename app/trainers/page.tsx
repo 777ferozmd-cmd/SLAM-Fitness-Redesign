@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { CheckCircle2 } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
 import ServiceHero from "@/components/sections/ServiceHero";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Meet the Trainers — SLAM Fitness Studio",
@@ -76,7 +77,7 @@ export default function TrainersPage() {
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {TRAINERS.map((trainer, idx) => (
-              <div 
+              <SpotlightCard 
                 key={idx} 
                 className="group relative rounded-2xl overflow-hidden bg-[#1A1A1A] border border-[#2A2A2A] hover:border-slam-accent transition-colors duration-300 flex flex-col"
               >
@@ -120,7 +121,7 @@ export default function TrainersPage() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>

@@ -2,6 +2,7 @@ import { CONTACT } from "@/lib/constants";
 import { TrendingUp, Users, ShieldCheck, Target, Phone, Mail } from "lucide-react";
 import FranchiseForm from "@/components/forms/FranchiseForm";
 import Image from "next/image";
+import Card from "@/components/ui/Card";
 
 export default function FranchisePage() {
   return (
@@ -63,11 +64,11 @@ export default function FranchisePage() {
               icon: TrendingUp,
             },
           ].map((feature, i) => (
-            <div key={i} className="bg-[#141414] border border-[#2A2A2A] rounded-[16px] p-8">
+            <Card key={i} className="p-8 !bg-slam-section">
               <feature.icon className="w-10 h-10 text-slam-accent mb-6" />
               <h3 className="text-white text-[20px] font-bold mb-3">{feature.title}</h3>
               <p className="text-slam-body text-[15px] leading-relaxed">{feature.desc}</p>
-            </div>
+            </Card>
           ))}
         </div>
       </section>

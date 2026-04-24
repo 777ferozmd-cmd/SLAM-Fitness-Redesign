@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -73,8 +74,9 @@ export default function TransformationTeaser() {
             <motion.div 
               key={idx}
               variants={itemVariants}
-              className="snap-center shrink-0 w-[85vw] md:w-auto bg-gradient-to-br from-[#1A1A1A] to-[#0D0D0D] border border-slam-border rounded-slam-lg p-5"
+              className="snap-center shrink-0 w-[85vw] md:w-auto"
             >
+              <Card className="p-5 h-full">
               {/* Before / After Placeholder */}
               <div className="flex gap-2 h-[200px] mb-6">
                 <div className="flex-1 bg-[#2A2A2A] rounded-[8px] flex items-center justify-center relative overflow-hidden">
@@ -93,6 +95,7 @@ export default function TransformationTeaser() {
                   <span className="text-[11px] text-white/80 font-bold uppercase tracking-wider">{t.time}</span>
                 </div>
               </div>
+              </Card>
             </motion.div>
           ))}
         </motion.div>

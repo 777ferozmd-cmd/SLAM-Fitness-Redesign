@@ -1,5 +1,6 @@
 import { CONTACT } from "@/lib/constants";
 import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
+import Card from "@/components/ui/Card";
 
 const LOCATIONS = [
   {
@@ -45,7 +46,7 @@ export default function LocationsPage() {
       <section className="px-6 md:px-20 max-w-[1200px] mx-auto mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {LOCATIONS.map((loc, i) => (
-            <div key={i} className="bg-[#1A1A1A] border border-[#2A2A2A] rounded-[16px] p-8 hover:border-slam-accent transition-colors flex flex-col h-full group">
+            <Card key={i} className="p-8 flex flex-col h-full group">
               <h3 className="text-white text-[24px] font-bold mb-6">{loc.area}</h3>
               
               <div className="space-y-4 mb-8 flex-grow">
@@ -71,7 +72,7 @@ export default function LocationsPage() {
               >
                 Get Directions <ArrowRight className="w-4 h-4" />
               </a>
-            </div>
+            </Card>
           ))}
         </div>
       </section>

@@ -3,6 +3,7 @@ import { Quote } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
 import ServiceHero from "@/components/sections/ServiceHero";
 import { TransformationGallery } from "./ClientComponents";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Transformations Gallery — SLAM Fitness Studio",
@@ -55,7 +56,7 @@ export default function TransformationsPage() {
                 quote: "My back pain is gone and I'm stronger than I was in my twenties. The trainers here are incredibly knowledgeable and supportive." 
               }
             ].map((testimonial, idx) => (
-              <div 
+              <SpotlightCard 
                 key={idx} 
                 className="bg-[#1A1A1A] p-8 rounded-2xl border-l-[3px] border-l-slam-accent border-y border-r border-[#2A2A2A] relative"
               >
@@ -71,7 +72,7 @@ export default function TransformationsPage() {
                     {testimonial.program}
                   </div>
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
         </div>
