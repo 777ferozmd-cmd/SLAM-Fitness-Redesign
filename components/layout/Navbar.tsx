@@ -77,10 +77,10 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ease-in-out bg-[rgba(13,13,13,0.92)] backdrop-blur-[16px] border-b border-slam-border ${
           isScrolled
-            ? "bg-[rgba(13,13,13,0.92)] backdrop-blur-[16px] border-b border-slam-border py-4"
-            : "bg-transparent py-6"
+            ? "py-4"
+            : "py-6"
         }`}
         style={{
           paddingLeft: "var(--container-pad-x)",
@@ -101,10 +101,10 @@ export default function Navbar() {
               <div key={link.label} className="relative group">
                 <Link
                   href={link.href}
-                  className={`nav-link flex items-center gap-1 ${
+                  className={`nav-link flex items-center gap-1 hover:text-slam-accent transition-colors duration-200 ${
                     pathname === link.href || (link.subLinks && link.subLinks.some(sub => pathname === sub.href))
                       ? "text-slam-accent"
-                      : ""
+                      : "text-slam-text"
                   }`}
                 >
                   {link.label}
@@ -114,13 +114,13 @@ export default function Navbar() {
                 {/* Dropdown */}
                 {link.subLinks && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                    <div className="nav-dropdown flex flex-col gap-2">
+                    <div className="nav-dropdown flex flex-col gap-1 bg-[rgba(13,13,13,0.92)] backdrop-blur-[16px] border border-slam-border p-3 rounded-xl min-w-[200px] shadow-2xl">
                       {link.subLinks.map((subLink) => (
                         <Link
                           key={subLink.label}
                           href={subLink.href}
-                          className={`block px-4 py-2 text-sm font-medium transition-colors hover:text-slam-accent rounded-md hover:bg-slam-bg ${
-                            pathname === subLink.href ? "text-slam-accent bg-slam-bg" : "text-slam-text"
+                          className={`block px-4 py-3 text-sm font-medium transition-colors duration-200 hover:text-slam-accent rounded-md ${
+                            pathname === subLink.href ? "text-slam-accent" : "text-slam-text"
                           }`}
                         >
                           {subLink.label}

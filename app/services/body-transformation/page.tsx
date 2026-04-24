@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
 import ServiceHero from "@/components/sections/ServiceHero";
+import Card from "@/components/ui/Card";
 
 export const metadata: Metadata = {
   title: "Body Transformation Programs in Chennai — SLAM",
@@ -137,7 +138,7 @@ export default function BodyTransformationPage() {
               { name: "Karthik M.", time: "16 Weeks", tag: "Muscle Gain" },
               { name: "Priya V.", time: "24 Weeks", tag: "Total Recomp" }
             ].map((card, idx) => (
-              <div key={idx} className="group relative rounded-2xl overflow-hidden bg-[#1A1A1A] border border-[#2A2A2A]">
+              <Card key={idx} className="group relative overflow-hidden bg-[#1A1A1A] border-none p-0">
                 {/* Image Placeholder (split before/after visually) */}
                 <div className="relative h-[300px] w-full flex">
                   <div className="w-1/2 h-full relative border-r border-white/20">
@@ -165,7 +166,7 @@ export default function BodyTransformationPage() {
                 </div>
                 
                 {/* Card Content */}
-                <div className="p-6">
+                <div className="p-6 relative z-10">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="text-xl font-bold text-white">{card.name}</h3>
                     <span className="text-[#6B6B6B] text-[14px]">{card.time}</span>
@@ -174,7 +175,7 @@ export default function BodyTransformationPage() {
                     {card.tag}
                   </p>
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </div>

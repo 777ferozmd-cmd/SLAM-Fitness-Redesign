@@ -8,7 +8,7 @@ interface SpotlightCardProps extends React.HTMLAttributes<HTMLDivElement> {
   spotlightColor?: string;
 }
 
-const SpotlightCard = ({ children, className = '', spotlightColor = 'rgba(255, 255, 255, 0.1)', ...props }: SpotlightCardProps) => {
+const SpotlightCard = ({ children, className = '', spotlightColor = 'rgba(255, 26, 26, 0.15)', ...props }: SpotlightCardProps) => {
   const divRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {

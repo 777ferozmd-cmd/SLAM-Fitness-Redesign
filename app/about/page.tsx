@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Target, Eye, Heart } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
 import ServiceHero from "@/components/sections/ServiceHero";
+import Card from "@/components/ui/Card";
 
 export const metadata: Metadata = {
   title: "About Us — SLAM Fitness Studio",
@@ -78,13 +79,13 @@ export default function AboutPage() {
                 desc: "Integrity in coaching, relentless pursuit of excellence, and fostering a supportive community. We never compromise on the quality of our equipment or the caliber of our staff." 
               }
             ].map((item, idx) => (
-              <div key={idx} className="bg-[#1A1A1A] rounded-2xl p-8 border border-[#2A2A2A] hover:border-slam-accent transition-colors duration-300 flex flex-col items-start">
+              <Card key={idx} className="bg-[#1A1A1A] p-8 flex flex-col items-start border-none">
                 <div className="w-16 h-16 rounded-full bg-slam-accent/10 flex items-center justify-center mb-6 shrink-0">
                   <item.icon className="w-8 h-8 text-slam-accent" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
                 <p className="text-[#B0B0B0] text-[16px] leading-relaxed">{item.desc}</p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>

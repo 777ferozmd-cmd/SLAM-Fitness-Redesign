@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Activity, Zap, Flame, Dumbbell, ShieldCheck, HeartPulse, CheckCircle2 } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
 import ServiceHero from "@/components/sections/ServiceHero";
+import Card from "@/components/ui/Card";
 
 export const metadata: Metadata = {
   title: "Functional Fitness Training in Chennai — SLAM",
@@ -85,13 +86,13 @@ export default function FunctionalTrainingPage() {
               { icon: ShieldCheck, title: "Real-World Strength", desc: "Build strength that actually matters outside the gym, preventing daily injuries." },
               { icon: Dumbbell, title: "Accelerated Fat Loss", desc: "The combination of strength and cardio rapidly accelerates fat burning and leaning out." }
             ].map((benefit, idx) => (
-              <div key={idx} className="bg-[#1A1A1A] p-8 rounded-[20px] border border-[#2A2A2A] hover:border-slam-accent transition-colors duration-300">
+              <Card key={idx} className="bg-[#1A1A1A] p-8 border-none">
                 <div className="w-14 h-14 rounded-full bg-slam-accent/10 flex items-center justify-center mb-6">
                   <benefit.icon className="w-7 h-7 text-slam-accent" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
                 <p className="text-[#B0B0B0] leading-relaxed">{benefit.desc}</p>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
@@ -121,11 +122,11 @@ export default function FunctionalTrainingPage() {
                 desc: "Bored of traditional bodybuilding splits and want a dynamic, challenging routine." 
               }
             ].map((item, idx) => (
-              <div key={idx} className="bg-slam-section rounded-2xl p-8 border border-[#2A2A2A] relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-1 h-full bg-slam-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300" />
-                <h3 className="text-2xl font-bold text-white mb-4 pl-4">{item.title}</h3>
-                <p className="text-[#B0B0B0] text-[16px] leading-relaxed pl-4">{item.desc}</p>
-              </div>
+              <Card key={idx} className="bg-slam-section p-8 relative overflow-hidden group border-none">
+                <div className="absolute top-0 left-0 w-1 h-full bg-slam-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 z-10" />
+                <h3 className="text-2xl font-bold text-white mb-4 pl-4 relative z-10">{item.title}</h3>
+                <p className="text-[#B0B0B0] text-[16px] leading-relaxed pl-4 relative z-10">{item.desc}</p>
+              </Card>
             ))}
           </div>
         </div>

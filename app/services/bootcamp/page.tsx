@@ -3,6 +3,7 @@ import Image from "next/image";
 import { CheckCircle2, Quote } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
 import ServiceHero from "@/components/sections/ServiceHero";
+import Card from "@/components/ui/Card";
 
 export const metadata: Metadata = {
   title: "Fitness Bootcamp in Chennai — SLAM",
@@ -113,15 +114,15 @@ export default function BootcampPage() {
               { name: "Priya M.", text: "Lost 8 kgs in my first 3 months. The coaches make sure everyone is challenged regardless of their fitness level." },
               { name: "Siddharth R.", text: "The energy in the room is unmatched. It's the highlight of my day and the results have been incredible." }
             ].map((testimonial, idx) => (
-              <div key={idx} className="bg-slam-section p-8 rounded-2xl border border-[#2A2A2A] relative">
+              <Card key={idx} className="bg-slam-section p-8 border-none relative">
                 <Quote className="w-10 h-10 text-slam-accent/20 absolute top-6 right-6" />
                 <p className="text-white text-[16px] leading-relaxed mb-6 italic relative z-10">
                   "{testimonial.text}"
                 </p>
-                <div className="font-bold text-slam-accent tracking-wide uppercase text-sm">
+                <div className="font-bold text-slam-accent tracking-wide uppercase text-sm relative z-10">
                   — {testimonial.name}
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
         </div>
