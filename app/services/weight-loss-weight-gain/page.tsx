@@ -6,7 +6,7 @@ import Card from "@/components/ui/Card";
 import { FAQAccordion, ProgramTabs } from "./ClientComponents";
 
 export const metadata: Metadata = {
-  title: "Weight Loss & Weight Gain Gym in Chennai — SLAM",
+  title: "Weight Loss & Weight Gain Gym in Chennai — Ferous",
   description: "Personalised weight loss and weight gain programs in Chennai with expert trainers and nutrition guidance. See results in 4–6 weeks.",
 };
 
@@ -31,29 +31,29 @@ export default function WeightLossGainPage() {
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-20 pb-16 md:pb-24">
-          <p className="text-slam-accent text-[12px] uppercase tracking-[0.12em] font-bold mb-4">
+          <p className="text-ferous-accent text-[12px] uppercase tracking-[0.12em] font-bold mb-4">
             Weight Loss & Weight Gain Programs
           </p>
           <h1 className="text-white font-extrabold text-[clamp(40px,6vw,72px)] leading-[1.1] max-w-[800px]">
-            <span className="text-slam-accent">Two Goals.</span> One Mission.
+            <span className="text-ferous-accent">Two Goals.</span> One Mission.
           </h1>
         </div>
       </section>
 
       {/* 2. Intro Split */}
-      <section className="py-20 md:py-32 bg-slam-bg">
+      <section className="py-20 md:py-32 bg-ferous-bg">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="flex flex-col md:flex-row gap-12 md:gap-0 relative">
             
             {/* Left: Weight Loss */}
             <div className="flex-1 md:pr-16 flex flex-col items-start">
-              <div className="w-16 h-16 rounded-full bg-slam-accent/10 flex items-center justify-center mb-8">
-                <Flame className="w-8 h-8 text-slam-accent" />
+              <div className="w-16 h-16 rounded-full bg-ferous-accent/10 flex items-center justify-center mb-8">
+                <Flame className="w-8 h-8 text-ferous-accent" />
               </div>
               <h2 className="text-[clamp(32px,4vw,40px)] font-bold text-white leading-tight mb-6">
                 Lose Weight The Right Way
               </h2>
-              <p className="text-[#B0B0B0] text-[18px] leading-relaxed mb-8">
+              <p className="text-ferous-body text-[18px] leading-relaxed mb-8">
                 Structured training that burns calories efficiently and sustainably. We design weight-loss routines that fit your pace, schedule, and comfort. HIIT, functional workouts, and calorie-optimised circuits help you burn fat while preserving lean muscle.
               </p>
               <ul className="space-y-4">
@@ -63,25 +63,25 @@ export default function WeightLossGainPage() {
                   "Personalised deficit nutrition planning"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slam-accent mt-2.5 shrink-0" />
-                    <span className="text-[#C8C8C8] text-[16px]">{item}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-ferous-accent mt-2.5 shrink-0" />
+                    <span className="text-ferous-text text-[16px]">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Divider */}
-            <div className="hidden md:block w-[1px] bg-[#2A2A2A] shrink-0" />
+            <div className="hidden md:block w-[1px] bg-ferous-border shrink-0" />
 
             {/* Right: Weight Gain */}
-            <div className="flex-1 md:pl-16 flex flex-col items-start mt-12 md:mt-0 pt-12 md:pt-0 border-t border-[#2A2A2A] md:border-0">
-              <div className="w-16 h-16 rounded-full bg-slam-accent/10 flex items-center justify-center mb-8">
-                <Target className="w-8 h-8 text-slam-accent" />
+            <div className="flex-1 md:pl-16 flex flex-col items-start mt-12 md:mt-0 pt-12 md:pt-0 border-t border-ferous-border md:border-0">
+              <div className="w-16 h-16 rounded-full bg-ferous-accent/10 flex items-center justify-center mb-8">
+                <Target className="w-8 h-8 text-ferous-accent" />
               </div>
               <h2 className="text-[clamp(32px,4vw,40px)] font-bold text-white leading-tight mb-6">
                 Build Solid, Lasting Mass
               </h2>
-              <p className="text-[#B0B0B0] text-[18px] leading-relaxed mb-8">
+              <p className="text-ferous-body text-[18px] leading-relaxed mb-8">
                 Progressive overload, strength circuits, and targeted exercises designed to build real muscle — not just scale weight. We pair expert training with a calorie-surplus nutrition plan to sculpt a fuller, stronger physique.
               </p>
               <ul className="space-y-4">
@@ -91,8 +91,8 @@ export default function WeightLossGainPage() {
                   "Mass-building nutrition plan"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slam-accent mt-2.5 shrink-0" />
-                    <span className="text-[#C8C8C8] text-[16px]">{item}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-ferous-accent mt-2.5 shrink-0" />
+                    <span className="text-ferous-text text-[16px]">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -103,7 +103,7 @@ export default function WeightLossGainPage() {
       </section>
 
       {/* 3. How It Works (Numbered Steps) */}
-      <section className="py-20 md:py-32 bg-slam-section">
+      <section className="py-20 md:py-32 bg-ferous-section">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="text-center mb-16">
             <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-white leading-tight">
@@ -113,7 +113,7 @@ export default function WeightLossGainPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative">
             {/* Desktop Connector Line */}
-            <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-[1px] bg-[#2A2A2A] z-0" />
+            <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-[1px] bg-ferous-border z-0" />
             
             {[
               { num: "01", title: "Personalised Assessment", desc: "We evaluate your current fitness, lifestyle, and specific goals." },
@@ -122,11 +122,11 @@ export default function WeightLossGainPage() {
               { num: "04", title: "Progress Tracking", desc: "Regular milestone check-ins to tweak plans and guarantee results." }
             ].map((step, idx) => (
               <div key={idx} className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-[80px] h-[80px] rounded-full bg-[#1A1A1A] border-2 border-slam-accent flex items-center justify-center text-3xl font-extrabold text-white mb-6">
+                <div className="w-[80px] h-[80px] rounded-full bg-ferous-card border-2 border-ferous-accent flex items-center justify-center text-3xl font-extrabold text-white mb-6">
                   {step.num}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-[#B0B0B0] text-[16px]">{step.desc}</p>
+                <p className="text-ferous-body text-[16px]">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -134,7 +134,7 @@ export default function WeightLossGainPage() {
       </section>
 
       {/* 4. Program Details (Tabs) */}
-      <section className="py-20 md:py-32 bg-slam-bg">
+      <section className="py-20 md:py-32 bg-ferous-bg">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="text-center mb-16">
             <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-white leading-tight">
@@ -146,7 +146,7 @@ export default function WeightLossGainPage() {
       </section>
 
       {/* 5. Who Is This For? */}
-      <section className="py-20 md:py-32 bg-slam-section">
+      <section className="py-20 md:py-32 bg-ferous-section">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="text-center mb-16">
             <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-white leading-tight">
@@ -160,12 +160,12 @@ export default function WeightLossGainPage() {
               { icon: Users, title: "Women", desc: "A safe, supportive environment with tailored programming for toning, fat loss, and strength." },
               { icon: HeartPulse, title: "Health-Focused Adults", desc: "Ideal for managing conditions like hypertension, cardiovascular risks, and type 2 diabetes through managed fitness." }
             ].map((item, idx) => (
-              <Card key={idx} className="p-8 flex flex-col items-start !border-[#2A2A2A]">
-                <div className="w-14 h-14 rounded-full bg-slam-accent/10 flex items-center justify-center mb-6">
-                  <item.icon className="w-7 h-7 text-slam-accent" />
+              <Card key={idx} className="p-8 flex flex-col items-start !border-ferous-border">
+                <div className="w-14 h-14 rounded-full bg-ferous-accent/10 flex items-center justify-center mb-6">
+                  <item.icon className="w-7 h-7 text-ferous-accent" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                <p className="text-[#B0B0B0] text-[16px] leading-relaxed">{item.desc}</p>
+                <p className="text-ferous-body text-[16px] leading-relaxed">{item.desc}</p>
               </Card>
             ))}
           </div>
@@ -173,7 +173,7 @@ export default function WeightLossGainPage() {
       </section>
 
       {/* 6. FAQ Accordion */}
-      <section className="py-20 md:py-32 bg-slam-bg">
+      <section className="py-20 md:py-32 bg-ferous-bg">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="text-center mb-16">
             <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-white leading-tight">

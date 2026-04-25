@@ -2,12 +2,13 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { CheckCircle2, Quote } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
+import { pricingPlans } from "@/lib/constants";
 import ServiceHero from "@/components/sections/ServiceHero";
 import Card from "@/components/ui/Card";
 
 export const metadata: Metadata = {
-  title: "Fitness Bootcamp in Chennai — SLAM",
-  description: "High-energy group training sessions for lasting results and healthier habits. Join the SLAM Bootcamp community.",
+  title: "Fitness Bootcamp in Chennai — Ferous",
+  description: "High-energy group training sessions for lasting results and healthier habits. Join the Ferous Bootcamp community.",
 };
 
 export default function BootcampPage() {
@@ -17,25 +18,25 @@ export default function BootcampPage() {
       {/* 1. Hero Section */}
       <ServiceHero 
         subtitle="Group Training"
-        title={<><span className="text-slam-accent">The Bootcamp</span> Experience</>}
+        title={<><span className="text-ferous-accent">The Bootcamp</span> Experience</>}
         imageSrc="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop"
-        imageAlt="SLAM Bootcamp Group Training"
+        imageAlt="Ferous Bootcamp Group Training"
       />
 
       {/* 2. What Makes It Different */}
-      <section className="py-20 md:py-32 bg-slam-bg">
+      <section className="py-20 md:py-32 bg-ferous-bg">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
             
             {/* Text Content */}
             <div className="flex-1">
               <h2 className="text-[clamp(32px,4vw,48px)] font-bold text-white leading-tight mb-6">
-                Group Energy. <span className="text-slam-accent">Individual Results.</span>
+                Group Energy. <span className="text-ferous-accent">Individual Results.</span>
               </h2>
-              <p className="text-[#B0B0B0] text-[18px] leading-relaxed mb-6">
+              <p className="text-ferous-body text-[18px] leading-relaxed mb-6">
                 Bootcamp isn't just a workout; it's an experience. We combine the motivation of group dynamics with the structured programming of personal training to create high-energy sessions that push your limits safely.
               </p>
-              <p className="text-[#B0B0B0] text-[18px] leading-relaxed mb-8">
+              <p className="text-ferous-body text-[18px] leading-relaxed mb-8">
                 Expect a mix of HIIT, functional strength, and cardiovascular conditioning. It's designed to build lasting healthy habits within a supportive community that holds you accountable.
               </p>
               <ul className="space-y-4">
@@ -46,7 +47,7 @@ export default function BootcampPage() {
                   "Fun, varied daily workouts"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-slam-accent shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-ferous-accent shrink-0" />
                     <span className="text-white font-medium">{item}</span>
                   </li>
                 ))}
@@ -69,7 +70,7 @@ export default function BootcampPage() {
       </section>
 
       {/* 3. Session Structure (4-step) */}
-      <section className="py-20 md:py-32 bg-slam-section">
+      <section className="py-20 md:py-32 bg-ferous-section">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="text-center mb-16">
             <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-white leading-tight">
@@ -78,7 +79,7 @@ export default function BootcampPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative">
-            <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-[1px] bg-[#2A2A2A] z-0" />
+            <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-[1px] bg-ferous-border z-0" />
             
             {[
               { num: "01", title: "Dynamic Warm-Up", desc: "Prepare your muscles and joints to prevent injury and maximize performance." },
@@ -87,11 +88,11 @@ export default function BootcampPage() {
               { num: "04", title: "Cooldown & Mobility", desc: "Guided stretching to kickstart recovery and improve flexibility." }
             ].map((step, idx) => (
               <div key={idx} className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-[80px] h-[80px] rounded-full bg-[#1A1A1A] border-2 border-slam-accent flex items-center justify-center text-3xl font-extrabold text-white mb-6">
+                <div className="w-[80px] h-[80px] rounded-full bg-ferous-card border-2 border-ferous-accent flex items-center justify-center text-3xl font-extrabold text-white mb-6">
                   {step.num}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-[#B0B0B0] text-[16px]">{step.desc}</p>
+                <p className="text-ferous-body text-[16px]">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -99,13 +100,13 @@ export default function BootcampPage() {
       </section>
 
       {/* 4. Community Testimonials */}
-      <section className="py-20 md:py-32 bg-slam-bg">
+      <section className="py-20 md:py-32 bg-ferous-bg">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="text-center mb-16">
             <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-white leading-tight mb-4">
               The Bootcamp Community
             </h2>
-            <p className="text-[#B0B0B0] text-[18px]">Don't just take our word for it.</p>
+            <p className="text-ferous-body text-[18px]">Don't just take our word for it.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -114,12 +115,12 @@ export default function BootcampPage() {
               { name: "Priya M.", text: "Lost 8 kgs in my first 3 months. The coaches make sure everyone is challenged regardless of their fitness level." },
               { name: "Siddharth R.", text: "The energy in the room is unmatched. It's the highlight of my day and the results have been incredible." }
             ].map((testimonial, idx) => (
-              <Card key={idx} className="bg-slam-section p-8 border-none relative">
-                <Quote className="w-10 h-10 text-slam-accent/20 absolute top-6 right-6" />
+              <Card key={idx} className="bg-ferous-section p-8 border-none relative">
+                <Quote className="w-10 h-10 text-ferous-accent/20 absolute top-6 right-6" />
                 <p className="text-white text-[16px] leading-relaxed mb-6 italic relative z-10">
                   "{testimonial.text}"
                 </p>
-                <div className="font-bold text-slam-accent tracking-wide uppercase text-sm relative z-10">
+                <div className="font-bold text-ferous-accent tracking-wide uppercase text-sm relative z-10">
                   — {testimonial.name}
                 </div>
               </Card>

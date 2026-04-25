@@ -28,7 +28,7 @@ const itemVariants = {
 
 export default function BookingCTA() {
   return (
-    <section className="w-full bg-slam-section py-[96px] px-6 border-b border-slam-border flex flex-col items-center justify-center text-center overflow-hidden">
+    <section className="w-full bg-ferous-section py-[96px] px-6 border-b border-ferous-border flex flex-col items-center justify-center text-center overflow-hidden">
       <motion.div 
         className="max-w-[700px] flex flex-col items-center"
         variants={containerVariants}

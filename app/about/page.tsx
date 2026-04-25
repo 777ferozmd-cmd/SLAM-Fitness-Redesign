@@ -5,8 +5,8 @@ import ServiceHero from "@/components/sections/ServiceHero";
 import Card from "@/components/ui/Card";
 
 export const metadata: Metadata = {
-  title: "About Us — SLAM Fitness Studio",
-  description: "Learn about the SLAM Fitness story, our mission, vision, and how we're redefining the premium fitness experience in Chennai.",
+  title: "About Us — Ferous Fitness Studio",
+  description: "Learn about the Ferous Fitness story, our mission, vision, and how we're redefining the premium fitness experience in Chennai.",
 };
 
 export default function AboutPage() {
@@ -15,34 +15,34 @@ export default function AboutPage() {
       
       {/* 1. Hero Section */}
       <ServiceHero 
-        subtitle="ABOUT SLAM"
+        subtitle="ABOUT FEROUS"
         title="Our Story"
         imageSrc="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop"
-        imageAlt="SLAM Fitness Gym Floor"
+        imageAlt="Ferous Fitness Gym Floor"
       />
 
       {/* 2. Brand Story */}
-      <section className="py-20 md:py-32 bg-slam-bg">
+      <section className="py-20 md:py-32 bg-ferous-bg">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             
             {/* Left: Narrative Copy */}
             <div className="flex-1">
               <h2 className="text-[clamp(32px,4vw,48px)] font-bold text-white leading-tight mb-6">
-                Redefining Fitness in <span className="text-slam-accent">Chennai</span>
+                Redefining Fitness in <span className="text-ferous-accent">Chennai</span>
               </h2>
-              <p className="text-[#B0B0B0] text-[18px] leading-relaxed mb-6">
-                SLAM Fitness was founded with a singular mission: to make premium, results-driven fitness accessible without the intimidation factor. We looked at the fitness landscape in Chennai and realized there was a massive gap between exclusive luxury clubs and overcrowded, poorly equipped neighborhood gyms.
+              <p className="text-ferous-body text-[18px] leading-relaxed mb-6">
+                Ferous Fitness was founded with a singular mission: to make premium, results-driven fitness accessible without the intimidation factor. We looked at the fitness landscape in Chennai and realized there was a massive gap between exclusive luxury clubs and overcrowded, poorly equipped neighborhood gyms.
               </p>
-              <p className="text-[#B0B0B0] text-[18px] leading-relaxed">
+              <p className="text-ferous-body text-[18px] leading-relaxed">
                 We bridge that gap. We're not just a place with weights and treadmills; we are a community-driven lifestyle destination. When you walk through our doors, you're not just renting equipment — you're investing in an environment engineered for your success, surrounded by expert professionals who actually care about your progress.
               </p>
             </div>
 
             {/* Right: Large Pull Quote */}
             <div className="flex-1 flex justify-center lg:justify-end">
-              <div className="relative pl-8 border-l-4 border-slam-accent max-w-[400px]">
-                <p className="text-[clamp(40px,5vw,48px)] font-extrabold text-slam-accent italic leading-[1.1]">
+              <div className="relative pl-8 border-l-4 border-ferous-accent max-w-[400px]">
+                <p className="text-[clamp(40px,5vw,48px)] font-extrabold text-ferous-accent italic leading-[1.1]">
                   "Not just a gym.<br/>A way of life."
                 </p>
               </div>
@@ -53,7 +53,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. Mission & Values */}
-      <section className="py-20 md:py-32 bg-slam-section">
+      <section className="py-20 md:py-32 bg-ferous-section">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="text-center mb-16">
             <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-white leading-tight">
@@ -79,12 +79,12 @@ export default function AboutPage() {
                 desc: "Integrity in coaching, relentless pursuit of excellence, and fostering a supportive community. We never compromise on the quality of our equipment or the caliber of our staff." 
               }
             ].map((item, idx) => (
-              <Card key={idx} className="bg-[#1A1A1A] p-8 flex flex-col items-start border-none">
-                <div className="w-16 h-16 rounded-full bg-slam-accent/10 flex items-center justify-center mb-6 shrink-0">
-                  <item.icon className="w-8 h-8 text-slam-accent" />
+              <Card key={idx} className="bg-ferous-card p-8 flex flex-col items-start border-none">
+                <div className="w-16 h-16 rounded-full bg-ferous-accent/10 flex items-center justify-center mb-6 shrink-0">
+                  <item.icon className="w-8 h-8 text-ferous-accent" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                <p className="text-[#B0B0B0] text-[16px] leading-relaxed">{item.desc}</p>
+                <p className="text-ferous-body text-[16px] leading-relaxed">{item.desc}</p>
               </Card>
             ))}
           </div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Milestones Timeline */}
-      <section className="py-20 md:py-32 bg-slam-bg overflow-hidden">
+      <section className="py-20 md:py-32 bg-ferous-bg overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="text-center mb-16">
             <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-white leading-tight">
@@ -102,25 +102,25 @@ export default function AboutPage() {
 
           <div className="relative">
             {/* Continuous horizontal line */}
-            <div className="absolute top-[40px] left-0 right-0 h-[2px] bg-[#2A2A2A] hidden md:block" />
+            <div className="absolute top-[40px] left-0 right-0 h-[2px] bg-ferous-border hidden md:block" />
 
             <div className="flex flex-col md:flex-row gap-8 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide">
               {[
-                { year: "2015", title: "Founded", desc: "The idea of SLAM was born, identifying the need for premium fitness." },
+                { year: "2015", title: "Founded", desc: "The idea of Ferous was born, identifying the need for premium fitness." },
                 { year: "2016", title: "First Branch", desc: "We opened our doors in Chennai, setting a new standard for local gyms." },
                 { year: "2019", title: "2000+ Members", desc: "Our community grew rapidly as results spoke louder than words." },
                 { year: "2023", title: "Multi-Location", desc: "Expanded to multiple prime locations across the city to serve more people." }
               ].map((milestone, idx) => (
                 <div key={idx} className="min-w-[280px] md:min-w-0 flex-1 snap-start relative pt-8 md:pt-0">
                   {/* Timeline Node */}
-                  <div className="hidden md:flex absolute top-[33px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-slam-accent ring-4 ring-[#1A1A1A]" />
+                  <div className="hidden md:flex absolute top-[33px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-ferous-accent ring-4 ring-ferous-card" />
                   
                   <div className="md:mt-20 text-center">
-                    <div className="text-3xl md:text-4xl font-extrabold text-slam-accent mb-3">
+                    <div className="text-3xl md:text-4xl font-extrabold text-ferous-accent mb-3">
                       {milestone.year}
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3">{milestone.title}</h3>
-                    <p className="text-[#B0B0B0] text-[15px] leading-relaxed px-4">{milestone.desc}</p>
+                    <p className="text-ferous-body text-[15px] leading-relaxed px-4">{milestone.desc}</p>
                   </div>
                 </div>
               ))}
@@ -130,10 +130,10 @@ export default function AboutPage() {
       </section>
 
       {/* 5. Parent Company */}
-      <section className="py-16 bg-[#141414] border-t border-b border-[#2A2A2A]">
+      <section className="py-16 bg-[#141414] border-t border-b border-ferous-border">
         <div className="max-w-[800px] mx-auto px-6 text-center">
-          <p className="text-[#B0B0B0] text-[16px] md:text-[18px] leading-relaxed">
-            SLAM is a proud venture of <span className="text-white font-bold tracking-wide">Paulsons Group</span>, carrying forward a multi-decade legacy of trust, excellence, and premium lifestyle services across South India.
+          <p className="text-ferous-body text-[16px] md:text-[18px] leading-relaxed">
+            Ferous is a premium fitness lifestyle brand, carrying forward a legacy of trust, excellence, and premium lifestyle services across South India.
           </p>
         </div>
       </section>

@@ -65,7 +65,7 @@ export default function Coaching() {
             </div>
             
             {/* Decorative Element */}
-            <div className="absolute -z-10 top-1/2 -left-10 w-40 h-40 bg-slam-accent/20 rounded-full blur-[80px]" />
+            <div className="absolute -z-10 top-1/2 -left-10 w-40 h-40 bg-ferous-accent/20 rounded-full blur-[80px]" />
           </motion.div>
 
           {/* Right Column: Copy & Features */}
@@ -75,7 +75,7 @@ export default function Coaching() {
               initial="initial"
               whileInView="whileInView"
               viewport={{ once: true, margin: "-100px" }}
-              className="text-slam-primary text-[12px] uppercase tracking-[0.12em] font-bold"
+              className="text-ferous-primary text-[12px] uppercase tracking-[0.12em] font-bold"
             >
               Expert Guidance
             </motion.p>
@@ -88,7 +88,7 @@ export default function Coaching() {
               className="text-white font-extrabold leading-[1.1] text-[clamp(40px,5vw,56px)]"
             >
               Coaching Built <br />
-              <span className="text-slam-muted">Around You.</span>
+              <span className="text-ferous-muted">Around You.</span>
             </motion.h2>
 
             <motion.p 
@@ -114,7 +114,7 @@ export default function Coaching() {
                   variants={fadeInUp}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-6 h-6 text-slam-accent shrink-0" />
+                  <CheckCircle2 className="w-6 h-6 text-ferous-accent shrink-0" />
                   <span className="text-white font-medium">{feature}</span>
                 </motion.li>
               ))}

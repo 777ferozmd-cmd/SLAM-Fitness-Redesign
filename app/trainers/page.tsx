@@ -5,8 +5,8 @@ import ServiceHero from "@/components/sections/ServiceHero";
 import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export const metadata: Metadata = {
-  title: "Meet the Trainers — SLAM Fitness Studio",
-  description: "At SLAM, every coach is certified, experienced, and committed to your results. Meet the experts behind your transformation.",
+  title: "Meet the Trainers — Ferous Fitness Studio",
+  description: "At Ferous, every coach is certified, experienced, and committed to your results. Meet the experts behind your transformation.",
 };
 
 const TRAINERS = [
@@ -69,17 +69,17 @@ export default function TrainersPage() {
         subtitle="OUR EXPERTS"
         title="The Coaches Behind Your Results"
         imageSrc="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2070&auto=format&fit=crop"
-        imageAlt="SLAM Fitness Trainers"
+        imageAlt="Ferous Fitness Trainers"
       />
 
       {/* 2. Trainer Grid */}
-      <section className="py-20 md:py-32 bg-slam-bg">
+      <section className="py-20 md:py-32 bg-ferous-bg">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {TRAINERS.map((trainer, idx) => (
               <SpotlightCard 
                 key={idx} 
-                className="group relative rounded-2xl overflow-hidden bg-[#1A1A1A] border border-[#2A2A2A] hover:border-slam-accent transition-colors duration-300 flex flex-col"
+                className="group relative rounded-2xl overflow-hidden bg-ferous-card border border-ferous-border hover:border-ferous-accent transition-colors duration-300 flex flex-col"
               >
                 {/* Photo Placeholder (Aspect 3/4) */}
                 <div className="relative w-full aspect-[3/4] bg-[#222222] flex items-center justify-center overflow-hidden">
@@ -87,7 +87,7 @@ export default function TrainersPage() {
                     {trainer.initials}
                   </div>
                   {/* Gradient Overlay bottom 40% */}
-                  <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-[#1A1A1A] to-transparent z-10" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-ferous-card to-transparent z-10" />
                 </div>
                 
                 {/* Content Area */}
@@ -95,7 +95,7 @@ export default function TrainersPage() {
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-1">{trainer.name}</h3>
-                      <p className="text-slam-accent text-[14px] font-bold uppercase tracking-wide">
+                      <p className="text-ferous-accent text-[14px] font-bold uppercase tracking-wide">
                         {trainer.specialization}
                       </p>
                     </div>
@@ -103,19 +103,19 @@ export default function TrainersPage() {
                       href={trainer.social} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-[#B0B0B0] hover:text-slam-accent transition-colors"
+                      className="text-ferous-body hover:text-ferous-accent transition-colors"
                       aria-label={`${trainer.name} Instagram`}
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                     </a>
                   </div>
                   
-                  <div className="mt-4 pt-4 border-t border-[#2A2A2A] flex flex-col gap-2">
-                    <p className="text-[#B0B0B0] text-[13px] leading-tight">
+                  <div className="mt-4 pt-4 border-t border-ferous-border flex flex-col gap-2">
+                    <p className="text-ferous-body text-[13px] leading-tight">
                       <span className="text-white font-medium mr-1">Certifications:</span> 
                       {trainer.certifications}
                     </p>
-                    <p className="text-[#B0B0B0] text-[13px] leading-tight">
+                    <p className="text-ferous-body text-[13px] leading-tight">
                       <span className="text-white font-medium mr-1">Experience:</span> 
                       {trainer.experience}
                     </p>
@@ -128,27 +128,27 @@ export default function TrainersPage() {
       </section>
 
       {/* 3. Philosophy Section */}
-      <section className="py-20 md:py-32 bg-slam-section">
+      <section className="py-20 md:py-32 bg-ferous-section">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             
             {/* Left: Philosophy Text */}
             <div className="flex-1">
               <h2 className="text-[clamp(32px,4vw,48px)] font-bold text-white leading-tight mb-6">
-                Our Coaching <span className="text-slam-accent">Philosophy</span>
+                Our Coaching <span className="text-ferous-accent">Philosophy</span>
               </h2>
-              <p className="text-[#B0B0B0] text-[18px] md:text-[20px] leading-relaxed mb-6">
-                At SLAM, every coach is certified, experienced, and committed to your results. We don't believe in generic workout plans or shouting reps at you. 
+              <p className="text-ferous-body text-[18px] md:text-[20px] leading-relaxed mb-6">
+                At Ferous, every coach is certified, experienced, and committed to your results. We don't believe in generic workout plans or shouting reps at you. 
               </p>
-              <p className="text-[#B0B0B0] text-[18px] md:text-[20px] leading-relaxed">
+              <p className="text-ferous-body text-[18px] md:text-[20px] leading-relaxed">
                 We believe in coaching. That means educating you on form, understanding your unique biomechanics, and providing the psychological support needed to push past your perceived limits.
               </p>
             </div>
 
             {/* Right: Credential Bullets */}
-            <div className="flex-1 w-full bg-[#1A1A1A] border border-[#2A2A2A] rounded-2xl p-8 lg:p-12">
-              <h3 className="text-xl font-bold text-white mb-8 border-b border-[#2A2A2A] pb-4">
-                The SLAM Standard
+            <div className="flex-1 w-full bg-ferous-card border border-ferous-border rounded-2xl p-8 lg:p-12">
+              <h3 className="text-xl font-bold text-white mb-8 border-b border-ferous-border pb-4">
+                The Ferous Standard
               </h3>
               <ul className="space-y-6">
                 {[
@@ -158,7 +158,7 @@ export default function TrainersPage() {
                   "Data-Driven Programming & Nutritional Coaching"
                 ].map((credential, idx) => (
                   <li key={idx} className="flex items-start gap-4">
-                    <span className="w-2 h-2 rounded-full bg-slam-accent mt-2.5 shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-ferous-accent mt-2.5 shrink-0" />
                     <span className="text-white text-[16px] md:text-[18px] font-medium leading-relaxed">
                       {credential}
                     </span>

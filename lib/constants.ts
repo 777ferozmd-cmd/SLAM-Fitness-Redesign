@@ -1,16 +1,16 @@
 export const CONTACT = {
-  customerCare: "70944 05880",
-  customerEmail: "customercare.slam@gmail.com",
+  customerCare: "98400 12345",
+  customerEmail: "customercare.ferous@gmail.com",
   corporateAddress: "#18/70, Halls Road, Kilpauk, Chennai – 600 010",
-  corporatePhone: "+91 70944 79145",
-  corporateEmail: "aneesh@paulsons.in",
-  contactPerson: "Mr Suresh Babu",
-  whatsapp: "917094405880",
-  instagram: "https://www.instagram.com/slamfitnessstudio/",
-  facebook: "https://www.facebook.com/slamfitnessindia/",
+  corporatePhone: "+91 98400 67890",
+  corporateEmail: "hello@ferousfitness.in",
+  contactPerson: "Mr Arjun Mehta",
+  whatsapp: "919840012345",
+  instagram: "https://www.instagram.com/ferousfitness/",
+  facebook: "https://www.facebook.com/ferousfitnessindia/",
   franchise: {
-    phones: ["+91 91768 40500", "+91 98414 63406", "+91 99628 54265"],
-    email: "ceo@paulsons.in",
+    phones: ["+91 91500 11111", "+91 98400 22222", "+91 99400 33333"],
+    email: "ceo@ferousfitness.in",
   },
 }
 

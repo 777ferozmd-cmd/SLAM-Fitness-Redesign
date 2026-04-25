@@ -20,14 +20,14 @@ export default function StatsBar() {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className="w-full bg-slam-section py-10 px-6 md:px-20 border-y border-slam-border"
+      className="w-full bg-ferous-section py-10 px-6 md:px-20 border-y border-ferous-border"
     >
       <div className="max-w-[1200px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-y-10 lg:gap-0">
         {STATS.map((stat, index) => (
           <div
             key={index}
             className={`flex flex-col items-center justify-center text-center ${
-              index !== STATS.length - 1 ? "lg:border-r border-slam-border" : ""
+              index !== STATS.length - 1 ? "lg:border-r border-ferous-border" : ""
             }`}
           >
             <div className="text-[clamp(40px,5vw,56px)] font-extrabold text-white leading-none">

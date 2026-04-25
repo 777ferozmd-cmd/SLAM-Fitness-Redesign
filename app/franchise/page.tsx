@@ -12,7 +12,7 @@ export default function FranchisePage() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=2070&auto=format&fit=crop"
-            alt="SLAM Fitness Franchise"
+            alt="Ferous Fitness Franchise"
             fill
             className="object-cover"
             priority
@@ -21,11 +21,11 @@ export default function FranchisePage() {
         </div>
         
         <div className="relative z-10 px-6 md:px-20 max-w-[1200px] mx-auto w-full">
-          <span className="text-slam-accent text-[12px] font-semibold uppercase tracking-[0.12em] block mb-4">
+          <span className="text-ferous-accent text-[12px] font-semibold uppercase tracking-[0.12em] block mb-4">
             FRANCHISE OPPORTUNITY
           </span>
           <h1 className="text-white text-[clamp(48px,6vw,72px)] font-bold mb-6 leading-[1.1] max-w-3xl">
-            Own a <span className="text-slam-accent">SLAM</span> Studio
+            Own a <span className="text-ferous-accent">FEROUS</span> Studio
           </h1>
           <p className="text-[#C8C8C8] text-[20px] max-w-2xl leading-[1.6]">
             Build a business with India's premium gym brand. Join a rapidly expanding network of world-class fitness facilities.
@@ -33,11 +33,11 @@ export default function FranchisePage() {
         </div>
       </section>
 
-      {/* Why SLAM */}
+      {/* Why Ferous */}
       <section className="px-6 md:px-20 max-w-[1200px] mx-auto py-24">
         <div className="text-center mb-16">
           <h2 className="text-white text-[clamp(36px,4.5vw,48px)] font-bold">
-            Why Partner with <span className="text-slam-accent">SLAM</span>?
+            Why Partner with <span className="text-ferous-accent">FEROUS</span>?
           </h2>
         </div>
 
@@ -64,34 +64,34 @@ export default function FranchisePage() {
               icon: TrendingUp,
             },
           ].map((feature, i) => (
-            <Card key={i} className="p-8 !bg-slam-section">
-              <feature.icon className="w-10 h-10 text-slam-accent mb-6" />
+            <Card key={i} className="p-8 !bg-ferous-section">
+              <feature.icon className="w-10 h-10 text-ferous-accent mb-6" />
               <h3 className="text-white text-[20px] font-bold mb-3">{feature.title}</h3>
-              <p className="text-slam-body text-[15px] leading-relaxed">{feature.desc}</p>
+              <p className="text-ferous-body text-[15px] leading-relaxed">{feature.desc}</p>
             </Card>
           ))}
         </div>
       </section>
 
       {/* Investment Overview */}
-      <section className="bg-[#141414] py-24 border-y border-[#2A2A2A]">
+      <section className="bg-ferous-section py-24 border-y border-ferous-border">
         <div className="px-6 md:px-20 max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-[#2A2A2A]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-ferous-border">
             <div className="md:px-8 pb-8 md:pb-0">
               <h3 className="text-white text-[28px] font-bold mb-4">Low Risk</h3>
-              <p className="text-slam-body text-[16px]">Proven operational models designed to minimize risk and optimize studio profitability.</p>
+              <p className="text-ferous-body text-[16px]">Proven operational models designed to minimize risk and optimize studio profitability.</p>
             </div>
             <div className="md:px-8 py-8 md:py-0">
               <h3 className="text-white text-[28px] font-bold mb-4">High Returns</h3>
-              <p className="text-slam-body text-[16px]">Strong revenue potential driven by memberships, personal training, and retail.</p>
+              <p className="text-ferous-body text-[16px]">Strong revenue potential driven by memberships, personal training, and retail.</p>
             </div>
             <div className="md:px-8 pt-8 md:pt-0">
               <h3 className="text-white text-[28px] font-bold mb-4">Full Support</h3>
-              <p className="text-slam-body text-[16px]">End-to-end guidance including marketing, CRM tools, and equipment procurement.</p>
+              <p className="text-ferous-body text-[16px]">End-to-end guidance including marketing, CRM tools, and equipment procurement.</p>
             </div>
           </div>
           <div className="text-center mt-12">
-            <p className="text-slam-body italic">Contact us to learn more about specific investment requirements for your city.</p>
+            <p className="text-ferous-body italic">Contact us to learn more about specific investment requirements for your city.</p>
           </div>
         </div>
       </section>
@@ -99,7 +99,7 @@ export default function FranchisePage() {
       {/* Process */}
       <section className="px-6 md:px-20 max-w-[1200px] mx-auto py-24">
         <h2 className="text-white text-[clamp(32px,4vw,40px)] font-bold text-center mb-16">
-          The <span className="text-slam-accent">Process</span>
+          The <span className="text-ferous-accent">Process</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {[
@@ -109,11 +109,11 @@ export default function FranchisePage() {
             { num: "04", title: "Launch", desc: "Studio fit-out, staff training, and grand opening." },
           ].map((step, i) => (
             <div key={i} className="relative">
-              <div className="text-slam-accent text-[48px] font-black opacity-20 mb-2 leading-none">{step.num}</div>
+              <div className="text-ferous-accent text-[48px] font-black opacity-20 mb-2 leading-none">{step.num}</div>
               <h3 className="text-white text-[20px] font-bold mb-2">{step.title}</h3>
-              <p className="text-slam-body text-[14px]">{step.desc}</p>
+              <p className="text-ferous-body text-[14px]">{step.desc}</p>
               {i < 3 && (
-                <div className="hidden md:block absolute top-6 -right-4 w-8 h-[1px] bg-[#2A2A2A]" />
+                <div className="hidden md:block absolute top-6 -right-4 w-8 h-[1px] bg-ferous-border" />
               )}
             </div>
           ))}
@@ -129,26 +129,26 @@ export default function FranchisePage() {
           
           <div className="flex flex-col justify-center">
             <h3 className="text-white text-[28px] font-bold mb-8">Get in Touch</h3>
-            <p className="text-slam-body text-[16px] mb-10">
+            <p className="text-ferous-body text-[16px] mb-10">
               Ready to take the next step? Our franchise team is available to answer all your questions and guide you through the process.
             </p>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <Phone className="w-6 h-6 text-slam-accent shrink-0 mt-1" />
+                <Phone className="w-6 h-6 text-ferous-accent shrink-0 mt-1" />
                 <div>
                   <p className="text-white font-medium mb-1">Call Us</p>
                   {CONTACT.franchise.phones.map((phone, idx) => (
-                    <p key={idx} className="text-slam-body mb-1">{phone}</p>
+                    <p key={idx} className="text-ferous-body mb-1">{phone}</p>
                   ))}
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
-                <Mail className="w-6 h-6 text-slam-accent shrink-0 mt-1" />
+                <Mail className="w-6 h-6 text-ferous-accent shrink-0 mt-1" />
                 <div>
                   <p className="text-white font-medium mb-1">Email</p>
-                  <p className="text-slam-body">{CONTACT.franchise.email}</p>
+                  <p className="text-ferous-body">{CONTACT.franchise.email}</p>
                 </div>
               </div>
             </div>

@@ -1,10 +1,10 @@
-# SLAM Fitness Studio — Website Rebuild Context
+# Ferous Fitness Studio — Website Rebuild Context
 
 ## Project Overview
 
-Build a modern, high-performance gym website for **SLAM Fitness Studio**, a premium unisex gym chain in Chennai. The design is based on 4 reference UI screenshots provided by the client — a dark, cinematic fitness website with a punchy red accent (`#FF1A1A`), rounded photo corners, Poppins typography, and two-column alternating layouts.
+Build a modern, high-performance gym website for **Ferous Fitness Studio**, a premium unisex gym chain in Chennai. The design is based on 4 reference UI screenshots provided by the client — a dark, cinematic fitness website with a punchy red accent (`#FF1A1A`), rounded photo corners, Poppins typography, and two-column alternating layouts.
 
-This is a complete rebuild of `slamfitnessstudio.in`. The goal is a world-class fitness brand website that converts visitors into members and franchise leads.
+This is a complete rebuild. The goal is a world-class fitness brand website that converts visitors into members and franchise leads.
 
 > **📐 Design details live in `design.md`** — read it before writing any CSS, component, or layout code. Every color, font size, border-radius, animation, and component pattern is specified there. `context.md` covers content and architecture; `design.md` covers all visual decisions.
 
@@ -19,7 +19,7 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 
 ### Color Tokens (summary — see `design.md` §1 for full palette)
 - **Background:** `#0D0D0D` (primary), `#141414` (sections), `#1A1A1A` (cards)
-- **Accent:** `#FF1A1A` — punchy red. Used for: CTA buttons, active accordion fills, keyword highlights in headlines, icon tints. **Not neon, not lime.**
+- **Accent:** `#FF1A1A` — punchy red. Used for: CTA buttons, active accordion fills, keyword highlights in headlines, icon tints.
 - **Text:** `#FFFFFF` (headlines), `#B0B0B0` (body), `#6B6B6B` (muted/captions)
 - **Borders:** `1px solid #2A2A2A`, active border `#FF1A1A`
 
@@ -97,7 +97,7 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
   2. **Primary CTA:** `[Claim Your Free Trial]` — solid red `#FF1A1A`, white text, `border-radius: 8px`, `padding: 16px 32px`
   3. **Body copy:** `18px`, `#C8C8C8`, `max-width: 420px` — `"Expert coaches. Personalised programs tailored to your goals, your body, and your schedule."`
   4. **H1 headline:** `clamp(52px, 6vw, 72px)`, `font-weight: 800`, white, `line-height: 1.1` — `"Where Chennai Comes to Train"`
-- Eyebrow label above H1: `SLAM FITNESS STUDIO` in `#FF1A1A`, `12px`, uppercase, `letter-spacing: 0.12em`
+- Eyebrow label above H1: `FEROUS FITNESS STUDIO` in `#FF1A1A`, `12px`, uppercase, `letter-spacing: 0.12em`
 - No ghost button on hero — single red CTA only
 
 #### Section 2 — Stats Bar (Full-width dark strip)
@@ -110,7 +110,7 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 #### Section 3 — Services / Programs (Accordion Layout)
 - **Two-column layout:** Left = H2 + intro copy + accordion list. Right = tall photo `border-radius: 16px`
 - Section H2 with accent pattern: `"<red>Programs</red> Built Around Your Goals"`
-- Intro copy: `"From fat loss to muscle gain — SLAM has a structured program for every body type and goal."`
+- Intro copy: `"From fat loss to muscle gain — Ferous has a structured program for every body type and goal."`
 - **Accordion list** of 4 services (see `design.md` §5.4 for full accordion spec):
   - Active item: solid `#FF1A1A` fill, white text, shows description
   - Inactive items: `1px solid #2A2A2A` border, white title, `⊕` icon right
@@ -145,13 +145,13 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 - Single red CTA button: `[Book Your Free Trial]`
 
 #### Section 8 — Blog Preview
-- Title: `FROM THE SLAM BLOG`
+- Title: `FROM THE FEROUS BLOG`
 - 3 blog cards in a row:
   - Thumbnail, category tag, title, read time, link
 - CTA: `[Read All Articles →]`
 
 #### Section 9 — Franchise Strip
-- Horizontal dark strip with: `Own a SLAM Studio` + short 1-line pitch + `[Franchise Enquiry →]` button
+- Horizontal dark strip with: `Own a Ferous Studio` + short 1-line pitch + `[Franchise Enquiry →]` button
 - Subtle background texture or pattern
 
 #### Section 10 — Footer
@@ -166,9 +166,9 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 2. **Brand Story** — 2-column: left text narrative, right large quote pull
    - Copy: Founded with a mission to make premium fitness accessible in Chennai. Not a gym — a lifestyle destination. Growing across the city. Expert professionals. Luxurious experience.
 3. **Mission & Values** — 3-column cards: Mission / Vision / Values
-4. **Timeline / Milestones** — Horizontal scrolling timeline of SLAM's growth
+4. **Timeline / Milestones** — Horizontal scrolling timeline of Ferous's growth
 5. **Parent Company** — Brief mention of Paulsons Group with credibility copy
-6. **CTA** — Join the SLAM family banner
+6. **CTA** — Join the Ferous family banner
 
 ---
 
@@ -193,7 +193,7 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 5. **Health Benefits** — Icon grid: manages type 2 diabetes, hypertension, cardiovascular risk, lean mass preservation
 6. **Results Timeline** — Visual graphic: `4–6 weeks = visible results`
 7. **Who Is This For?** — 3 profile cards: Beginners / Women / Health-focused adults
-8. **FAQ Section** — All 19 FAQs from the original site, in accordion format, properly structured
+8. **FAQ Section** — Properly structured
 9. **Booking CTA** — Full-width dark strip with form or button
 
 ---
@@ -239,7 +239,7 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 1. Hero — Title: `THE COACHES BEHIND YOUR RESULTS`
 2. Trainer grid — 6-card grid (3 per row desktop, 2 on tablet, 1 on mobile)
    - Each card: photo, name, specialisation, certifications, years of experience, social link
-3. Philosophy section — copy about trainer quality standards at SLAM
+3. Philosophy section — copy about trainer quality standards at Ferous
 4. CTA — Book a session with a trainer
 
 ---
@@ -261,7 +261,7 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 1. Hero — Title: `CHOOSE YOUR PLAN`
 2. 3 pricing tiers in cards:
    - **Starter** — Monthly, basic access
-   - **SLAMer** — 3-month, includes nutrition guidance *(highlight as recommended)*
+   - **Ferous Pro** — 3-month, includes nutrition guidance *(highlight as recommended)*
    - **Elite** — 6–12 month, personal training + diet + priority access
 3. Features comparison table below the cards
 4. FAQ — 3–4 pricing-specific questions (no hidden fees, what's included, etc.)
@@ -288,24 +288,24 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 ### PAGE 12: Locations (`/locations`)
 
 #### Sections:
-1. Hero — Title: `FIND YOUR SLAM`
+1. Hero — Title: `FIND YOUR FEROUS`
 2. Location cards — each with: area name, address, phone, hours, map embed or link
 3. City map overview
 4. Corporate office details:
    - `#18/70, Halls Road, Kilpauk, Chennai – 600 010`
-   - `+91 70944 79145`
+   - `+91 98400 67890`
 
 ---
 
 ### PAGE 13: Franchise (`/franchise`)
 
 #### Sections:
-1. Hero — Title: `OWN A SLAM STUDIO` with bold entrepreneurship sub-copy
-2. Why franchise with SLAM — 4 value props
+1. Hero — Title: `OWN A FEROUS STUDIO` with bold entrepreneurship sub-copy
+2. Why franchise with Ferous — 4 value props
 3. Investment overview (without specific numbers — lead gen focus)
 4. Process steps — 4 steps from enquiry to launch
 5. Contact form — collects: name, city, investment capacity, phone, email
-6. Contact: `+91 91768 40500` / `+91 98414 63406` / `+91 99628 54265` / `ceo@paulsons.in`
+6. Contact: `+91 91500 11111` / `+91 98400 22222` / `+91 99400 33333` / `ceo@ferousfitness.in`
 
 ---
 
@@ -318,8 +318,8 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
      - Fields: Full Name, Phone, Email, Goal (dropdown: Weight Loss / Weight Gain / Functional Training / Bootcamp / Body Transformation / Not Sure), Message
      - Submit CTA: `[Book My Free Trial]`
    - Right: Contact info block
-     - Customer Care: `70944 05880`
-     - Email: `customercare.slam@gmail.com`
+     - Customer Care: `98400 12345`
+     - Email: `customercare.ferous@gmail.com`
      - Address: Kilpauk, Chennai
      - Social links: Instagram, Facebook
 3. WhatsApp floating CTA button (bottom-right corner, fixed position, accent color) — links to WhatsApp chat
@@ -334,7 +334,7 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 - Services dropdown items: Weight Loss & Weight Gain / Functional Training / Bootcamp / Body Transformation
 - On scroll: becomes sticky with `backdrop-filter: blur(16px)` dark bg
 - Mobile: hamburger → full-screen overlay menu with staggered link animation
-- CTA button: `[Join SLAM]` in accent red
+- CTA button: `[Join FEROUS]` in accent red
 
 ### Footer
 - 4-column grid:
@@ -342,11 +342,11 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
   - Col 2: Quick Links (Home, About, Blog, Store Locator, Franchise, Contact)
   - Col 3: Services (all 4 service page links)
   - Col 4: Contact info
-    - Mr Suresh Babu — `70944 05880`
-    - `customercare.slam@gmail.com`
+    - Mr Arjun Mehta — `98400 12345`
+    - `customercare.ferous@gmail.com`
     - Corporate: `#18/70 Halls Road, Kilpauk, Chennai 600 010`
-    - `+91 70944 79145`
-- Bottom bar: `© 2025 SLAM Fitness Studio. All Rights Reserved.`
+    - `+91 98400 67890`
+- Bottom bar: `© 2026 Ferous Fitness Studio. All Rights Reserved.`
 - Thin `#FF1A1A` red line above footer as divider
 
 ### CTA Button Variants
@@ -359,7 +359,7 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 - Fixed bottom-right corner
 - WhatsApp icon in white on dark `#1A1A1A` circle — keep distinct from brand red
 - Subtle pulse animation
-- Links to: `https://wa.me/917094405880`
+- Links to: `https://wa.me/919840012345`
 
 ---
 
@@ -369,14 +369,14 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 
 **Tagline (hero use):** `NOT JUST A GYM. A WAY OF LIFE.`
 
-**Mission statement:** SLAM Fitness Studio is a premium fitness destination in Chennai, combining expert coaching, personalised programs, and nutritional guidance to deliver real, lasting transformation — for weight loss, weight gain, and everything in between.
+**Mission statement:** Ferous Fitness Studio is a premium fitness destination in Chennai, combining expert coaching, personalised programs, and nutritional guidance to deliver real, lasting transformation — for weight loss, weight gain, and everything in between.
 
 **Value Props (use throughout site):**
 1. Personalised programs tailored to your body, goals, and schedule
 2. Certified, experienced coaches with one-on-one attention
 3. Training + nutrition — both sides of the transformation equation
 4. Beginner-friendly. Flexible timings. No judgment.
-5. Community of SLAMers who celebrate every milestone with you
+5. Community of members who celebrate every milestone with you
 6. Proven results: visible changes within 4–6 weeks of consistent training
 7. Manages health conditions: type 2 diabetes, hypertension, cardiovascular risk
 
@@ -399,7 +399,7 @@ Dark, cinematic, premium. The visual language is confident and clean — not agg
 ### FAQ Copy (full — use on `/services/weight-loss-weight-gain`)
 
 **Q: Which type of gym is best for weight loss?**
-A gym that combines strength training, cardio, and functional workouts is most effective. Look for programs focused on calorie burn, endurance, and muscle building, with nutritional guidance for long-term results. SLAM checks all of these.
+A gym that combines strength training, cardio, and functional workouts is most effective. Look for programs focused on calorie burn, endurance, and muscle building, with nutritional guidance for long-term results. Ferous checks all of these.
 
 **Q: How long does it take to see results?**
 Most members see visible improvements within 4–6 weeks of consistent training and proper nutrition.
@@ -411,16 +411,16 @@ Yes. Expert-designed diet plans complement your training to ensure balanced nutr
 Absolutely. Step-by-step programs focus on proper form, gradual intensity, and balanced nutrition. Trainers guide you through every stage.
 
 **Q: Can women join a gym for weight loss?**
-Yes. SLAM creates a safe, supportive environment with workouts tailored to female fitness goals — toning, strength training, fat loss, and flexibility.
+Yes. Ferous creates a safe, supportive environment with workouts tailored to female fitness goals — toning, strength training, fat loss, and flexibility.
 
 **Q: Does strength training help with weight gain?**
 Yes. Lifting weights enhances muscle tone, boosts metabolism, and burns calories even after your workout.
 
 **Q: What's the ideal time to work out?**
-Morning workouts enhance metabolism; evening sessions improve strength and endurance. SLAM offers flexible timings to fit your lifestyle.
+Morning workouts enhance metabolism; evening sessions improve strength and endurance. Ferous offers flexible timings to fit your lifestyle.
 
 **Q: Can I gain weight at the same gym where I lose it?**
-Yes. SLAM offers both programs, customised to your body's needs. Trainers adjust your workouts and nutrition for balanced transformation.
+Yes. Ferous offers both programs, customised to your body's needs. Trainers adjust your workouts and nutrition for balanced transformation.
 
 **Q: Which gym class is best for weight loss?**
 HIIT, functional workouts, and circuit training boost metabolism, burn calories, and tone muscles effectively.
@@ -446,19 +446,18 @@ Yes. Progressive overload, muscle activation, and calorie-surplus nutrition help
 
 | Field | Value |
 |---|---|
-| Customer Care | 70944 05880 |
-| Customer Email | customercare.slam@gmail.com |
+| Customer Care | 98400 12345 |
+| Customer Email | customercare.ferous@gmail.com |
 | Corporate Address | #18/70, Halls Road, Kilpauk, Chennai – 600 010 |
-| Corporate Phone | +91 70944 79145 |
-| Corporate Email | aneesh@paulsons.in |
-| Contact Person | Mr Suresh Babu (Additional President) |
-| Feedback Email | sureshs@paulsons.in |
-| Franchise Phone 1 | +91 91768 40500 |
-| Franchise Phone 2 | +91 98414 63406 |
-| Franchise Phone 3 | +91 99628 54265 |
-| Franchise Email | ceo@paulsons.in |
-| Instagram | https://www.instagram.com/slamfitnessstudio/ |
-| Facebook | https://www.facebook.com/slamfitnessindia/ |
+| Corporate Phone | +91 98400 67890 |
+| Corporate Email | hello@ferousfitness.in |
+| Contact Person | Mr Arjun Mehta |
+| Franchise Phone 1 | +91 91500 11111 |
+| Franchise Phone 2 | +91 98400 22222 |
+| Franchise Phone 3 | +91 99400 33333 |
+| Franchise Email | ceo@ferousfitness.in |
+| Instagram | https://www.instagram.com/ferousfitness/ |
+| Facebook | https://www.facebook.com/ferousfitnessindia/ |
 
 ---
 
@@ -468,14 +467,14 @@ Yes. Progressive overload, muscle activation, and calorie-surplus nutrition help
 
 | Page | Title Tag | Meta Description |
 |---|---|---|
-| Home | SLAM Fitness Studio — Best Gym in Chennai | Chennai's premium unisex gym for weight loss, weight gain, functional training & body transformation. Expert coaches. Real results. |
-| Weight Loss & Weight Gain | Weight Loss & Weight Gain Gym in Chennai — SLAM | Personalised weight loss and weight gain programs in Chennai with expert trainers and nutrition guidance. See results in 4–6 weeks. |
-| Functional Training | Functional Fitness Gym in Chennai — SLAM | Chennai's best functional fitness training programs. Multi-muscle workouts for performance, fat burn, and strength. |
-| Bootcamp | Fitness Bootcamp in Chennai — SLAM | High-energy fitness bootcamps in Chennai. Group training for lasting results and a healthier lifestyle. |
-| Body Transformation | Body Transformation Gym in Chennai — SLAM | Complete body transformation programs in Chennai combining expert training with personalised nutrition. |
-| Trainers | Expert Gym Trainers in Chennai — SLAM | Meet SLAM's certified fitness coaches — specialists in weight loss, muscle gain, functional training, and body transformation. |
-| Pricing | Gym Membership Pricing in Chennai — SLAM | Flexible gym membership plans in Chennai for every goal and budget. Start with a free trial. |
-| Contact | Book a Free Trial — SLAM Fitness Studio Chennai | Book a free consultation or trial class at SLAM Fitness Studio, Chennai. No commitment required. |
+| Home | Ferous Fitness Studio — Best Gym in Chennai | Chennai's premium unisex gym for weight loss, weight gain, functional training & body transformation. Expert coaches. Real results. |
+| Weight Loss & Weight Gain | Weight Loss & Weight Gain Gym in Chennai — Ferous | Personalised weight loss and weight gain programs in Chennai with expert trainers and nutrition guidance. See results in 4–6 weeks. |
+| Functional Training | Functional Fitness Gym in Chennai — Ferous | Chennai's best functional fitness training programs. Multi-muscle workouts for performance, fat burn, and strength. |
+| Bootcamp | Fitness Bootcamp in Chennai — Ferous | High-energy fitness bootcamps in Chennai. Group training for lasting results and a healthier lifestyle. |
+| Body Transformation | Body Transformation Gym in Chennai — Ferous | Complete body transformation programs in Chennai combining expert training with personalised nutrition. |
+| Trainers | Expert Gym Trainers in Chennai — Ferous | Meet Ferous's certified fitness coaches — specialists in weight loss, muscle gain, functional training, and body transformation. |
+| Pricing | Gym Membership Pricing in Chennai — Ferous | Flexible gym membership plans in Chennai for every goal and budget. Start with a free trial. |
+| Contact | Book a Free Trial — Ferous Fitness Studio Chennai | Book a free consultation or trial class at Ferous Fitness Studio, Chennai. No commitment required. |
 
 ### Primary Keywords (use naturally in copy)
 - Weight loss gym in Chennai
@@ -558,7 +557,7 @@ Since final photography will be sourced by the client, use placeholder strategie
 │   │   ├── Hero.tsx
 │   │   ├── StatsBar.tsx
 │   │   ├── ServicesGrid.tsx
-│   │   ├── WhySLAM.tsx
+│   │   ├── WhyFerous.tsx
 │   │   ├── TransformationTeaser.tsx
 │   │   ├── TrainerSpotlight.tsx
 │   │   ├── BlogPreview.tsx
@@ -581,17 +580,18 @@ Since final photography will be sourced by the client, use placeholder strategie
 
 ```typescript
 export const CONTACT = {
-  customerCare: "70944 05880",
-  customerEmail: "customercare.slam@gmail.com",
+  customerCare: "98400 12345",
+  customerEmail: "customercare.ferous@gmail.com",
   corporateAddress: "#18/70, Halls Road, Kilpauk, Chennai – 600 010",
-  corporatePhone: "+91 70944 79145",
-  corporateEmail: "aneesh@paulsons.in",
-  whatsapp: "917094405880",
-  instagram: "https://www.instagram.com/slamfitnessstudio/",
-  facebook: "https://www.facebook.com/slamfitnessindia/",
+  corporatePhone: "+91 98400 67890",
+  corporateEmail: "hello@ferousfitness.in",
+  contactPerson: "Mr Arjun Mehta",
+  whatsapp: "919840012345",
+  instagram: "https://www.instagram.com/ferousfitness/",
+  facebook: "https://www.facebook.com/ferousfitnessindia/",
   franchise: {
-    phones: ["+91 91768 40500", "+91 98414 63406", "+91 99628 54265"],
-    email: "ceo@paulsons.in",
+    phones: ["+91 91500 11111", "+91 98400 22222", "+91 99400 33333"],
+    email: "ceo@ferousfitness.in",
   },
 }
 

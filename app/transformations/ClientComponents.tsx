@@ -39,7 +39,7 @@ export function TransformationGallery() {
             {activeTab === category && (
               <motion.div
                 layoutId="active-tab-underline"
-                className="absolute left-0 right-0 bottom-0 h-0.5 bg-slam-accent"
+                className="absolute left-0 right-0 bottom-0 h-0.5 bg-ferous-accent"
                 initial={false}
                 transition={{ type: "spring", stiffness: 500, damping: 30 }}
               />
@@ -82,7 +82,7 @@ export function TransformationGallery() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute top-4 right-4 bg-slam-accent px-3 py-1 rounded text-white text-[10px] font-bold tracking-wider uppercase">
+                  <div className="absolute top-4 right-4 bg-ferous-accent px-3 py-1 rounded text-white text-[10px] font-bold tracking-wider uppercase">
                     After
                   </div>
                 </div>
@@ -94,7 +94,7 @@ export function TransformationGallery() {
                   <h3 className="text-xl font-bold text-white">{card.name}</h3>
                   <span className="text-[#6B6B6B] text-[14px]">{card.time}</span>
                 </div>
-                <p className="text-slam-accent text-[14px] font-medium uppercase tracking-wider">
+                <p className="text-ferous-accent text-[14px] font-medium uppercase tracking-wider">
                   {card.category}
                 </p>
                 <p className="text-[#6B6B6B] text-[12px] mt-1">Program: {card.program}</p>

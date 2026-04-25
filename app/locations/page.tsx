@@ -6,23 +6,23 @@ const LOCATIONS = [
   {
     area: "Kilpauk (HQ)",
     address: "#18/70, Halls Road, Kilpauk, Chennai – 600 010",
-    phone: "+91 70944 79145",
+    phone: "+91 98400 67890",
     hours: "5:30 AM - 10:30 PM",
-    mapLink: "https://maps.google.com/?q=SLAM+Fitness+Kilpauk"
+    mapLink: "https://maps.google.com/?q=Ferous+Fitness+Kilpauk"
   },
   {
     area: "Nungambakkam",
     address: "123 Fitness Avenue, Nungambakkam, Chennai – 600 034",
-    phone: "+91 98765 43210",
+    phone: "+91 98400 12345",
     hours: "5:30 AM - 10:30 PM",
-    mapLink: "https://maps.google.com/?q=SLAM+Fitness+Nungambakkam"
+    mapLink: "https://maps.google.com/?q=Ferous+Fitness+Nungambakkam"
   },
   {
     area: "Adyar",
     address: "45 LB Road, Adyar, Chennai – 600 020",
-    phone: "+91 98765 43211",
+    phone: "+91 98400 12346",
     hours: "5:30 AM - 10:30 PM",
-    mapLink: "https://maps.google.com/?q=SLAM+Fitness+Adyar"
+    mapLink: "https://maps.google.com/?q=Ferous+Fitness+Adyar"
   }
 ];
 
@@ -31,14 +31,14 @@ export default function LocationsPage() {
     <main className="pt-24 pb-24 min-h-screen">
       {/* Hero */}
       <section className="px-6 md:px-20 max-w-[1200px] mx-auto pt-12 pb-16 text-center">
-        <span className="text-slam-accent text-[12px] font-semibold uppercase tracking-[0.12em] block mb-3">
+        <span className="text-ferous-accent text-[12px] font-semibold uppercase tracking-[0.12em] block mb-3">
           OUR LOCATIONS
         </span>
         <h1 className="text-white text-[clamp(36px,4.5vw,56px)] font-bold mb-6 leading-[1.2]">
-          Find Your <span className="text-slam-accent">SLAM</span>
+          Find Your <span className="text-ferous-accent">FEROUS</span>
         </h1>
-        <p className="text-slam-body text-[18px] max-w-2xl mx-auto">
-          We are expanding rapidly across Chennai. Find a premium SLAM Fitness Studio near you and start your transformation today.
+        <p className="text-ferous-body text-[18px] max-w-2xl mx-auto">
+          We are expanding rapidly across Chennai. Find a premium Ferous Fitness Studio near you and start your transformation today.
         </p>
       </section>
 
@@ -51,16 +51,16 @@ export default function LocationsPage() {
               
               <div className="space-y-4 mb-8 flex-grow">
                 <div className="flex items-start gap-4">
-                  <MapPin className="w-5 h-5 text-slam-accent shrink-0 mt-1" />
-                  <p className="text-slam-body text-[15px] leading-relaxed">{loc.address}</p>
+                  <MapPin className="w-5 h-5 text-ferous-accent shrink-0 mt-1" />
+                  <p className="text-ferous-body text-[15px] leading-relaxed">{loc.address}</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Phone className="w-5 h-5 text-slam-accent shrink-0" />
-                  <p className="text-slam-body text-[15px]">{loc.phone}</p>
+                  <Phone className="w-5 h-5 text-ferous-accent shrink-0" />
+                  <p className="text-ferous-body text-[15px]">{loc.phone}</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <Clock className="w-5 h-5 text-slam-accent shrink-0" />
-                  <p className="text-slam-body text-[15px]">{loc.hours}</p>
+                  <Clock className="w-5 h-5 text-ferous-accent shrink-0" />
+                  <p className="text-ferous-body text-[15px]">{loc.hours}</p>
                 </div>
               </div>
 
@@ -68,7 +68,7 @@ export default function LocationsPage() {
                 href={loc.mapLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white font-bold text-[16px] group-hover:text-slam-accent transition-colors mt-auto"
+                className="inline-flex items-center gap-2 text-white font-bold text-[16px] group-hover:text-ferous-accent transition-colors mt-auto"
               >
                 Get Directions <ArrowRight className="w-4 h-4" />
               </a>
@@ -79,16 +79,16 @@ export default function LocationsPage() {
 
       {/* Corporate Office */}
       <section className="px-6 md:px-20 max-w-[1200px] mx-auto">
-        <div className="bg-[#141414] rounded-[24px] p-12 text-center border border-[#2A2A2A]">
+        <div className="bg-ferous-section rounded-[24px] p-12 text-center border border-ferous-border">
           <h2 className="text-white text-[32px] font-bold mb-6">Corporate Office</h2>
-          <div className="flex flex-col items-center gap-4 text-slam-body text-[18px]">
+          <div className="flex flex-col items-center gap-4 text-ferous-body text-[18px]">
             <p>{CONTACT.corporateAddress}</p>
             <p className="flex items-center gap-2">
-              <Phone className="w-5 h-5 text-slam-accent" />
+              <Phone className="w-5 h-5 text-ferous-accent" />
               {CONTACT.corporatePhone}
             </p>
             <p className="flex items-center gap-2">
-              <span className="text-slam-accent font-medium">Email:</span>
+              <span className="text-ferous-accent font-medium">Email:</span>
               {CONTACT.corporateEmail}
             </p>
           </div>

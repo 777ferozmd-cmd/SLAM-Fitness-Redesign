@@ -8,7 +8,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export default function Card({ children, className = "", spotlightColor = "rgba(255, 26, 26, 0.15)", ...props }: CardProps) {
-  const baseStyles = "bg-slam-card border border-slam-border rounded-slam-lg transition-colors duration-300 hover:border-slam-accent overflow-hidden";
+  const baseStyles = "bg-ferous-card border border-ferous-border rounded-ferous-lg transition-colors duration-300 hover:border-ferous-accent overflow-hidden";
   
   return (
     <SpotlightCard 

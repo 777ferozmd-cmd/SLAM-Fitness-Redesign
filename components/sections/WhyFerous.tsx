@@ -24,7 +24,7 @@ const itemVariants = {
   },
 };
 
-export default function WhySLAM() {
+export default function WhyFerous() {
   const features = [
     "Personalised programs",
     "Certified coaches",
@@ -34,7 +34,7 @@ export default function WhySLAM() {
   ];
 
   return (
-    <section className="bg-slam-section py-20 lg:py-32 overflow-hidden border-b border-slam-border">
+    <section className="bg-ferous-section py-20 lg:py-32 overflow-hidden border-b border-ferous-border">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-[80px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
@@ -48,7 +48,7 @@ export default function WhySLAM() {
           >
             <Image
               src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop"
-              alt="Group training at SLAM Fitness"
+              alt="Group training at Ferous Fitness"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -66,14 +66,14 @@ export default function WhySLAM() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <motion.div variants={itemVariants}>
-              <SectionLabel>WHY SLAM</SectionLabel>
+              <SectionLabel>WHY FEROUS</SectionLabel>
             </motion.div>
 
             <motion.h2 
               variants={itemVariants}
               className="text-[clamp(36px,5vw,52px)] font-extrabold text-white leading-[1.1] mb-6 tracking-tight"
             >
-              <span className="text-slam-accent">Coaching</span> Built Around You
+              <span className="text-ferous-accent">Coaching</span> Built Around You
             </motion.h2>
 
             <motion.p 
@@ -86,7 +86,7 @@ export default function WhySLAM() {
             <motion.ul variants={itemVariants} className="flex flex-col gap-4 mb-10">
               {features.map((feature, idx) => (
                 <li key={idx} className="flex items-center gap-3 text-white font-medium text-[16px]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-slam-accent shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-ferous-accent shrink-0" />
                   {feature}
                 </li>
               ))}

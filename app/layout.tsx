@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "SLAM Fitness Studio — Best Gym in Chennai",
+  title: "Ferous Fitness Studio — Best Gym in Chennai",
   description: "Chennai's premium unisex gym for weight loss, weight gain, functional training & body transformation. Expert coaches. Real results.",
 };
 
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans bg-slam-bg text-slam-text antialiased flex flex-col min-h-screen`}>
+      <body className={`${poppins.variable} font-sans bg-ferous-bg text-ferous-text antialiased flex flex-col min-h-screen`}>
         <Navbar />
         <main className="flex-grow">
           {children}

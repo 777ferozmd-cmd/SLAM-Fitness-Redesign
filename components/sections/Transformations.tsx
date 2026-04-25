@@ -33,7 +33,7 @@ export default function Transformations() {
   };
 
   return (
-    <section className="bg-slam-bg py-20 md:py-32 overflow-hidden border-b border-slam-border">
+    <section className="bg-ferous-bg py-20 md:py-32 overflow-hidden border-b border-ferous-border">
       <div className="max-w-[1200px] mx-auto px-6 md:px-20">
         
         {/* Header */}
@@ -43,7 +43,7 @@ export default function Transformations() {
               variants={fadeInUp}
               initial="initial"
               whileInView="whileInView"
-              className="text-slam-primary text-[12px] uppercase tracking-[0.12em] font-bold"
+              className="text-ferous-primary text-[12px] uppercase tracking-[0.12em] font-bold"
             >
               Real Members. Real Results.
             </motion.p>
@@ -54,7 +54,7 @@ export default function Transformations() {
               className="text-white font-extrabold leading-[1.1] text-[clamp(40px,5vw,56px)]"
             >
               Transformations That <br className="hidden md:block"/>
-              <span className="text-slam-muted">Speak For Themselves.</span>
+              <span className="text-ferous-muted">Speak For Themselves.</span>
             </motion.h2>
           </div>
           <motion.div 
@@ -63,7 +63,7 @@ export default function Transformations() {
             whileInView="whileInView"
             className="shrink-0"
           >
-            <Link href="/about" className="text-white font-bold inline-flex items-center hover:text-slam-accent transition-colors">
+            <Link href="/about" className="text-white font-bold inline-flex items-center hover:text-ferous-accent transition-colors">
               View All Stories
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
@@ -84,7 +84,7 @@ export default function Transformations() {
               {/* Image Split */}
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden flex bg-[#141414] group">
                 {/* Before Image */}
-                <div className="relative w-1/2 h-full border-r-4 border-slam-bg filter grayscale-[50%] group-hover:grayscale-0 transition-all duration-500">
+                <div className="relative w-1/2 h-full border-r-4 border-ferous-bg filter grayscale-[50%] group-hover:grayscale-0 transition-all duration-500">
                   <Image 
                     src={t.beforeImage}
                     alt={`${t.name} Before`}
@@ -105,13 +105,13 @@ export default function Transformations() {
                     className="object-cover"
                     sizes="(max-width: 768px) 50vw, 25vw"
                   />
-                  <div className="absolute top-4 right-4 bg-slam-accent px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase text-white shadow-lg">
+                  <div className="absolute top-4 right-4 bg-ferous-accent px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase text-white shadow-lg">
                     After
                   </div>
                 </div>
                 
                 {/* VS Badge */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slam-bg border-2 border-[#2A2A2A] flex items-center justify-center shadow-xl z-10">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-ferous-bg border-2 border-[#2A2A2A] flex items-center justify-center shadow-xl z-10">
                   <span className="text-white text-[10px] font-black italic">VS</span>
                 </div>
               </div>
@@ -120,8 +120,8 @@ export default function Transformations() {
               <div className="flex flex-col">
                 <h3 className="text-2xl font-bold text-white mb-2">{t.name}</h3>
                 <div className="flex items-center gap-3 text-sm font-medium">
-                  <span className="text-slam-accent bg-slam-accent/10 px-3 py-1 rounded-full">{t.duration}</span>
-                  <span className="text-slam-muted">•</span>
+                  <span className="text-ferous-accent bg-ferous-accent/10 px-3 py-1 rounded-full">{t.duration}</span>
+                  <span className="text-ferous-muted">•</span>
                   <span className="text-[#C8C8C8]">{t.achievement}</span>
                 </div>
               </div>

@@ -51,10 +51,10 @@ export default function ContactForm() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", delay: 0.2 }}
           >
-            <CheckCircle2 className="w-20 h-20 text-slam-accent mb-4 mx-auto" />
+            <CheckCircle2 className="w-20 h-20 text-ferous-accent mb-4 mx-auto" />
           </motion.div>
           <h3 className="text-2xl font-bold text-white mb-2">Request Received!</h3>
-          <p className="text-slam-muted">One of our fitness experts will call you shortly to arrange your free trial session.</p>
+          <p className="text-ferous-muted">One of our fitness experts will call you shortly to arrange your free trial session.</p>
         </motion.div>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
@@ -70,7 +70,7 @@ export default function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="John Doe"
-                className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-slam-accent focus:ring-1 focus:ring-slam-accent transition-colors"
+                className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-ferous-accent focus:ring-1 focus:ring-ferous-accent transition-colors"
               />
             </div>
             
@@ -86,7 +86,7 @@ export default function ContactForm() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+91 98765 43210"
-                className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-slam-accent focus:ring-1 focus:ring-slam-accent transition-colors"
+                className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-ferous-accent focus:ring-1 focus:ring-ferous-accent transition-colors"
               />
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               placeholder="john@example.com"
-              className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-slam-accent focus:ring-1 focus:ring-slam-accent transition-colors"
+              className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-ferous-accent focus:ring-1 focus:ring-ferous-accent transition-colors"
             />
           </div>
 
@@ -115,7 +115,7 @@ export default function ContactForm() {
               required
               value={formData.goal}
               onChange={handleChange}
-              className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-slam-accent focus:ring-1 focus:ring-slam-accent transition-colors appearance-none"
+              className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-ferous-accent focus:ring-1 focus:ring-ferous-accent transition-colors appearance-none"
             >
               <option value="Weight Loss">Weight Loss</option>
               <option value="Weight Gain">Weight Gain</option>
@@ -136,7 +136,7 @@ export default function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               placeholder="Tell us about any past injuries or specific goals..."
-              className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-slam-accent focus:ring-1 focus:ring-slam-accent transition-colors resize-none"
+              className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-ferous-accent focus:ring-1 focus:ring-ferous-accent transition-colors resize-none"
             ></textarea>
           </div>
 

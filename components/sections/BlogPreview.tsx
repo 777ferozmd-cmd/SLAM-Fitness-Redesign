@@ -50,7 +50,7 @@ const posts = [
 
 export default function BlogPreview() {
   return (
-    <section className="bg-slam-bg py-20 lg:py-32 overflow-hidden border-b border-slam-border">
+    <section className="bg-ferous-bg py-20 lg:py-32 overflow-hidden border-b border-ferous-border">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-[80px]">
         
         {/* Header */}
@@ -69,7 +69,7 @@ export default function BlogPreview() {
               variants={itemVariants}
               className="text-[clamp(36px,5vw,52px)] font-extrabold text-white leading-[1.1] tracking-tight"
             >
-              From the <span className="text-slam-accent">SLAM</span> Blog
+              From the <span className="text-ferous-accent">Ferous</span> Blog
             </motion.h2>
           </div>
           
@@ -97,7 +97,7 @@ export default function BlogPreview() {
               <Link href="/blog" className="flex flex-col group cursor-pointer h-full">
                 <Card className="p-0 border-[#2A2A2A] h-full flex flex-col bg-transparent !border-transparent hover:!border-transparent hover:bg-transparent">
                   {/* Image */}
-                  <div className="w-full h-[240px] relative rounded-slam-lg overflow-hidden mb-6 bg-[#1A1A1A]">
+                  <div className="w-full h-[240px] relative rounded-ferous-lg overflow-hidden mb-6 bg-[#1A1A1A]">
                     <Image 
                       src={post.image} 
                       alt={post.title} 
@@ -115,7 +115,7 @@ export default function BlogPreview() {
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-white leading-snug group-hover:text-slam-accent transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white leading-snug group-hover:text-ferous-accent transition-colors duration-300">
                     {post.title}
                   </h3>
                 </Card>

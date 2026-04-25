@@ -31,7 +31,7 @@ export default function ServicesAccordion() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="bg-slam-bg py-20 lg:py-32 overflow-hidden border-b border-slam-border">
+    <section className="bg-ferous-bg py-20 lg:py-32 overflow-hidden border-b border-ferous-border">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-[80px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
@@ -51,14 +51,14 @@ export default function ServicesAccordion() {
               variants={itemVariants}
               className="text-[clamp(36px,5vw,52px)] font-extrabold text-white leading-[1.1] mb-6 tracking-tight"
             >
-              <span className="text-slam-accent">Programs</span> Tailored To You
+              <span className="text-ferous-accent">Programs</span> Tailored To You
             </motion.h2>
 
             <motion.p 
               variants={itemVariants}
               className="text-[18px] text-[#C8C8C8] mb-10 max-w-[480px]"
             >
-              From fat loss to muscle gain — SLAM has a structured program for every body type and goal.
+              From fat loss to muscle gain — Ferous has a structured program for every body type and goal.
             </motion.p>
 
             {/* Accordion List */}
@@ -72,10 +72,10 @@ export default function ServicesAccordion() {
                     href={`/services/${service.slug}`}
                     onMouseEnter={() => setActiveIndex(index)}
                     onClick={() => setActiveIndex(index)}
-                    className={`block w-full text-left p-6 rounded-slam-lg transition-all duration-300 ease-in-out ${
+                    className={`block w-full text-left p-6 rounded-ferous-lg transition-all duration-300 ease-in-out ${
                       isActive 
-                        ? "bg-slam-accent text-white shadow-[0_8px_24px_rgba(255,26,26,0.2)]" 
-                        : "bg-transparent border border-slam-border hover:border-slam-accent"
+                        ? "bg-ferous-accent text-white shadow-[0_8px_24px_rgba(255,26,26,0.2)]" 
+                        : "bg-transparent border border-ferous-border hover:border-ferous-accent"
                     }`}
                   >
                     <div className="flex justify-between items-center">
@@ -83,7 +83,7 @@ export default function ServicesAccordion() {
                         {service.title}
                       </h3>
                       {!isActive && (
-                        <Plus className="w-6 h-6 text-slam-accent shrink-0" strokeWidth={2.5} />
+                        <Plus className="w-6 h-6 text-ferous-accent shrink-0" strokeWidth={2.5} />
                       )}
                     </div>
                     
@@ -112,7 +112,7 @@ export default function ServicesAccordion() {
           >
             <Image
               src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop"
-              alt="SLAM Fitness Studio Training Programs"
+              alt="Ferous Fitness Studio Training Programs"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"

@@ -1,4 +1,4 @@
-# design.md — SLAM Fitness Studio Visual Specification
+# design.md — Ferous Fitness Studio Visual Specification
 
 > This is the single source of truth for all visual decisions. Read this before writing any CSS, component, or layout code. `context.md` covers content and architecture; this file covers every color, font size, border-radius, animation, spacing value, and component pattern.
 
@@ -66,7 +66,7 @@ Loaded via `next/font/google`. No other typeface is used anywhere on the site.
 
 ### Casing Rules
 - **Headlines:** Title Case — e.g., `"Where Chennai Comes to Train"` — **NOT ALL CAPS**
-- **Eyebrow labels:** ALL CAPS with `letter-spacing: 0.12em` — e.g., `SLAM FITNESS STUDIO`
+- **Eyebrow labels:** ALL CAPS with `letter-spacing: 0.12em` — e.g., `FEROUS FITNESS STUDIO`
 - **CTA buttons:** ALL CAPS or Title Case — e.g., `[CLAIM YOUR FREE TRIAL]`
 
 ### Headline Accent Pattern
@@ -82,7 +82,7 @@ Every primary H2 uses the pattern: **first significant word in `#FF1A1A`**, rest
 Examples across the site:
 - `Programs Built Around Your Goals`
 - `Coaching Built Around You`
-- `Why Choose SLAM`
+- `Why Choose Ferous`
 - `Real People. Real Results.`
 
 ---
@@ -586,7 +586,7 @@ Used above every major section heading:
 ```
 
 **Content stack (bottom to top — markup order: top to bottom):**
-1. Eyebrow label (`SLAM FITNESS STUDIO`)
+1. Eyebrow label (`FEROUS FITNESS STUDIO`)
 2. H1 headline
 3. Body copy (`18px`, `#C8C8C8`, `max-width: 420px`)
 4. Primary CTA button
@@ -779,41 +779,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'slam-bg':       '#0D0D0D',
-        'slam-section':  '#141414',
-        'slam-card':     '#1A1A1A',
-        'slam-accent':   '#FF1A1A',
-        'slam-accent-hover': '#CC0000',
-        'slam-border':   '#2A2A2A',
-        'slam-text':     '#FFFFFF',
-        'slam-body':     '#B0B0B0',
-        'slam-muted':    '#6B6B6B',
+        'ferous-bg':       '#0D0D0D',
+        'ferous-section':  '#141414',
+        'ferous-card':     '#1A1A1A',
+        'ferous-accent':   '#FF1A1A',
+        'ferous-accent-hover': '#CC0000',
+        'ferous-border':   '#2A2A2A',
+        'ferous-text':     '#FFFFFF',
+        'ferous-body':     '#B0B0B0',
+        'ferous-muted':    '#6B6B6B',
       },
       fontFamily: {
         sans: ['var(--font-poppins)', 'sans-serif'],
       },
       borderRadius: {
-        'slam-sm':  '8px',
-        'slam-md':  '12px',
-        'slam-lg':  '16px',
-        'slam-xl':  '24px',
-      },
-      maxWidth: {
-        'container': '1200px',
-      },
-      animation: {
-        'pulse-whatsapp': 'pulse-whatsapp 2.5s ease-in-out infinite',
-        'fade-up':        'fade-up 0.6s ease forwards',
-      },
-      keyframes: {
-        'pulse-whatsapp': {
-          '0%, 100%': { boxShadow: '0 4px 20px rgba(0,0,0,0.4)' },
-          '50%':       { boxShadow: '0 4px 32px rgba(37,211,102,0.3)' },
-        },
-        'fade-up': {
-          from: { opacity: '0', transform: 'translateY(20px)' },
-          to:   { opacity: '1', transform: 'translateY(0)' },
-        },
+        'ferous-sm':  '8px',
+        'ferous-md':  '12px',
+        'ferous-lg':  '16px',
+        'ferous-xl':  '24px',
       },
     },
   },
@@ -821,144 +804,3 @@ const config: Config = {
 }
 export default config
 ```
-
----
-
-## §10 — Global CSS (`globals.css`)
-
-```css
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-/* Note: use next/font/google in layout.tsx instead of @import in production */
-
-:root {
-  /* Colors */
-  --color-bg-primary:    #0D0D0D;
-  --color-bg-section:    #141414;
-  --color-bg-card:       #1A1A1A;
-  --color-accent:        #FF1A1A;
-  --color-accent-hover:  #CC0000;
-  --color-border:        #2A2A2A;
-  --color-text:          #FFFFFF;
-  --color-body:          #B0B0B0;
-  --color-muted:         #6B6B6B;
-
-  /* Layout */
-  --container-max:    1200px;
-  --container-pad-x:  80px;
-  --container-pad-y:  96px;
-
-  /* Type */
-  --font-primary: 'Poppins', sans-serif;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--color-bg-primary);
-  color: var(--color-text);
-  font-family: var(--font-primary);
-  font-size: 16px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Focus visible ring for accessibility */
-*:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-/* Scrollbar (optional dark styling) */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-bg-primary); }
-::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
-
-/* Container utility */
-.container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-pad-x);
-}
-
-/* Section padding utility */
-.section {
-  padding: var(--container-pad-y) 0;
-}
-
-/* Alternating section backgrounds */
-.section-dark    { background: var(--color-bg-primary); }
-.section-darker  { background: var(--color-bg-section); }
-
-@media (max-width: 1024px) {
-  :root {
-    --container-pad-x: 48px;
-    --container-pad-y: 72px;
-  }
-}
-@media (max-width: 768px) {
-  :root {
-    --container-pad-x: 24px;
-    --container-pad-y: 56px;
-  }
-}
-@media (max-width: 480px) {
-  :root {
-    --container-pad-x: 16px;
-    --container-pad-y: 48px;
-  }
-}
-```
-
----
-
-## §11 — Accessibility Requirements
-
-- Minimum contrast ratio: **4.5:1** for all body text on dark backgrounds
-  - `#B0B0B0` on `#0D0D0D` = 6.2:1 ✓
-  - `#FFFFFF` on `#0D0D0D` = 19.1:1 ✓
-  - `#6B6B6B` on `#0D0D0D` = 3.3:1 — use only for captions/muted, never for readable body copy
-- All icon-only buttons: `aria-label` required
-- All images: descriptive `alt` text including relevant SEO keywords
-- Interactive elements: `:focus-visible` ring in `#FF1A1A`
-- Semantic HTML: `<main>`, `<nav>`, `<section>`, `<article>`, `<aside>`, `<header>`, `<footer>`
-- Form inputs: `<label>` elements properly associated via `htmlFor`
-
----
-
-## §12 — SEO / Schema Markup
-
-Add on homepage and `/contact`:
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "SLAM Fitness Studio",
-  "url": "https://slamfitnessstudio.in",
-  "telephone": "+917094405880",
-  "email": "customercare.slam@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "#18/70, Halls Road, Kilpauk",
-    "addressLocality": "Chennai",
-    "postalCode": "600010",
-    "addressCountry": "IN"
-  },
-  "image": "https://slamfitnessstudio.in/og-image.jpg",
-  "priceRange": "₹₹",
-  "openingHours": "Mo-Su 05:00-22:00"
-}
-```
-
----
-
-*End of design.md — always read this file before writing any CSS, component, or layout code.*

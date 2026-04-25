@@ -9,24 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'slam-bg':       '#0D0D0D',
-        'slam-section':  '#141414',
-        'slam-card':     '#1A1A1A',
-        'slam-accent':   '#FF1A1A',
-        'slam-accent-hover': '#CC0000',
-        'slam-border':   '#2A2A2A',
-        'slam-text':     '#FFFFFF',
-        'slam-body':     '#B0B0B0',
-        'slam-muted':    '#6B6B6B',
+        'ferous-bg':       '#0D0D0D',
+        'ferous-section':  '#141414',
+        'ferous-card':     '#1A1A1A',
+        'ferous-accent':   '#FF1A1A',
+        'ferous-accent-hover': '#CC0000',
+        'ferous-border':   '#2A2A2A',
+        'ferous-text':     '#FFFFFF',
+        'ferous-body':     '#B0B0B0',
+        'ferous-muted':    '#6B6B6B',
       },
       fontFamily: {
         sans: ['var(--font-poppins)', 'sans-serif'],
       },
       borderRadius: {
-        'slam-sm':  '8px',
-        'slam-md':  '12px',
-        'slam-lg':  '16px',
-        'slam-xl':  '24px',
+        'ferous-sm':  '8px',
+        'ferous-md':  '12px',
+        'ferous-lg':  '16px',
+        'ferous-xl':  '24px',
       },
       maxWidth: {
         'container': '1200px',

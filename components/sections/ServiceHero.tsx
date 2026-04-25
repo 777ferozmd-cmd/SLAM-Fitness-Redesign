@@ -25,7 +25,7 @@ export default function ServiceHero({ title, subtitle, imageSrc, imageAlt }: Ser
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-20 pb-16 md:pb-24">
-        <p className="text-slam-accent text-[12px] uppercase tracking-[0.12em] font-bold mb-4">
+        <p className="text-ferous-accent text-[12px] uppercase tracking-[0.12em] font-bold mb-4">
           {subtitle}
         </p>
         <h1 className="text-white font-extrabold text-[clamp(40px,6vw,72px)] leading-[1.1] max-w-[800px]">

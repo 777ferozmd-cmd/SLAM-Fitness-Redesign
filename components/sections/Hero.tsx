@@ -31,7 +31,7 @@ export default function Hero() {
       {/* Background Image */}
       <Image
         src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2000&auto=format&fit=crop"
-        alt="SLAM Fitness Studio Gym Area"
+        alt="Ferous Fitness Studio Gym Area"
         fill
         className="object-cover z-0"
         priority
@@ -54,14 +54,14 @@ export default function Hero() {
           animate="visible"
         >
           <motion.div variants={itemVariants}>
-            <SectionLabel>SLAM FITNESS STUDIO</SectionLabel>
+            <SectionLabel>FEROUS FITNESS STUDIO</SectionLabel>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
             className="text-[clamp(52px,6vw,72px)] font-extrabold text-white leading-[1.1] tracking-tight mb-4"
           >
-            Where Chennai Comes to <span className="text-[#FF1A1A]">Train</span>
+            Where Chennai Comes to <span className="text-ferous-accent">Train</span>
           </motion.h1>
 
           <motion.p

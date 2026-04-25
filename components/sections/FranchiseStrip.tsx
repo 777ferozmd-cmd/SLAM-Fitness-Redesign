@@ -11,11 +11,11 @@ export default function FranchiseStrip() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
           
           <div className="flex items-start gap-6 w-full lg:w-auto">
-            <div className="w-16 h-16 rounded-full bg-slam-bg border-2 border-slam-border flex items-center justify-center shrink-0">
-              <Building2 className="w-8 h-8 text-slam-accent" />
+            <div className="w-16 h-16 rounded-full bg-ferous-bg border-2 border-ferous-border flex items-center justify-center shrink-0">
+              <Building2 className="w-8 h-8 text-ferous-accent" />
             </div>
             <div className="flex flex-col gap-2">
-              <h3 className="text-2xl font-bold text-white leading-none">Own a SLAM Studio</h3>
+              <h3 className="text-2xl font-bold text-white leading-none">Own a Ferous Studio</h3>
               <p className="text-[#C8C8C8] text-sm max-w-md">
                 Join India&apos;s fastest-growing fitness franchise. Proven business model, comprehensive support, and a powerful brand.
               </p>
@@ -25,7 +25,7 @@ export default function FranchiseStrip() {
           <div className="w-full lg:w-auto shrink-0 flex items-center">
             <Link 
               href="/franchise" 
-              className="group flex items-center gap-2 text-slam-accent font-bold uppercase tracking-wider text-sm hover:text-white transition-colors"
+              className="group flex items-center gap-2 text-ferous-accent font-bold uppercase tracking-wider text-sm hover:text-white transition-colors"
             >
               Explore Franchise Opportunities
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

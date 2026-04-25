@@ -77,7 +77,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ease-in-out bg-[rgba(13,13,13,0.92)] backdrop-blur-[16px] border-b border-slam-border ${
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ease-in-out bg-[rgba(13,13,13,0.92)] backdrop-blur-[16px] border-b border-ferous-border ${
           isScrolled
             ? "py-4"
             : "py-6"
@@ -90,8 +90,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 z-[201]" onClick={() => setIsMobileMenuOpen(false)}>
-            <span className="text-slam-text font-extrabold text-2xl tracking-tight uppercase">
-              SLAM<span className="text-slam-accent">.</span>
+            <span className="text-ferous-text font-extrabold text-2xl tracking-tight uppercase">
+              FEROUS<span className="text-ferous-accent">.</span>
             </span>
           </Link>
 
@@ -101,10 +101,10 @@ export default function Navbar() {
               <div key={link.label} className="relative group">
                 <Link
                   href={link.href}
-                  className={`nav-link flex items-center gap-1 hover:text-slam-accent transition-colors duration-200 ${
+                  className={`nav-link flex items-center gap-1 hover:text-ferous-accent transition-colors duration-200 ${
                     pathname === link.href || (link.subLinks && link.subLinks.some(sub => pathname === sub.href))
-                      ? "text-slam-accent"
-                      : "text-slam-text"
+                      ? "text-ferous-accent"
+                      : "text-ferous-text"
                   }`}
                 >
                   {link.label}
@@ -114,13 +114,13 @@ export default function Navbar() {
                 {/* Dropdown */}
                 {link.subLinks && (
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                    <div className="nav-dropdown flex flex-col gap-1 bg-[rgba(13,13,13,0.92)] backdrop-blur-[16px] border border-slam-border p-3 rounded-xl min-w-[200px] shadow-2xl">
+                    <div className="nav-dropdown flex flex-col gap-1 bg-[rgba(13,13,13,0.92)] backdrop-blur-[16px] border border-ferous-border p-3 rounded-xl min-w-[200px] shadow-2xl">
                       {link.subLinks.map((subLink) => (
                         <Link
                           key={subLink.label}
                           href={subLink.href}
-                          className={`block px-4 py-3 text-sm font-medium transition-colors duration-200 hover:text-slam-accent rounded-md ${
-                            pathname === subLink.href ? "text-slam-accent" : "text-slam-text"
+                          className={`block px-4 py-3 text-sm font-medium transition-colors duration-200 hover:text-ferous-accent rounded-md ${
+                            pathname === subLink.href ? "text-ferous-accent" : "text-ferous-text"
                           }`}
                         >
                           {subLink.label}
@@ -136,13 +136,13 @@ export default function Navbar() {
           {/* Right CTA */}
           <div className="hidden lg:block">
             <Link href="/contact" className="btn-primary">
-              Join SLAM
+              Join FEROUS
             </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden z-[201] text-slam-text hover:text-slam-accent transition-colors"
+            className="lg:hidden z-[201] text-ferous-text hover:text-ferous-accent transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Menu"
           >
@@ -155,7 +155,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 bg-slam-bg z-[200] flex flex-col pt-32 px-6 pb-8 overflow-y-auto"
+            className="fixed inset-0 bg-ferous-bg z-[200] flex flex-col pt-32 px-6 pb-8 overflow-y-auto"
             variants={mobileMenuVariants}
             initial="hidden"
             animate="visible"
@@ -173,8 +173,8 @@ export default function Navbar() {
                     href={link.href}
                     className={`text-2xl font-bold uppercase tracking-wide ${
                       pathname === link.href || (link.subLinks && link.subLinks.some(sub => pathname === sub.href))
-                        ? "text-slam-accent"
-                        : "text-slam-text"
+                        ? "text-ferous-accent"
+                        : "text-ferous-text"
                     }`}
                     onClick={() => !link.subLinks && setIsMobileMenuOpen(false)}
                   >
@@ -183,13 +183,13 @@ export default function Navbar() {
                   
                   {/* Mobile SubLinks */}
                   {link.subLinks && (
-                    <div className="mt-4 flex flex-col gap-3 pl-4 border-l-2 border-slam-border">
+                    <div className="mt-4 flex flex-col gap-3 pl-4 border-l-2 border-ferous-border">
                       {link.subLinks.map((subLink) => (
                         <Link
                           key={subLink.label}
                           href={subLink.href}
                           className={`text-lg font-medium ${
-                            pathname === subLink.href ? "text-slam-accent" : "text-slam-body"
+                            pathname === subLink.href ? "text-ferous-accent" : "text-ferous-body"
                           }`}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
@@ -201,13 +201,13 @@ export default function Navbar() {
                 </motion.div>
               ))}
               
-              <motion.div variants={linkItemVariants} className="mt-8 pt-8 border-t border-slam-border">
+              <motion.div variants={linkItemVariants} className="mt-8 pt-8 border-t border-ferous-border">
                 <Link 
                   href="/contact" 
                   className="btn-primary w-full flex justify-center text-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Join SLAM Today
+                  Join FEROUS Today
                 </Link>
               </motion.div>
             </motion.div>

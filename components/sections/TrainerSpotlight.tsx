@@ -32,7 +32,7 @@ const trainers = [
 
 export default function TrainerSpotlight() {
   return (
-    <section className="bg-slam-bg py-20 lg:py-32 overflow-hidden border-b border-slam-border">
+    <section className="bg-ferous-bg py-20 lg:py-32 overflow-hidden border-b border-ferous-border">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-[80px]">
         
         {/* Header */}
@@ -51,7 +51,7 @@ export default function TrainerSpotlight() {
               variants={itemVariants}
               className="text-[clamp(36px,5vw,52px)] font-extrabold text-white leading-[1.1] tracking-tight"
             >
-              Trained By the <span className="text-slam-accent">Best</span>
+              Trained By the <span className="text-ferous-accent">Best</span>
             </motion.h2>
           </div>
           
@@ -78,15 +78,15 @@ export default function TrainerSpotlight() {
             >
               <Card className="p-8 flex flex-col items-center group cursor-default h-full">
               {/* Placeholder Headshot */}
-              <div className="w-28 h-28 rounded-full bg-[#2A2A2A] group-hover:bg-[#FF1A1A]/10 transition-colors duration-300 mx-auto mb-6 flex items-center justify-center border-2 border-transparent group-hover:border-[#FF1A1A]/30">
-                <span className="text-3xl font-bold text-white group-hover:text-[#FF1A1A] transition-colors duration-300">
+              <div className="w-28 h-28 rounded-full bg-[#2A2A2A] group-hover:bg-ferous-accent/10 transition-colors duration-300 mx-auto mb-6 flex items-center justify-center border-2 border-transparent group-hover:border-ferous-accent/30">
+                <span className="text-3xl font-bold text-white group-hover:text-ferous-accent transition-colors duration-300">
                   {trainer.initials}
                 </span>
               </div>
               
               {/* Details */}
               <h3 className="text-2xl font-bold text-white text-center mb-1">{trainer.name}</h3>
-              <p className="text-[15px] font-semibold text-slam-accent text-center mb-4">{trainer.spec}</p>
+              <p className="text-[15px] font-semibold text-ferous-accent text-center mb-4">{trainer.spec}</p>
               
               <div className="w-full h-px bg-[#2A2A2A] mb-4" />
               

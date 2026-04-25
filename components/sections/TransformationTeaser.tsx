@@ -32,7 +32,7 @@ const transformations = [
 
 export default function TransformationTeaser() {
   return (
-    <section className="bg-slam-section py-20 lg:py-32 overflow-hidden border-b border-slam-border">
+    <section className="bg-ferous-section py-20 lg:py-32 overflow-hidden border-b border-ferous-border">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-[80px]">
         
         {/* Header */}
@@ -51,7 +51,7 @@ export default function TransformationTeaser() {
               variants={itemVariants}
               className="text-[clamp(36px,5vw,52px)] font-extrabold text-white leading-[1.1] tracking-tight"
             >
-              <span className="text-slam-accent">Real</span> People. Real Results.
+              <span className="text-ferous-accent">Real</span> People. Real Results.
             </motion.h2>
           </div>
           
@@ -83,14 +83,14 @@ export default function TransformationTeaser() {
                   <span className="absolute bottom-3 left-3 text-[11px] uppercase font-bold text-white/50 tracking-wider">Before</span>
                 </div>
                 <div className="flex-1 bg-[#1A1A1A] rounded-[8px] flex items-center justify-center relative overflow-hidden">
-                  <span className="absolute bottom-3 left-3 text-[11px] uppercase font-bold text-slam-accent tracking-wider">After</span>
+                  <span className="absolute bottom-3 left-3 text-[11px] uppercase font-bold text-ferous-accent tracking-wider">After</span>
                 </div>
               </div>
 
               {/* Details */}
               <div>
                 <h3 className="text-xl font-bold text-white mb-1">{t.name}</h3>
-                <p className="text-sm font-semibold text-slam-accent mb-3">{t.program}</p>
+                <p className="text-sm font-semibold text-ferous-accent mb-3">{t.program}</p>
                 <div className="inline-block px-3 py-1 bg-[#2A2A2A] rounded-full">
                   <span className="text-[11px] text-white/80 font-bold uppercase tracking-wider">{t.time}</span>
                 </div>

@@ -33,17 +33,17 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     <main className="pt-24 pb-24 min-h-screen">
       {/* Header */}
       <header className="px-6 md:px-20 max-w-[1000px] mx-auto pt-12 pb-12 text-center">
-        <span className="inline-block text-[12px] font-semibold text-slam-accent uppercase tracking-[0.12em] mb-6">
+        <span className="inline-block text-[12px] font-semibold text-ferous-accent uppercase tracking-[0.12em] mb-6">
           {post.category}
         </span>
         <h1 className="text-white text-[clamp(36px,5vw,64px)] font-bold mb-8 leading-[1.1]">
           {post.title}
         </h1>
-        <div className="flex items-center justify-center text-slam-muted text-[14px] gap-4">
+        <div className="flex items-center justify-center text-ferous-muted text-[14px] gap-4">
           <span className="text-white font-medium">{post.author}</span>
-          <span className="w-1 h-1 rounded-full bg-slam-border" />
+          <span className="w-1 h-1 rounded-full bg-ferous-border" />
           <span>{post.date}</span>
-          <span className="w-1 h-1 rounded-full bg-slam-border" />
+          <span className="w-1 h-1 rounded-full bg-ferous-border" />
           <span>{post.readTime}</span>
         </div>
       </header>
@@ -70,7 +70,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             if (idx === Math.floor(post.content.length / 2)) {
               return (
                 <div key={idx}>
-                  <blockquote className="border-l-[3px] border-slam-accent pl-6 my-10 italic text-white text-[clamp(24px,3vw,32px)] font-medium leading-[1.4]">
+                  <blockquote className="border-l-[3px] border-ferous-accent pl-6 my-10 italic text-white text-[clamp(24px,3vw,32px)] font-medium leading-[1.4]">
                     "{post.excerpt}"
                   </blockquote>
                   <p className="text-[18px] text-[#B0B0B0] leading-[1.7] mb-8">
@@ -98,7 +98,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <Link
               key={relatedPost.slug}
               href={`/blog/${relatedPost.slug}`}
-              className="group block bg-[#1A1A1A] border border-[#2A2A2A] rounded-[16px] overflow-hidden transition-all duration-300 hover:border-slam-accent hover:-translate-y-1"
+              className="group block bg-[#1A1A1A] border border-[#2A2A2A] rounded-[16px] overflow-hidden transition-all duration-300 hover:border-ferous-accent hover:-translate-y-1"
             >
               <div className="relative aspect-[16/9] overflow-hidden">
                 <Image
@@ -109,15 +109,15 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 />
               </div>
               <div className="p-5">
-                <span className="inline-block text-[11px] font-semibold text-slam-accent uppercase tracking-[0.1em] mb-2">
+                <span className="inline-block text-[11px] font-semibold text-ferous-accent uppercase tracking-[0.1em] mb-2">
                   {relatedPost.category}
                 </span>
-                <h3 className="text-white text-[17px] font-bold leading-[1.4] mb-3 group-hover:text-slam-accent transition-colors line-clamp-2">
+                <h3 className="text-white text-[17px] font-bold leading-[1.4] mb-3 group-hover:text-ferous-accent transition-colors line-clamp-2">
                   {relatedPost.title}
                 </h3>
-                <div className="text-slam-muted text-[12px] flex items-center gap-3 mt-2">
+                <div className="text-ferous-muted text-[12px] flex items-center gap-3 mt-2">
                   <span>{relatedPost.date}</span>
-                  <span className="w-1 h-1 rounded-full bg-slam-border" />
+                  <span className="w-1 h-1 rounded-full bg-ferous-border" />
                   <span>{relatedPost.readTime}</span>
                 </div>
               </div>
