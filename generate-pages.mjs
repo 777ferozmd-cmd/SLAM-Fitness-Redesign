@@ -8,12 +8,7 @@ const routes = [
   { path: '/services/functional-training', name: 'Functional Training' },
   { path: '/services/bootcamp', name: 'Fitness Bootcamp' },
   { path: '/services/body-transformation', name: 'Body Transformation' },
-  { path: '/trainers', name: 'Meet the Trainers' },
-  { path: '/transformations', name: 'Transformation Gallery' },
   { path: '/pricing', name: 'Membership & Pricing' },
-  { path: '/blog', name: 'Blog Index' },
-  { path: '/blog/[slug]', name: 'Blog Post' },
-  { path: '/locations', name: 'Store Locator' },
   { path: '/franchise', name: 'Franchise Opportunity' },
   { path: '/contact', name: 'Contact' },
 ];

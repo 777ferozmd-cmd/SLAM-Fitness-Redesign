@@ -5,7 +5,6 @@ import WhyFerous from "@/components/sections/WhyFerous";
 import TransformationTeaser from "@/components/sections/TransformationTeaser";
 import TrainerSpotlight from "@/components/sections/TrainerSpotlight";
 import BookingCTA from "@/components/sections/BookingCTA";
-import BlogPreview from "@/components/sections/BlogPreview";
 import Button from "@/components/ui/Button";
 
 export default function Home() {
@@ -18,7 +17,6 @@ export default function Home() {
       <TransformationTeaser />
       <TrainerSpotlight />
       <BookingCTA />
-      <BlogPreview />
       
       {/* Section 9: Franchise Strip */}
       <section className="w-full bg-ferous-section border-y border-ferous-border py-12 px-6">

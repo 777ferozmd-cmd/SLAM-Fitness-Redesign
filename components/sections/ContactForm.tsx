@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Loader2, CheckCircle2 } from "lucide-react";
+import { Loader2, CheckCircle2, ChevronDown } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,6 +10,7 @@ export default function ContactForm() {
     phone: "",
     email: "",
     goal: "Weight Loss",
+    location: "Kilpauk (HQ)",
     message: "",
   });
 
@@ -109,21 +110,44 @@ export default function ContactForm() {
           {/* Goal */}
           <div className="flex flex-col gap-2">
             <label htmlFor="goal" className="text-sm font-bold text-white uppercase tracking-wider">Primary Goal *</label>
-            <select
-              id="goal"
-              name="goal"
-              required
-              value={formData.goal}
-              onChange={handleChange}
-              className="bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-ferous-accent focus:ring-1 focus:ring-ferous-accent transition-colors appearance-none"
-            >
-              <option value="Weight Loss">Weight Loss</option>
-              <option value="Weight Gain">Weight Gain</option>
-              <option value="Functional Training">Functional Training</option>
-              <option value="Bootcamp">Bootcamp</option>
-              <option value="Body Transformation">Body Transformation</option>
-              <option value="Not Sure">Not Sure</option>
-            </select>
+            <div className="relative">
+              <select
+                id="goal"
+                name="goal"
+                required
+                value={formData.goal}
+                onChange={handleChange}
+                className="w-full bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-ferous-accent focus:ring-1 focus:ring-ferous-accent transition-colors appearance-none"
+              >
+                <option value="Weight Loss">Weight Loss</option>
+                <option value="Weight Gain">Weight Gain</option>
+                <option value="Functional Training">Functional Training</option>
+                <option value="Bootcamp">Bootcamp</option>
+                <option value="Body Transformation">Body Transformation</option>
+                <option value="Not Sure">Not Sure</option>
+              </select>
+              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ferous-muted pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Location Selection */}
+          <div className="flex flex-col gap-2">
+            <label htmlFor="location" className="text-sm font-bold text-white uppercase tracking-wider">Choose your location *</label>
+            <div className="relative">
+              <select
+                id="location"
+                name="location"
+                required
+                value={formData.location}
+                onChange={handleChange}
+                className="w-full bg-[#1A1A1A] border border-[#2A2A2A] text-white px-4 py-[14px] rounded-lg focus:outline-none focus:border-ferous-accent focus:ring-1 focus:ring-ferous-accent transition-colors appearance-none"
+              >
+                <option value="Kilpauk (HQ)">Kilpauk (HQ)</option>
+                <option value="Nungambakkam">Nungambakkam</option>
+                <option value="Adyar">Adyar</option>
+              </select>
+              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ferous-muted pointer-events-none" />
+            </div>
           </div>
 
           {/* Message */}

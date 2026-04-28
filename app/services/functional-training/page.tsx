@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Activity, Zap, Flame, Dumbbell, ShieldCheck, HeartPulse, CheckCircle2 } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
 import ServiceHero from "@/components/sections/ServiceHero";
+import ServiceTransformations from "@/components/sections/ServiceTransformations";
 import Card from "@/components/ui/Card";
 
 export const metadata: Metadata = {
@@ -98,7 +99,7 @@ export default function FunctionalTrainingPage() {
         </div>
       </section>
 
-      {/* 4. Who It's For */}
+      {/* 4. Who Is This For? */}
       <section className="py-20 md:py-32 bg-ferous-bg">
         <div className="max-w-[1200px] mx-auto px-6 md:px-20">
           <div className="text-center mb-16">
@@ -110,29 +111,44 @@ export default function FunctionalTrainingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { 
+                icon: Dumbbell,
                 title: "Athletes & Competitors", 
                 desc: "Looking to improve agility, explosiveness, and sport-specific performance." 
               },
               { 
+                icon: Activity,
                 title: "Desk Workers", 
                 desc: "Need to reverse poor posture, relieve back pain, and regain natural mobility." 
               },
               { 
+                icon: Zap,
                 title: "Fitness Enthusiasts", 
                 desc: "Bored of traditional bodybuilding splits and want a dynamic, challenging routine." 
               }
             ].map((item, idx) => (
-              <Card key={idx} className="bg-ferous-section p-8 relative overflow-hidden group border-none">
-                <div className="absolute top-0 left-0 w-1 h-full bg-ferous-accent transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-300 z-10" />
-                <h3 className="text-2xl font-bold text-white mb-4 pl-4 relative z-10">{item.title}</h3>
-                <p className="text-ferous-body text-[16px] leading-relaxed pl-4 relative z-10">{item.desc}</p>
+              <Card key={idx} className="p-8 flex flex-col items-start !border-ferous-border">
+                <div className="w-14 h-14 rounded-full bg-ferous-accent/10 flex items-center justify-center mb-6">
+                  <item.icon className="w-7 h-7 text-ferous-accent" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
+                <p className="text-ferous-body text-[16px] leading-relaxed">{item.desc}</p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5. CTA */}
+      {/* 5. Transformations */}
+      <ServiceTransformations 
+        title="Functional Fitness Success"
+        subtitle="BETTER MOVEMENT"
+        transformations={[
+          { id: 3, name: "Priya V.", time: "24 Weeks", category: "Total Recomp", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" },
+          { id: 5, name: "Sneha P.", time: "10 Weeks", category: "Toning", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" }
+        ]}
+      />
+
+      {/* 6. CTA */}
       <BookingCTA />
 
     </main>

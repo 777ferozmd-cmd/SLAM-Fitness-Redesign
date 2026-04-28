@@ -66,10 +66,6 @@ export const NAV_LINKS = [
     ]
   },
   { label: "Pricing", href: "/pricing" },
-  { label: "Trainers", href: "/trainers" },
-  { label: "Transformations", href: "/transformations" },
-  { label: "Blog", href: "/blog" },
-  { label: "Locations", href: "/locations" },
   { label: "Franchise", href: "/franchise" },
   { label: "Contact", href: "/contact" },
 ]

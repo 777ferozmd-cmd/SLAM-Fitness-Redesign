@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { CheckCircle2, Quote } from "lucide-react";
+import { CheckCircle2, Quote, Users, Zap, Target } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
-import { pricingPlans } from "@/lib/constants";
 import ServiceHero from "@/components/sections/ServiceHero";
+import ServiceTransformations from "@/components/sections/ServiceTransformations";
 import Card from "@/components/ui/Card";
 
 export const metadata: Metadata = {
@@ -129,7 +129,56 @@ export default function BootcampPage() {
         </div>
       </section>
 
-      {/* 5. CTA */}
+      {/* 5. Who Is This For? */}
+      <section className="py-20 md:py-32 bg-ferous-section">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-20">
+          <div className="text-center mb-16">
+            <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-white leading-tight">
+              Who Is This For?
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { 
+                icon: Users,
+                title: "Social Butterflies", 
+                desc: "Those who thrive in a high-energy group environment and love the motivation of training with others." 
+              },
+              { 
+                icon: Zap,
+                title: "Energy Seekers", 
+                desc: "Anyone looking to break the monotony of solo gym sessions with fast-paced, music-driven circuits." 
+              },
+              { 
+                icon: Target,
+                title: "Challenge Hunters", 
+                desc: "People who enjoy being pushed by their peers and thrive on a bit of healthy community competition." 
+              }
+            ].map((item, idx) => (
+              <Card key={idx} className="p-8 flex flex-col items-start !border-ferous-border">
+                <div className="w-14 h-14 rounded-full bg-ferous-accent/10 flex items-center justify-center mb-6">
+                  <item.icon className="w-7 h-7 text-ferous-accent" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
+                <p className="text-ferous-body text-[16px] leading-relaxed">{item.desc}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Transformations */}
+      <ServiceTransformations 
+        title="Bootcamp Results"
+        subtitle="THE ENERGY PAYS OFF"
+        transformations={[
+          { id: 5, name: "Sneha P.", time: "10 Weeks", category: "Toning", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" },
+          { id: 1, name: "Rahul S.", time: "12 Weeks", category: "Fat Loss", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" }
+        ]}
+      />
+
+      {/* 6. CTA */}
       <BookingCTA />
 
     </main>

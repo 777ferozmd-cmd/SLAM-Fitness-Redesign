@@ -56,7 +56,7 @@ export default function TrainerSpotlight() {
           </div>
           
           <motion.div variants={itemVariants} className="hidden md:block">
-            <Button variant="text" href="/trainers">
+            <Button variant="text" href="/about#trainers">
               Meet the Full Team
             </Button>
           </motion.div>
@@ -105,7 +105,7 @@ export default function TrainerSpotlight() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <Button variant="text" href="/trainers">
+          <Button variant="text" href="/about#trainers">
             Meet the Full Team
           </Button>
         </motion.div>

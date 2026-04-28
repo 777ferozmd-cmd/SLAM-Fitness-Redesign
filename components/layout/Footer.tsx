@@ -51,7 +51,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-[#B0B0B0] hover:text-ferous-accent transition-colors inline-block"
                   >
-                    {link.label === "Locations" ? "Store Locator" : link.label}
+                    {link.label}
                   </Link>
                 </li>
               ))}

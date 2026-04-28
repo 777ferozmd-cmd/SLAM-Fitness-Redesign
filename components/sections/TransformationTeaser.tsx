@@ -56,7 +56,7 @@ export default function TransformationTeaser() {
           </div>
           
           <motion.div variants={itemVariants} className="hidden md:block">
-            <Button variant="text" href="/transformations">
+            <Button variant="text" href="/services/body-transformation">
               See All Transformations
             </Button>
           </motion.div>

@@ -2,8 +2,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { Dumbbell, Target, Flame, Activity, Users, ShieldCheck, HeartPulse } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
+import ServiceTransformations from "@/components/sections/ServiceTransformations";
 import Card from "@/components/ui/Card";
-import { FAQAccordion, ProgramTabs } from "./ClientComponents";
+import { ProgramTabs } from "./ClientComponents";
 
 export const metadata: Metadata = {
   title: "Weight Loss & Weight Gain Gym in Chennai — Ferous",
@@ -172,19 +173,20 @@ export default function WeightLossGainPage() {
         </div>
       </section>
 
-      {/* 6. FAQ Accordion */}
-      <section className="py-20 md:py-32 bg-ferous-bg">
-        <div className="max-w-[1200px] mx-auto px-6 md:px-20">
-          <div className="text-center mb-16">
-            <h2 className="text-[clamp(36px,5vw,52px)] font-bold text-white leading-tight">
-              Frequently Asked Questions
-            </h2>
-          </div>
-          <FAQAccordion />
-        </div>
-      </section>
 
-      {/* 7. Booking CTA */}
+      {/* 7. Transformations */}
+      <ServiceTransformations 
+        title="Weight Management Results"
+        subtitle="THE PROOF IS IN THE WORK"
+        transformations={[
+          { id: 1, name: "Rahul S.", time: "12 Weeks", category: "Fat Loss", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" },
+          { id: 2, name: "Karthik M.", time: "16 Weeks", category: "Muscle Gain", beforeImg: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" },
+          { id: 4, name: "Arjun K.", time: "8 Weeks", category: "Fat Loss", beforeImg: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" },
+          { id: 6, name: "Vikram D.", time: "20 Weeks", category: "Mass Building", beforeImg: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" }
+        ]}
+      />
+
+      {/* 8. Booking CTA */}
       <BookingCTA />
 
     </main>
