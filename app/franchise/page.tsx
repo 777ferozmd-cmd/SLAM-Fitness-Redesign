@@ -1,8 +1,19 @@
+import { Metadata } from "next";
 import { CONTACT } from "@/lib/constants";
 import { TrendingUp, Users, ShieldCheck, Target, Phone, Mail } from "lucide-react";
 import FranchiseForm from "@/components/forms/FranchiseForm";
 import Image from "next/image";
 import Card from "@/components/ui/Card";
+
+export const metadata: Metadata = {
+  title: "Own a Ferous Franchise — Gym Franchise Opportunity in India",
+  description: "Join India's premium gym franchise. Low risk, high returns, full support. Own a Ferous Fitness Studio in your city.",
+  openGraph: {
+    title: "Own a Ferous Fitness Franchise",
+    description: "Join India's premium gym franchise network. Proven model, full support, and strong ROI potential.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+};
 
 export default function FranchisePage() {
   return (
@@ -16,6 +27,8 @@ export default function FranchisePage() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>

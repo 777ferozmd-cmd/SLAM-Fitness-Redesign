@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "About Us — Ferous Fitness Studio",
   description:
     "Learn about the Ferous Fitness story, our mission, vision, and the expert coaches behind every transformation.",
+  openGraph: {
+    title: "About Ferous Fitness Studio",
+    description: "Our mission, vision, values, and the certified coaches who drive every transformation in Chennai.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 const TRAINERS = [

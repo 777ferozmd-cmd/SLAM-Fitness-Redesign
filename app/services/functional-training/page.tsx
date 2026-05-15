@@ -9,6 +9,11 @@ import Card from "@/components/ui/Card";
 export const metadata: Metadata = {
   title: "Functional Fitness Training in Chennai — Ferous",
   description: "Improve real-world strength, mobility, and endurance with Ferous's functional training programs. Move better and perform harder.",
+  openGraph: {
+    title: "Functional Fitness Training — Ferous Fitness Studio",
+    description: "Multi-joint, real-world training programs to improve strength, mobility, and endurance in Chennai.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function FunctionalTrainingPage() {
@@ -143,8 +148,8 @@ export default function FunctionalTrainingPage() {
         title="Functional Fitness Success"
         subtitle="BETTER MOVEMENT"
         transformations={[
-          { id: 3, name: "Priya V.", time: "24 Weeks", category: "Total Recomp", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" },
-          { id: 5, name: "Sneha P.", time: "10 Weeks", category: "Toning", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" }
+          { id: 3, name: "Priya V.", time: "24 Weeks", category: "Total Recomp", beforeImg: "/transformations/Priya V before.jpg", afterImg: "/transformations/Priya V after.jpg" },
+          { id: 5, name: "Sneha P.", time: "10 Weeks", category: "Toning", beforeImg: "/transformations/Sneha P before.jpg", afterImg: "/transformations/Sneha P after.jpg" }
         ]}
       />
 

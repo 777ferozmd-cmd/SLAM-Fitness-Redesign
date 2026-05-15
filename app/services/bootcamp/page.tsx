@@ -9,6 +9,11 @@ import Card from "@/components/ui/Card";
 export const metadata: Metadata = {
   title: "Fitness Bootcamp in Chennai — Ferous",
   description: "High-energy group training sessions for lasting results and healthier habits. Join the Ferous Bootcamp community.",
+  openGraph: {
+    title: "Fitness Bootcamp — Ferous Fitness Studio",
+    description: "High-energy group training with HIIT, functional strength, and cardio conditioning. Join the community.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function BootcampPage() {
@@ -173,8 +178,8 @@ export default function BootcampPage() {
         title="Bootcamp Results"
         subtitle="THE ENERGY PAYS OFF"
         transformations={[
-          { id: 5, name: "Sneha P.", time: "10 Weeks", category: "Toning", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" },
-          { id: 1, name: "Rahul S.", time: "12 Weeks", category: "Fat Loss", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" }
+          { id: 5, name: "Sneha P.", time: "10 Weeks", category: "Toning", beforeImg: "/transformations/Sneha P before.jpg", afterImg: "/transformations/Sneha P after.jpg" },
+          { id: 1, name: "Rahul S.", time: "12 Weeks", category: "Fat Loss", beforeImg: "/transformations/Rahul S Before.jpg", afterImg: "/transformations/Rahul S After.jpg" }
         ]}
       />
 

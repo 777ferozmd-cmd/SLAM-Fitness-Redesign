@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,9 +27,27 @@ const itemVariants = {
 };
 
 const transformations = [
-  { name: "Rahul S.", program: "Body Transformation", time: "12 Weeks" },
-  { name: "Priya M.", program: "Weight Loss", time: "8 Weeks" },
-  { name: "Vikram K.", program: "Muscle Gain", time: "16 Weeks" }
+  { 
+    name: "Rahul S.", 
+    program: "Body Transformation", 
+    time: "12 Weeks",
+    beforeImg: "/transformations/Rahul S Before.jpg",
+    afterImg: "/transformations/Rahul S After.jpg"
+  },
+  { 
+    name: "Priya M.", 
+    program: "Weight Loss", 
+    time: "8 Weeks",
+    beforeImg: "/transformations/Priya M before.jpg",
+    afterImg: "/transformations/Priya M after.jpg"
+  },
+  { 
+    name: "Vikram K.", 
+    program: "Muscle Gain", 
+    time: "16 Weeks",
+    beforeImg: "/transformations/Vikram  K before.jpg",
+    afterImg: "/transformations/Vikram k after.jpg"
+  }
 ];
 
 export default function TransformationTeaser() {
@@ -76,25 +96,27 @@ export default function TransformationTeaser() {
               variants={itemVariants}
               className="snap-center shrink-0 w-[85vw] md:w-auto"
             >
-              <Card className="p-5 h-full">
-              {/* Before / After Placeholder */}
-              <div className="flex gap-2 h-[200px] mb-6">
-                <div className="flex-1 bg-[#2A2A2A] rounded-[8px] flex items-center justify-center relative overflow-hidden">
-                  <span className="absolute bottom-3 left-3 text-[11px] uppercase font-bold text-white/50 tracking-wider">Before</span>
-                </div>
-                <div className="flex-1 bg-[#1A1A1A] rounded-[8px] flex items-center justify-center relative overflow-hidden">
-                  <span className="absolute bottom-3 left-3 text-[11px] uppercase font-bold text-ferous-accent tracking-wider">After</span>
-                </div>
-              </div>
+              <Card className="!p-0 border-ferous-border overflow-hidden group h-full">
+                {/* Before After Slider */}
+                <BeforeAfterSlider 
+                  beforeImg={t.beforeImg}
+                  afterImg={t.afterImg}
+                  beforeAlt={`${t.name} Before`}
+                  afterAlt={`${t.name} After`}
+                  aspectRatio="5/7"
+                  className="w-full"
+                />
 
-              {/* Details */}
-              <div>
-                <h3 className="text-xl font-bold text-white mb-1">{t.name}</h3>
-                <p className="text-sm font-semibold text-ferous-accent mb-3">{t.program}</p>
-                <div className="inline-block px-3 py-1 bg-[#2A2A2A] rounded-full">
-                  <span className="text-[11px] text-white/80 font-bold uppercase tracking-wider">{t.time}</span>
+                {/* Details */}
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-1">
+                    <h3 className="text-xl font-bold text-white">{t.name}</h3>
+                    <span className="text-ferous-accent font-bold text-sm">{t.time}</span>
+                  </div>
+                  <p className="text-[#6B6B6B] text-[13px] font-medium uppercase tracking-wider">
+                    {t.program}
+                  </p>
                 </div>
-              </div>
               </Card>
             </motion.div>
           ))}

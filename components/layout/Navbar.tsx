@@ -77,6 +77,8 @@ export default function Navbar() {
   return (
     <>
       <nav
+        role="navigation"
+        aria-label="Main navigation"
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ease-in-out bg-[rgba(13,13,13,0.92)] backdrop-blur-[16px] border-b border-ferous-border ${
           isScrolled
             ? "py-4"
@@ -101,7 +103,7 @@ export default function Navbar() {
               <div key={link.label} className="relative group">
                 <Link
                   href={link.href}
-                  className={`nav-link flex items-center gap-1 hover:text-ferous-accent transition-colors duration-200 ${
+                  className={`nav-link flex items-center gap-1 min-h-[48px] hover:text-ferous-accent transition-colors duration-200 ${
                     pathname === link.href || (link.subLinks && link.subLinks.some(sub => pathname === sub.href))
                       ? "text-ferous-accent"
                       : "text-ferous-text"
@@ -142,9 +144,11 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="lg:hidden z-[201] text-ferous-text hover:text-ferous-accent transition-colors"
+            className="lg:hidden z-[201] text-ferous-text hover:text-ferous-accent transition-colors min-h-[48px] min-w-[48px] flex items-center justify-center"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle Menu"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
           </button>
@@ -155,6 +159,9 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-menu"
+            role="dialog"
+            aria-label="Mobile navigation menu"
             className="fixed inset-0 bg-ferous-bg z-[200] flex flex-col pt-32 px-6 pb-8 overflow-y-auto"
             variants={mobileMenuVariants}
             initial="hidden"

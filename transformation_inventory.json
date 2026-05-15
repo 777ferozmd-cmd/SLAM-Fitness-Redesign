@@ -1,0 +1,160 @@
+{
+  "transformation_records": [
+    {
+      "file_path": "components/sections/TransformationTeaser.tsx",
+      "section_name": "TransformationTeaser",
+      "transformations": [
+        {
+          "id": "teaser_1",
+          "name": "Rahul S.",
+          "program": "Body Transformation",
+          "time": "12 Weeks",
+          "beforeImg": "/transformations/Rahul S Before.jpg",
+          "afterImg": "/transformations/Rahul S After.jpg"
+        },
+        {
+          "id": "teaser_2",
+          "name": "Priya M.",
+          "program": "Weight Loss",
+          "time": "8 Weeks",
+          "beforeImg": "/transformations/Priya M before.jpg",
+          "afterImg": "/transformations/Priya M after.jpg"
+        },
+        {
+          "id": "teaser_3",
+          "name": "Vikram K.",
+          "program": "Muscle Gain",
+          "time": "16 Weeks",
+          "beforeImg": "/transformations/Vikram  K before.jpg",
+          "afterImg": "/transformations/Vikram k after.jpg"
+        }
+      ]
+    },
+    {
+      "file_path": "components/sections/Transformations.tsx",
+      "section_name": "Transformations",
+      "transformations": [
+        {
+          "id": "trans_1",
+          "name": "Rahul M.",
+          "duration": "6 Months",
+          "achievement": "Lost 15kg & built lean muscle",
+          "beforeImage": "/transformations/Rahul M  before.jpg",
+          "afterImage": "/transformations/Rahul M after.jpg"
+        },
+        {
+          "id": "trans_2",
+          "name": "Sneha K.",
+          "duration": "4 Months",
+          "achievement": "Gained strength & confidence",
+          "beforeImage": "/transformations/Sneha K before.jpg",
+          "afterImage": "/transformations/Sneha K after.jpg"
+        }
+      ]
+    },
+    {
+      "file_path": "app/services/weight-loss-weight-gain/page.tsx",
+      "section_name": "ServiceTransformations",
+      "transformations": [
+        {
+          "id": "weight_1",
+          "name": "Rahul S.",
+          "time": "12 Weeks",
+          "category": "Fat Loss",
+          "beforeImg": "/transformations/Rahul S Before.jpg",
+          "afterImg": "/transformations/Rahul S After.jpg"
+        },
+        {
+          "id": "weight_2",
+          "name": "Karthik M.",
+          "time": "16 Weeks",
+          "category": "Muscle Gain",
+          "beforeImg": "/transformations/Karthik M before.jpg",
+          "afterImg": "/transformations/Karthik M after.jpg"
+        },
+        {
+          "id": "weight_3",
+          "name": "Arjun K.",
+          "time": "8 Weeks",
+          "category": "Fat Loss",
+          "beforeImg": "/transformations/Arjun k before.jpg",
+          "afterImg": "/transformations/Arjun k after.jpg"
+        },
+        {
+          "id": "weight_4",
+          "name": "Vikram D.",
+          "time": "20 Weeks",
+          "category": "Mass Building",
+          "beforeImg": "/transformations/Vikram D before.jpg",
+          "afterImg": "/transformations/Vikram D after.jpg"
+        }
+      ]
+    },
+    {
+      "file_path": "app/services/functional-training/page.tsx",
+      "section_name": "ServiceTransformations",
+      "transformations": [
+        {
+          "id": "func_1",
+          "name": "Priya V.",
+          "time": "24 Weeks",
+          "category": "Total Recomp",
+          "beforeImg": "/transformations/Priya V before.jpg",
+          "afterImg": "/transformations/Priya V after.jpg"
+        },
+        {
+          "id": "func_2",
+          "name": "Sneha P.",
+          "time": "10 Weeks",
+          "category": "Toning",
+          "beforeImg": "/transformations/Sneha P before.jpg",
+          "afterImg": "/transformations/Sneha P after.jpg"
+        }
+      ]
+    },
+    {
+      "file_path": "app/services/bootcamp/page.tsx",
+      "section_name": "ServiceTransformations",
+      "transformations": [
+        {
+          "id": "boot_1",
+          "name": "Sneha P.",
+          "time": "10 Weeks",
+          "category": "Toning",
+          "beforeImg": "/transformations/Sneha P before.jpg",
+          "afterImg": "/transformations/Sneha P after.jpg"
+        },
+        {
+          "id": "boot_2",
+          "name": "Rahul S.",
+          "time": "12 Weeks",
+          "category": "Fat Loss",
+          "beforeImg": "/transformations/Rahul S Before.jpg",
+          "afterImg": "/transformations/Rahul S After.jpg"
+        }
+      ]
+    },
+    {
+      "file_path": "app/services/body-transformation/page.tsx",
+      "section_name": "ServiceTransformations",
+      "transformations": [
+        {
+          "id": "body_1",
+          "name": "Priya V.",
+          "time": "24 Weeks",
+          "category": "Total Recomp",
+          "beforeImg": "/transformations/Priya V before.jpg",
+          "afterImg": "/transformations/Priya V after.jpg"
+        },
+        {
+          "id": "body_2",
+          "name": "Karthik M.",
+          "time": "16 Weeks",
+          "category": "Muscle Gain",
+          "beforeImg": "/transformations/Karthik M before.jpg",
+          "afterImg": "/transformations/Karthik M after.jpg"
+        }
+      ]
+    }
+  ]
+}

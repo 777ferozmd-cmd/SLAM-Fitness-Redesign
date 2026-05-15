@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Card from "@/components/ui/Card";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 
 const CATEGORIES = ["All", "Weight Loss", "Weight Gain", "Body Transformation", "Bootcamp"];
 
@@ -62,31 +63,15 @@ export function TransformationGallery() {
               className="h-full"
             >
               <Card className="group relative h-full flex flex-col !p-0 border-[#2A2A2A]">
-              {/* Image Placeholder (split before/after visually) */}
-              <div className="relative h-[300px] w-full flex">
-                <div className="w-1/2 h-full relative border-r border-white/20">
-                  <Image
-                    src={card.beforeImg}
-                    alt={`${card.name} Before`}
-                    fill
-                    className="object-cover opacity-60 grayscale"
-                  />
-                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded text-white text-[10px] font-bold tracking-wider uppercase">
-                    Before
-                  </div>
-                </div>
-                <div className="w-1/2 h-full relative">
-                  <Image
-                    src={card.afterImg}
-                    alt={`${card.name} After`}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute top-4 right-4 bg-ferous-accent px-3 py-1 rounded text-white text-[10px] font-bold tracking-wider uppercase">
-                    After
-                  </div>
-                </div>
-              </div>
+              {/* Before After Slider */}
+              <BeforeAfterSlider 
+                beforeImg={card.beforeImg}
+                afterImg={card.afterImg}
+                beforeAlt={`${card.name} Before`}
+                afterAlt={`${card.name} After`}
+                aspectRatio="4/3"
+                className="w-full"
+              />
               
               {/* Card Content */}
               <div className="p-6">

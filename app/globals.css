@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-/* Note: use next/font/google in layout.tsx instead of @import in production */
+/* ─────────────────────────────────────────────────────────────────────────────
+   NOTE: Fonts are loaded via next/font/google in layout.tsx (display:swap).
+   The @import below is intentionally removed to prevent double-loading Poppins
+   which added ~30KB of redundant network overhead.
+──────────────────────────────────────────────────────────────────────────────── */
 
 @tailwind base;
 @tailwind components;
@@ -24,6 +27,9 @@
 
   /* Type */
   --font-primary: 'Poppins', sans-serif;
+
+  /* Touch target minimum (WCAG 2.5.5) */
+  --touch-target-min: 48px;
 }
 
 *, *::before, *::after {
@@ -34,25 +40,30 @@
 
 html {
   scroll-behavior: smooth;
+  /* Reserve space at the top so anchor links clear the fixed navbar (≈80px) */
+  scroll-padding-top: 88px;
 }
 
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text);
   font-family: var(--font-primary);
-  font-size: 16px;
+  /* Fluid base size: 15px on small screens, 16px on desktop */
+  font-size: clamp(15px, 1vw + 12px, 16px);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  /* Prevent horizontal overflow at any breakpoint */
+  overflow-x: hidden;
 }
 
-/* Focus visible ring for accessibility */
+/* Focus visible ring for accessibility / keyboard navigation */
 *:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* Scrollbar (optional dark styling) */
+/* Scrollbar (dark styling) */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--color-bg-primary); }
 ::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 3px; }
@@ -74,6 +85,10 @@ body {
 .section-dark    { background: var(--color-bg-primary); }
 .section-darker  { background: var(--color-bg-section); }
 
+/* ── Responsive breakpoints ──────────────────────────────────────────────────── */
+@media (max-width: 1440px) {
+  :root { --container-pad-x: 64px; }
+}
 @media (max-width: 1024px) {
   :root {
     --container-pad-x: 48px;
@@ -93,6 +108,44 @@ body {
   }
 }
 
+/* ── Utility: hide scrollbar (used in carousels) ─────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar {
+  -ms-overflow-style: none;   /* IE / Edge */
+  scrollbar-width: none;      /* Firefox */
+}
+
+/* ── Responsive video container (16:9 aspect ratio) ─────────────────────────── */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.video-responsive iframe,
+.video-responsive video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+/* ── Aspect-ratio image containers (CLS prevention) ─────────────────────────── */
+.aspect-hero   { aspect-ratio: 16 / 9; }
+.aspect-card   { aspect-ratio: 5 / 7; }
+.aspect-square { aspect-ratio: 1 / 1; }
+.aspect-wide   { aspect-ratio: 3 / 2; }
+
+/* ── Touch target helpers ────────────────────────────────────────────────────── */
+/* Ensures interactive elements meet 48×48px minimum for touch devices */
+.touch-target {
+  min-height: var(--touch-target-min);
+  min-width:  var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @layer components {
   /* Primary CTA Button */
   .btn-primary {
@@ -107,6 +160,11 @@ body {
     text-transform: uppercase;
     border: none;
     cursor: pointer;
+    /* Meet 48px touch target height */
+    min-height: var(--touch-target-min);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
   }
   .btn-primary:hover {
@@ -129,6 +187,10 @@ body {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     border: 1.5px solid #FFFFFF;
+    min-height: var(--touch-target-min);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: background 200ms ease, border-color 200ms ease;
   }
   .btn-ghost:hover {
@@ -146,6 +208,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    min-height: var(--touch-target-min);
     transition: color 200ms ease;
   }
   .btn-text:hover { color: var(--color-accent); }
@@ -165,6 +228,7 @@ body {
     justify-content: center;
     box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     cursor: pointer;
+    /* Touch-friendly: 56px exceeds 48px minimum */
     animation: pulse 2.5s infinite;
   }
   @keyframes pulse {
@@ -172,3 +236,12 @@ body {
     50% { box-shadow: 0 4px 32px rgba(37,211,102,0.3); }
   }
 }
+
+/* ── Print styles ────────────────────────────────────────────────────────────── */
+@media print {
+  nav, footer, .whatsapp-btn, button { display: none !important; }
+  body { background: #fff; color: #000; font-size: 12pt; }
+  a { color: #000; text-decoration: underline; }
+  .container { max-width: 100%; padding: 0; }
+}
+

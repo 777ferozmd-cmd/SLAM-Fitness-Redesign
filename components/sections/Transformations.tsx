@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 
 export default function Transformations() {
   const transformations = [
@@ -12,16 +13,16 @@ export default function Transformations() {
       name: "Rahul M.",
       duration: "6 Months",
       achievement: "Lost 15kg & built lean muscle",
-      beforeImage: "https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?q=80&w=600&auto=format&fit=crop", // placeholder fat
-      afterImage: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop", // placeholder fit
+      beforeImage: "/transformations/Rahul M  before.jpg", // placeholder fat
+      afterImage: "/transformations/Rahul M after.jpg", // placeholder fit
     },
     {
       id: 2,
       name: "Sneha K.",
       duration: "4 Months",
       achievement: "Gained strength & confidence",
-      beforeImage: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=600&auto=format&fit=crop", // placeholder
-      afterImage: "https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=600&auto=format&fit=crop", // placeholder fit
+      beforeImage: "/transformations/Sneha K before.jpg", // placeholder
+      afterImage: "/transformations/Sneha K after.jpg", // placeholder fit
     }
   ];
 
@@ -81,40 +82,14 @@ export default function Transformations() {
               transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
               className="flex flex-col gap-6"
             >
-              {/* Image Split */}
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden flex bg-[#141414] group">
-                {/* Before Image */}
-                <div className="relative w-1/2 h-full border-r-4 border-ferous-bg filter grayscale-[50%] group-hover:grayscale-0 transition-all duration-500">
-                  <Image 
-                    src={t.beforeImage}
-                    alt={`${t.name} Before`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase text-white/80">
-                    Before
-                  </div>
-                </div>
-                {/* After Image */}
-                <div className="relative w-1/2 h-full">
-                  <Image 
-                    src={t.afterImage}
-                    alt={`${t.name} After`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                  <div className="absolute top-4 right-4 bg-ferous-accent px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase text-white shadow-lg">
-                    After
-                  </div>
-                </div>
-                
-                {/* VS Badge */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-ferous-bg border-2 border-[#2A2A2A] flex items-center justify-center shadow-xl z-10">
-                  <span className="text-white text-[10px] font-black italic">VS</span>
-                </div>
-              </div>
+              <BeforeAfterSlider
+                beforeImg={t.beforeImage}
+                afterImg={t.afterImage}
+                beforeAlt={`${t.name} Before`}
+                afterAlt={`${t.name} After`}
+                aspectRatio="5/7"
+                className="w-full"
+              />
 
               {/* Info */}
               <div className="flex flex-col">

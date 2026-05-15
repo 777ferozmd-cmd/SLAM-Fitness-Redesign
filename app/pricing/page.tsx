@@ -9,6 +9,11 @@ import SpotlightCard from "@/components/ui/SpotlightCard";
 export const metadata: Metadata = {
   title: "Gym Membership Pricing in Chennai — Ferous",
   description: "Flexible gym membership plans in Chennai for every goal and budget. Start with a free trial.",
+  openGraph: {
+    title: "Gym Membership Pricing — Ferous Fitness Studio",
+    description: "Compare Starter, Pro, and Elite membership plans. Flexible options for every goal and budget in Chennai.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function PricingPage() {
@@ -25,6 +30,8 @@ export default function PricingPage() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/60" />

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 
 interface ServiceHeroProps {
   title: React.ReactNode;
@@ -18,6 +19,8 @@ export default function ServiceHero({ title, subtitle, imageSrc, imageAlt }: Ser
           fill
           className="object-cover"
           priority
+          fetchPriority="high"
+          sizes="100vw"
         />
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60" />

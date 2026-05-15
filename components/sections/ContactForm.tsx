@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Loader2, CheckCircle2, ChevronDown } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -20,18 +21,36 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus("loading");
 
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: formData.name,
+            phone: formData.phone,
+            email: formData.email,
+            goal: formData.goal,
+            location: formData.location,
+            message: formData.message,
+          }
+        ]);
+
+      if (error) throw error;
+
       setStatus("success");
       setFormData({
         name: "",
         phone: "",
         email: "",
         goal: "Weight Loss",
+        location: "Kilpauk (HQ)",
         message: "",
       });
       setTimeout(() => setStatus("idle"), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus("error");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -68,6 +87,7 @@ export default function ContactForm() {
                 id="name"
                 name="name"
                 required
+                autoComplete="name"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="John Doe"
@@ -84,6 +104,8 @@ export default function ContactForm() {
                 name="phone"
                 required
                 minLength={10}
+                autoComplete="tel"
+                inputMode="tel"
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+91 98765 43210"
@@ -100,6 +122,8 @@ export default function ContactForm() {
               id="email"
               name="email"
               required
+              autoComplete="email"
+              inputMode="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="john@example.com"

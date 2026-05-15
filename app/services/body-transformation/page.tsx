@@ -1,15 +1,21 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight, Target, Activity, ShieldCheck } from "lucide-react";
+import { CheckCircle2, ArrowRight, Target, Activity, ShieldCheck, ClipboardList, Dumbbell, Trophy } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
 import ServiceHero from "@/components/sections/ServiceHero";
 import ServiceTransformations from "@/components/sections/ServiceTransformations";
 import Card from "@/components/ui/Card";
+import SpotlightCard from "@/components/ui/SpotlightCard";
 
 export const metadata: Metadata = {
   title: "Body Transformation Programs in Chennai — Ferous",
   description: "Complete physique transformation through structured training and nutrition. Your best body starts here.",
+  openGraph: {
+    title: "Body Transformation Programs — Ferous Fitness Studio",
+    description: "Complete physique overhaul through structured personal training and precision nutrition coaching in Chennai.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function BodyTransformationPage() {
@@ -79,33 +85,47 @@ export default function BodyTransformationPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
             {/* Desktop Connector Line */}
-            <div className="hidden md:block absolute top-[40px] left-[15%] right-[15%] h-[1px] bg-ferous-border z-0" />
-            
+            <div className="hidden md:block absolute top-[96px] left-[15%] right-[15%] h-[1px] bg-ferous-border z-0" />
+
             {[
               { 
                 phase: "Phase 1", 
+                icon: ClipboardList,
                 title: "Assessment & Baseline", 
                 desc: "We analyze your current body composition, metabolic rate, and lifestyle habits to create a precise, data-driven starting point." 
               },
               { 
                 phase: "Phase 2", 
+                icon: Dumbbell,
                 title: "Training + Nutrition", 
                 desc: "Execution begins. You'll follow a customized progressive overload program paired with strict, sustainable nutritional macros." 
               },
               { 
                 phase: "Phase 3", 
+                icon: Trophy,
                 title: "Results & Maintenance", 
                 desc: "As you hit your goal weight and physique, we transition your plan to ensure long-term maintenance and prevent rebounds." 
               }
             ].map((step, idx) => (
-              <div key={idx} className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-[80px] h-[80px] rounded-full bg-ferous-card border-2 border-ferous-accent flex items-center justify-center text-xl font-bold text-white mb-6 uppercase tracking-wider">
+              <div key={idx} className="relative z-10 flex flex-col items-center text-center group">
+                {/* Phase Label - Outside */}
+                <span className="text-ferous-accent text-[12px] font-bold uppercase tracking-[0.2em] mb-4 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
                   {step.phase}
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
-                <p className="text-ferous-body text-[16px] leading-relaxed">{step.desc}</p>
+                </span>
+
+                {/* Circular Phase Logo */}
+                <SpotlightCard 
+                  className="w-[120px] h-[120px] rounded-full bg-ferous-card border border-ferous-border flex items-center justify-center mb-8 relative transition-all duration-500 group-hover:border-ferous-accent group-hover:scale-105 overflow-hidden"
+                  spotlightColor="rgba(255, 26, 26, 0.2)"
+                >
+                  <div className="absolute inset-0 bg-ferous-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <step.icon className="w-10 h-10 text-ferous-accent relative z-10 transition-transform duration-500 group-hover:scale-110" />
+                </SpotlightCard>
+
+                <h3 className="text-2xl font-bold text-white mb-4 transition-colors duration-300 group-hover:text-ferous-accent">{step.title}</h3>
+                <p className="text-ferous-body text-[16px] leading-relaxed max-w-[300px]">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -156,8 +176,8 @@ export default function BodyTransformationPage() {
         title="Dramatic Body Overhauls"
         subtitle="THE SUCCESS STORIES"
         transformations={[
-          { id: 3, name: "Priya V.", time: "24 Weeks", category: "Total Recomp", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" },
-          { id: 2, name: "Karthik M.", time: "16 Weeks", category: "Muscle Gain", beforeImg: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" }
+          { id: 3, name: "Priya V.", time: "24 Weeks", category: "Total Recomp", beforeImg: "/transformations/Priya V before.jpg", afterImg: "/transformations/Priya V after.jpg" },
+          { id: 2, name: "Karthik M.", time: "16 Weeks", category: "Muscle Gain", beforeImg: "/transformations/Karthik M before.jpg", afterImg: "/transformations/Karthik M after.jpg" }
         ]}
       />
 

@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { Plus } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 import SectionLabel from "@/components/ui/SectionLabel";
+import FlowingMenu from "@/components/ui/FlowingMenu";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,7 +26,18 @@ const itemVariants = {
 };
 
 export default function ServicesAccordion() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const programImages: Record<string, string> = {
+    "weight-loss-weight-gain": "/hero/img1_situp_girl.jpg",
+    "functional-training": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop",
+    "bootcamp": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=2069&auto=format&fit=crop",
+    "body-transformation": "/hero/img6_deadlift.jpg",
+  };
+
+  const programMenuItems = SERVICES.map((service) => ({
+    link: `/services/${service.slug}`,
+    text: service.title,
+    image: programImages[service.slug] ?? "/hero/img3_barbell_gym.jpg",
+  }));
 
   return (
     <section className="bg-ferous-bg py-20 lg:py-32 overflow-hidden border-b border-ferous-border">
@@ -61,44 +70,18 @@ export default function ServicesAccordion() {
               From fat loss to muscle gain — Ferous has a structured program for every body type and goal.
             </motion.p>
 
-            {/* Accordion List */}
-            <motion.div variants={itemVariants} className="flex flex-col gap-4">
-              {SERVICES.map((service, index) => {
-                const isActive = activeIndex === index;
-
-                return (
-                  <Link
-                    key={service.slug}
-                    href={`/services/${service.slug}`}
-                    onMouseEnter={() => setActiveIndex(index)}
-                    onClick={() => setActiveIndex(index)}
-                    className={`block w-full text-left p-6 rounded-ferous-lg transition-all duration-300 ease-in-out ${
-                      isActive 
-                        ? "bg-ferous-accent text-white shadow-[0_8px_24px_rgba(255,26,26,0.2)]" 
-                        : "bg-transparent border border-ferous-border hover:border-ferous-accent"
-                    }`}
-                  >
-                    <div className="flex justify-between items-center">
-                      <h3 className={`text-xl font-bold ${isActive ? "text-white" : "text-white"}`}>
-                        {service.title}
-                      </h3>
-                      {!isActive && (
-                        <Plus className="w-6 h-6 text-ferous-accent shrink-0" strokeWidth={2.5} />
-                      )}
-                    </div>
-                    
-                    <div 
-                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isActive ? "max-h-[150px] opacity-100 mt-3" : "max-h-0 opacity-0 mt-0"
-                      }`}
-                    >
-                      <p className="text-white/90 leading-relaxed pr-8">
-                        {service.description}
-                      </p>
-                    </div>
-                  </Link>
-                );
-              })}
+            {/* Flowing Menu */}
+            <motion.div variants={itemVariants} className="h-[320px] sm:h-[340px] lg:h-[360px]">
+              <FlowingMenu
+                items={programMenuItems}
+                bgColor="#0d0d0d"
+                textColor="#ffffff"
+                marqueeBgColor="#e11111"
+                marqueeTextColor="#ffffff"
+                borderColor="#2a2a2a"
+                speed={18}
+                className="rounded-ferous-lg border border-ferous-border"
+              />
             </motion.div>
           </motion.div>
 

@@ -180,7 +180,7 @@ export default function Hero() {
         }
       `}</style>
 
-      <section className="relative w-full h-[100vh] min-h-[600px] overflow-hidden flex items-end">
+      <section className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden flex items-end">
 
         {/* ── Active background image ─────────────────────────────────────── */}
         {/*    Ken Burns restarts on each kenKey change (element remounts)    */}
@@ -191,6 +191,7 @@ export default function Hero() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
             sizes="100vw"
           />
         </div>
@@ -284,6 +285,8 @@ export default function Hero() {
                       src={`https://i.pravatar.cc/100?img=${i + 10}`}
                       alt="Member avatar"
                       fill
+                      loading="lazy"
+                      sizes="40px"
                       className="object-cover"
                     />
                   </div>

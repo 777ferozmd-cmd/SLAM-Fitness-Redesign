@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "generatedAt": "2026-05-03T03:37:36.553Z",
+    "totalReferences": 21,
+    "htmlImages": 10,
+    "cssImages": 0,
+    "inlineSvgs": 5,
+    "staticFiles": 6
+  },
+  "images": [
+    {
+      "id": "svg_49ojmhezg",
+      "path": "inline-svg",
+      "type": "SVG",
+      "element": "svg",
+      "location": "app\\about\\page.tsx:205",
+      "size": "unknown",
+      "purpose": "Inline icon/graphic"
+    },
+    {
+      "id": "svg_jxszrq5ln",
+      "path": "inline-svg",
+      "type": "SVG",
+      "element": "svg",
+      "location": "app\\contact\\ContactContent.tsx:88",
+      "size": "unknown",
+      "purpose": "Inline icon/graphic"
+    },
+    {
+      "id": "svg_1nmd2hfai",
+      "path": "inline-svg",
+      "type": "SVG",
+      "element": "svg",
+      "location": "app\\contact\\ContactContent.tsx:91",
+      "size": "unknown",
+      "purpose": "Inline icon/graphic"
+    },
+    {
+      "id": "img_9w36us8qd",
+      "path": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=2070&auto=format&fit=crop",
+      "type": "HTML/JSX",
+      "element": "img",
+      "location": "app\\franchise\\page.tsx:14",
+      "size": "?x?",
+      "purpose": "unknown"
+    },
+    {
+      "id": "img_f1qrifg4r",
+      "path": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=2070&auto=format&fit=crop",
+      "type": "HTML/JSX",
+      "element": "img",
+      "location": "app\\pricing\\page.tsx:23",
+      "size": "?x?",
+      "purpose": "unknown"
+    },
+    {
+      "id": "img_3f52ftys1",
+      "path": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop",
+      "type": "HTML/JSX",
+      "element": "img",
+      "location": "app\\services\\body-transformation\\page.tsx:61",
+      "size": "?x?",
+      "purpose": "unknown"
+    },
+    {
+      "id": "img_k0ltq7wwl",
+      "path": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=2069&auto=format&fit=crop",
+      "type": "HTML/JSX",
+      "element": "img",
+      "location": "app\\services\\bootcamp\\page.tsx:60",
+      "size": "?x?",
+      "purpose": "unknown"
+    },
+    {
+      "id": "img_vunjzknwz",
+      "path": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop",
+      "type": "HTML/JSX",
+      "element": "img",
+      "location": "app\\services\\functional-training\\page.tsx:60",
+      "size": "?x?",
+      "purpose": "unknown"
+    },
+    {
+      "id": "img_9a1riw241",
+      "path": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop",
+      "type": "HTML/JSX",
+      "element": "img",
+      "location": "app\\services\\weight-loss-weight-gain\\page.tsx:23",
+      "size": "?x?",
+      "purpose": "unknown"
+    },
+    {
+      "id": "svg_by92i693r",
+      "path": "inline-svg",
+      "type": "SVG",
+      "element": "svg",
+      "location": "components\\layout\\Footer.tsx:30",
+      "size": "unknown",
+      "purpose": "Inline icon/graphic"
+    },
+    {
+      "id": "svg_k3efc4ywg",
+      "path": "inline-svg",
+      "type": "SVG",
+      "element": "svg",
+      "location": "components\\layout\\Footer.tsx:39",
+      "size": "unknown",
+      "purpose": "Inline icon/graphic"
+    },
+    {
+      "id": "img_1ngsord2t",
+      "path": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470&auto=format&fit=crop",
+      "type": "HTML/JSX",
+      "element": "img",
+      "location": "components\\sections\\Coaching.tsx:47",
+      "size": "?x?",
+      "purpose": "unknown"
+    },
+    {
+      "id": "img_c5wsh01b4",
+      "path": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop",
+      "type": "HTML/JSX",
+      "element": "img",
+      "location": "components\\sections\\Coaching.tsx:59",
+      "size": "?x?",
+      "purpose": "unknown"
+    },
+    {
+      "id": "img_mdoi1d12x",
+      "path": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1200&auto=format&fit=crop",
+      "type": "HTML/JSX",
+      "element": "img",
+      "location": "components\\sections\\ServicesAccordion.tsx:114",
+      "size": "?x?",
+      "purpose": "unknown"
+    },
+    {
+      "id": "img_0m797oko3",
+      "path": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop",
+      "type": "HTML/JSX",
+      "element": "img",
+      "location": "components\\sections\\WhyFerous.tsx:50",
+      "size": "?x?",
+      "purpose": "unknown"
+    },
+    {
+      "id": "file_8kbs7zf0z",
+      "path": "/hero/img1_situp_girl.jpg",
+      "type": "File",
+      "element": "File System",
+      "location": "public\\hero\\img1_situp_girl.jpg",
+      "size": "unknown",
+      "purpose": "Static asset"
+    },
+    {
+      "id": "file_zphdkwpl0",
+      "path": "/hero/img2_battle_ropes.jpg",
+      "type": "File",
+      "element": "File System",
+      "location": "public\\hero\\img2_battle_ropes.jpg",
+      "size": "unknown",
+      "purpose": "Static asset"
+    },
+    {
+      "id": "file_gwfi3s1xd",
+      "path": "/hero/img3_barbell_gym.jpg",
+      "type": "File",
+      "element": "File System",
+      "location": "public\\hero\\img3_barbell_gym.jpg",
+      "size": "unknown",
+      "purpose": "Static asset"
+    },
+    {
+      "id": "file_lozv88y0b",
+      "path": "/hero/img4_gym_equipment.jpg",
+      "type": "File",
+      "element": "File System",
+      "location": "public\\hero\\img4_gym_equipment.jpg",
+      "size": "unknown",
+      "purpose": "Static asset"
+    },
+    {
+      "id": "file_1shsnr3im",
+      "path": "/hero/img5_squat_woman.jpg",
+      "type": "File",
+      "element": "File System",
+      "location": "public\\hero\\img5_squat_woman.jpg",
+      "size": "unknown",
+      "purpose": "Static asset"
+    },
+    {
+      "id": "file_sx3fvbz3p",
+      "path": "/hero/img6_deadlift.jpg",
+      "type": "File",
+      "element": "File System",
+      "location": "public\\hero\\img6_deadlift.jpg",
+      "size": "unknown",
+      "purpose": "Static asset"
+    }
+  ]
+}

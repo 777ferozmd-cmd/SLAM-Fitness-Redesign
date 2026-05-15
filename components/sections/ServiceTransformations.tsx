@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Card from "@/components/ui/Card";
 import SectionLabel from "@/components/ui/SectionLabel";
+import BeforeAfterSlider from "@/components/ui/BeforeAfterSlider";
 
 interface Transformation {
   id: number;
@@ -50,40 +51,15 @@ export default function ServiceTransformations({
               transition={{ delay: idx * 0.1, duration: 0.5 }}
             >
               <Card className="!p-0 border-ferous-border overflow-hidden group">
-                {/* Image Container */}
-                <div className="relative h-[320px] flex">
-                  {/* Before */}
-                  <div className="relative w-1/2 h-full border-r border-white/10 overflow-hidden">
-                    <Image
-                      src={item.beforeImg}
-                      alt={`${item.name} Before`}
-                      fill
-                      className="object-cover opacity-50 grayscale group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4 z-10">
-                      <span className="bg-black/60 backdrop-blur-md px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white border border-white/10">
-                        Before
-                      </span>
-                    </div>
-                  </div>
-                  {/* After */}
-                  <div className="relative w-1/2 h-full overflow-hidden">
-                    <Image
-                      src={item.afterImg}
-                      alt={`${item.name} After`}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 right-4 z-10">
-                      <span className="bg-ferous-accent px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-white shadow-lg">
-                        After
-                      </span>
-                    </div>
-                  </div>
-                  
-                  {/* Center Divider Line Highlight */}
-                  <div className="absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-transparent via-ferous-accent to-transparent z-20" />
-                </div>
+                {/* Before After Slider */}
+                <BeforeAfterSlider 
+                  beforeImg={item.beforeImg}
+                  afterImg={item.afterImg}
+                  beforeAlt={`${item.name} Before`}
+                  afterAlt={`${item.name} After`}
+                  aspectRatio="5/7"
+                  className="w-full"
+                />
 
                 {/* Details */}
                 <div className="p-6">

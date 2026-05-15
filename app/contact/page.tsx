@@ -4,6 +4,11 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Book a Free Trial — Ferous Fitness Studio Chennai",
   description: "Book a free consultation or trial class at Ferous Fitness Studio, Chennai. No commitment required.",
+  openGraph: {
+    title: "Book a Free Trial at Ferous Fitness Studio",
+    description: "Book a free consultation or trial class in Chennai. No commitment required. Expert coaches ready for you.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function ContactPage() {

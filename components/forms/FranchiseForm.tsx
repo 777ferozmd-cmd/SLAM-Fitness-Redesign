@@ -1,6 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import { supabase } from "@/lib/supabase";
 
 type FranchiseFormData = {
   name: string;
@@ -19,10 +20,24 @@ export default function FranchiseForm() {
   } = useForm<FranchiseFormData>();
 
   const onSubmit = async (data: FranchiseFormData) => {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log(data);
-    reset();
+    try {
+      const { error } = await supabase
+        .from('franchise_submissions')
+        .insert([
+          {
+            name: data.name,
+            city: data.city,
+            phone: data.phone,
+            email: data.email,
+            investment: data.investment,
+          }
+        ]);
+
+      if (error) throw error;
+      reset();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
 
   return (

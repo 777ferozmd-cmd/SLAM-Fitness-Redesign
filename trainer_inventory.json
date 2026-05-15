@@ -1,0 +1,100 @@
+{
+  "trainer_records": [
+    {
+      "file_path": "components/sections/TrainerSpotlight.tsx",
+      "section_name": "TrainerSpotlight",
+      "trainers": [
+        {
+          "id": "spotlight_1",
+          "name": "Karthik Raj",
+          "initials": "KR",
+          "spec": "Head Coach, Functional Training",
+          "exp": 8,
+          "image": "MISSING"
+        },
+        {
+          "id": "spotlight_2",
+          "name": "Sneha Reddy",
+          "initials": "SR",
+          "spec": "Weight Loss Specialist",
+          "exp": 5,
+          "image": "MISSING"
+        },
+        {
+          "id": "spotlight_3",
+          "name": "Arun Kumar",
+          "initials": "AK",
+          "spec": "Strength & Conditioning",
+          "exp": 6,
+          "image": "MISSING"
+        }
+      ]
+    },
+    {
+      "file_path": "app/about/page.tsx",
+      "section_name": "AboutPage",
+      "trainers": [
+        {
+          "id": "about_1",
+          "name": "Vikram R.",
+          "initials": "VR",
+          "specialization": "Head Strength Coach",
+          "certifications": "ACE Certified, CrossFit Level 2",
+          "experience": "8+ Years",
+          "social": "https://instagram.com",
+          "image": "MISSING"
+        },
+        {
+          "id": "about_2",
+          "name": "Sneha P.",
+          "initials": "SP",
+          "specialization": "Functional & HIIT Specialist",
+          "certifications": "NASM CPT, Kettlebell Level 1",
+          "experience": "5+ Years",
+          "social": "https://instagram.com",
+          "image": "MISSING"
+        },
+        {
+          "id": "about_3",
+          "name": "Karthik D.",
+          "initials": "KD",
+          "specialization": "Body Transformation",
+          "certifications": "ISSA Certified, Sports Nutrition",
+          "experience": "10+ Years",
+          "social": "https://instagram.com",
+          "image": "MISSING"
+        },
+        {
+          "id": "about_4",
+          "name": "Rahul S.",
+          "initials": "RS",
+          "specialization": "Powerlifting Coach",
+          "certifications": "USAPL Coach, Strength Specialist",
+          "experience": "6+ Years",
+          "social": "https://instagram.com",
+          "image": "MISSING"
+        },
+        {
+          "id": "about_5",
+          "name": "Priya V.",
+          "initials": "PV",
+          "specialization": "Mobility & Recovery",
+          "certifications": "Yoga Alliance, FMS Level 1",
+          "experience": "7+ Years",
+          "social": "https://instagram.com",
+          "image": "MISSING"
+        },
+        {
+          "id": "about_6",
+          "name": "Arun M.",
+          "initials": "AM",
+          "specialization": "Bootcamp Instructor",
+          "certifications": "ACE Group Fitness, CPR/AED",
+          "experience": "4+ Years",
+          "social": "https://instagram.com",
+          "image": "MISSING"
+        }
+      ]
+    }
+  ]
+}

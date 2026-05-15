@@ -9,6 +9,11 @@ import { ProgramTabs } from "./ClientComponents";
 export const metadata: Metadata = {
   title: "Weight Loss & Weight Gain Gym in Chennai — Ferous",
   description: "Personalised weight loss and weight gain programs in Chennai with expert trainers and nutrition guidance. See results in 4–6 weeks.",
+  openGraph: {
+    title: "Weight Loss & Weight Gain Programs — Ferous Fitness Studio",
+    description: "Personalised programs for fat loss and muscle gain with expert trainers and nutrition guidance in Chennai.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function WeightLossGainPage() {
@@ -25,6 +30,8 @@ export default function WeightLossGainPage() {
             fill
             className="object-cover"
             priority
+            fetchPriority="high"
+            sizes="100vw"
           />
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black/60" />
@@ -179,10 +186,10 @@ export default function WeightLossGainPage() {
         title="Weight Management Results"
         subtitle="THE PROOF IS IN THE WORK"
         transformations={[
-          { id: 1, name: "Rahul S.", time: "12 Weeks", category: "Fat Loss", beforeImg: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" },
-          { id: 2, name: "Karthik M.", time: "16 Weeks", category: "Muscle Gain", beforeImg: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" },
-          { id: 4, name: "Arjun K.", time: "8 Weeks", category: "Fat Loss", beforeImg: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" },
-          { id: 6, name: "Vikram D.", time: "20 Weeks", category: "Mass Building", beforeImg: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop", afterImg: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" }
+          { id: 1, name: "Rahul S.", time: "12 Weeks", category: "Fat Loss", beforeImg: "/transformations/Rahul S Before.jpg", afterImg: "/transformations/Rahul S After.jpg" },
+          { id: 2, name: "Karthik M.", time: "16 Weeks", category: "Muscle Gain", beforeImg: "/transformations/Karthik M before.jpg", afterImg: "/transformations/Karthik M after.jpg" },
+          { id: 4, name: "Arjun K.", time: "8 Weeks", category: "Fat Loss", beforeImg: "/transformations/Arjun k before.jpg", afterImg: "/transformations/Arjun k after.jpg" },
+          { id: 6, name: "Vikram D.", time: "20 Weeks", category: "Mass Building", beforeImg: "/transformations/Vikram D before.jpg", afterImg: "/transformations/Vikram D after.jpg" }
         ]}
       />
 
