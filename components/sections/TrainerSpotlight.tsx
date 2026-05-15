@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
@@ -31,6 +32,18 @@ const trainers = [
 ];
 
 export default function TrainerSpotlight() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const target = e.currentTarget;
+    const scrollLeft = target.scrollLeft;
+    const scrollWidth = target.scrollWidth - target.clientWidth;
+    if (scrollWidth <= 0) return;
+    const progress = scrollLeft / scrollWidth;
+    const index = Math.round(progress * (trainers.length - 1));
+    setActiveIndex(index);
+  };
+
   return (
     <section className="bg-ferous-bg py-20 lg:py-32 overflow-hidden border-b border-ferous-border">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-[80px]">
@@ -64,7 +77,8 @@ export default function TrainerSpotlight() {
 
         {/* Cards Carousel/Grid */}
         <motion.div 
-          className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 md:pb-0 md:grid md:grid-cols-3 md:overflow-visible no-scrollbar"
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 md:pb-0 md:grid md:grid-cols-3 md:overflow-visible no-scrollbar"
+          onScroll={handleScroll}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -98,9 +112,26 @@ export default function TrainerSpotlight() {
           ))}
         </motion.div>
 
+        {/* Pagination Dots (Mobile Only) */}
+        <motion.div 
+          className="flex justify-center gap-2 mt-2 mb-6 md:hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          {trainers.map((_, idx) => (
+            <div
+              key={idx}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                activeIndex === idx ? "w-6 bg-ferous-accent" : "w-1.5 bg-[#333]"
+              }`}
+            />
+          ))}
+        </motion.div>
+
         {/* Mobile CTA */}
         <motion.div 
-          className="mt-4 md:hidden"
+          className="mt-2 md:hidden"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

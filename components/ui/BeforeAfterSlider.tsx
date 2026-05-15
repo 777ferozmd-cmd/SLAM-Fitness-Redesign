@@ -100,10 +100,12 @@ export default function BeforeAfterSlider({
   return (
     <div 
       ref={containerRef}
-      className={`relative group overflow-hidden rounded-xl bg-[#0a0a0a] shadow-[0_20px_60px_rgba(0,0,0,0.5)] select-none touch-none ${className}`}
+      className={`relative group overflow-hidden rounded-xl bg-[#0a0a0a] shadow-[0_20px_60px_rgba(0,0,0,0.5)] select-none touch-pan-y ${className}`}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
+      onPointerLeave={handlePointerUp}
       data-dragging={isDragging}
     >
       {/* Aspect Ratio padding hack */}

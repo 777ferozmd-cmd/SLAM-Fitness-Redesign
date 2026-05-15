@@ -180,7 +180,7 @@ export default function Hero() {
         }
       `}</style>
 
-      <section className="relative w-full h-[100dvh] min-h-[600px] overflow-hidden flex items-end">
+      <section className="relative w-full h-[100svh] min-h-[600px] overflow-hidden flex items-end">
 
         {/* ── Active background image ─────────────────────────────────────── */}
         {/*    Ken Burns restarts on each kenKey change (element remounts)    */}
@@ -258,7 +258,7 @@ export default function Hero() {
 
             <motion.p
               variants={itemVariants}
-              className="text-[18px] text-[#C8C8C8] max-w-[420px] mb-8 leading-relaxed"
+              className="hidden md:block text-[18px] text-[#C8C8C8] max-w-[420px] mb-8 leading-relaxed"
             >
               Expert coaches. Personalised programs tailored to your goals,
               your body, and your schedule.
